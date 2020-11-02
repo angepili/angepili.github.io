@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+
+
+	<title>Ottenere i commenti di un video Youtube tramite API con Postman  - AngeloPili.it</title>
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="MobileOptimized" content="320">
+<meta name="generator" content="HUGO v0.77.0" />
+<meta name="msapplication-TileImage" content="/pwa/ms-icon-144x144.png">
+<meta name="author"      content="">
+<meta name="description" content="Tramite le API di Youtube è possibile ottenere dati di canali, video, ed insighits in maniera molto semplice. In questo post vediamo come ottenere la lista dei commenti di un Video tramite API in formato Json.">
+<meta name="keywords"    content="Development, Youtube, API, Postman">
+<meta property="og:locale" content="it-it">
+<meta property="og:type" content="blog">
+<meta property="og:title"       content="Ottenere i commenti di un video Youtube tramite API con Postman">
+<meta property="og:description" content="Tramite le API di Youtube è possibile ottenere dati di canali, video, ed insighits in maniera molto semplice. In questo post vediamo come ottenere la lista dei commenti di un Video tramite API in formato Json.">
+<meta property="og:url"         content="https://angelopili.it/pages/ottenere-commenti-video-youtube/">
+<meta property="og:site_name"   content="Ottenere i commenti di un video Youtube tramite API con Postman">
+<meta property="og:image"       content="https://angelopili.it/uploads/youtube-comments/youtube-comments.png">
+<meta property="twitter:image"  content="https://angelopili.it/uploads/youtube-comments/youtube-comments.png">
+<meta property="og:latitude"    content="45.4642700"/>
+<meta property="og:longitude"   content="9.1895100"/>
+<meta property="og:locality"    content="Milan"/>
+<meta property="og:country-name"content="Italy"/>
+
+<meta name="twitter:title"      content="Ottenere i commenti di un video Youtube tramite API con Postman">
+<meta name="twitter:description" content="Tramite le API di Youtube è possibile ottenere dati di canali, video, ed insighits in maniera molto semplice. In questo post vediamo come ottenere la lista dei commenti di un Video tramite API in formato Json.">
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@ngpi71" />
+<meta name="twitter:site" content="@ngpi71" />
+
+
+<meta name="robots" content="index, follow"/>
+<meta name="googlebot" content="index,follow" />
+
+<link rel="canonical" href="https://angelopili.it/pages/ottenere-commenti-video-youtube/" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="/pwa/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/pwa/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/pwa/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/pwa/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/pwa/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/pwa/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/pwa/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/pwa/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/pwa/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/pwa/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/pwa/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/pwa/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/pwa/favicon-16x16.png">
+<link rel="manifest" href="/pwa/manifest.json?v=1604306831">
+
+<link rel="icon" type="image/x-icon" href="https://angelopili.it/favicon.ico?v=1604306831">
+<link rel="apple-touch-icon-precomposed" href="https://angelopili.it/favicon.png?v=1604306831">
+
+</head>
+<body>
+	<header>
+	===================<br>
+	== <a href="https://angelopili.it/">AngeloPili.it</a> ==<br>
+	===================
+	<div>Appunti di sviluppo</div>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Ottenere i commenti di un video Youtube tramite API con Postman</h1>
+			<b><time>17.08.2020</time></b>
+		       
+		           <a href="/tags/youtube">Youtube</a>
+        	       
+		           <a href="/tags/api">API</a>
+        	       
+		           <a href="/tags/postman">Postman</a>
+        	       
+
+			<div>
+				<p>Per lavorare con le API di Youtube occorre inanzitutto un account Google per poter accedere alla <a href="https://console.developers.google.com/">Console di Google</a>, creare un API key e, tra tutti i servizi messi a dispozione, abilitare Youtube.</p>
+<p>Ottenuta l&rsquo;API Key, possiamo eseguire subito la nostra richiesta in GET con i seguenti parametri:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">METODO</span>: <span style="color:#ae81ff">GET</span>
+<span style="color:#f92672">URL</span>: <span style="color:#ae81ff">https://www.googleapis.com/youtube/v3/commentThreads</span>
+<span style="color:#f92672">PARAMETRI</span>: 
+    <span style="color:#f92672">key</span>: <span style="color:#ae81ff">0123456789</span>
+    <span style="color:#f92672">videoId</span>: <span style="color:#ae81ff">ABCDEFG1234</span>
+    <span style="color:#f92672">part</span>: <span style="color:#ae81ff">snippet,replies</span>
+    <span style="color:#f92672">maxResults</span>: <span style="color:#ae81ff">100</span>
+</code></pre></div><p>Vediamo nel dettaglio i parametri:</p>
+<ul>
+<li>inseriamo la nostra API key come valore di <em>key</em>.</li>
+<li>il parametro <em>videoID</em> conterrà l&rsquo;ID del video; è facilmente reperibile dalla URL youtube, basterà copiare il valore del parametro <code>v</code>, ad esempio nella URL <a href="https://www.youtube.com/watch?v=9EcjWd-O4jI">https://www.youtube.com/watch?v=9EcjWd-O4jI</a> il parametro equivale a <code>9EcjWd-O4jI</code>.</li>
+<li>con il parametro <em>part</em> andiamo ad indicare quali contenuti della risposta vogliamo ricevere, infatti utilizzeremo <code>snippet</code> che contiene il dettaglio del commento, e <code>replies</code> che sono le eventuali repliche ad un commento.</li>
+<li>mentre <em>maxResults</em> parla da solo, andiamo ad indicare quanti sono i commenti massimi che intendiamo ricevere. Si può indicare un valore tra 0 e 100, infatti se il video presenta più di 100 commenti, occorrerà utilizzare la paginazione, usando il valore di <code>nextPageToken</code> che troveremo nella risposta.</li>
+</ul>
+<h2 id="usare-postman-per-testare-lapi-di-youtube">Usare Postman per testare l&rsquo;API di youtube</h2>
+<p>Ora possiamo fare un test di chiamata con Postman usando il metodo GET ed inserendo i parametri come da schermata qui sotto, così da verificare la corretta esecuzione e la risposta restituita.</p>
+<p><img src="/uploads/youtube-comments/youtube-api-comments-postman.png" alt=""></p>
+<p>Se tutto è andato a buon fine, la <strong>API di youtube</strong> ci restituirà una risposta che conterrà un oggetto Json con il token di paginazione ed i risultati dentro la voce <code>items</code>, con questa struttura:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;youtube#commentThreadListResponse&#34;</span>,
+  <span style="color:#f92672">&#34;etag&#34;</span>: <span style="color:#e6db74">&#34;c9KByPuS9hbsT3kYq232RoBRClA&#34;</span>,
+  <span style="color:#f92672">&#34;nextPageToken&#34;</span>: <span style="color:#e6db74">&#34;QURTSl9pMUJDRUdkak9xeHJFckZJT3hyeW1FUHBsUlRuMjVNVjdNTlhUYjNydXVaZWtYU3N1Y3FnVkZlWEQxbXpMTnM4SFh1N1RURWZuQmFTdVdfVTBlWXJxWEZXNWcyRVM0VkRYaW1hMFlmSGhxMnpza2EzdlI3a0JITWtzWmw=&#34;</span>,
+  <span style="color:#f92672">&#34;pageInfo&#34;</span>: {
+    <span style="color:#f92672">&#34;totalResults&#34;</span>: <span style="color:#ae81ff">100</span>,
+    <span style="color:#f92672">&#34;resultsPerPage&#34;</span>: <span style="color:#ae81ff">100</span>
+  },
+  <span style="color:#f92672">&#34;items&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;youtube#commentThread&#34;</span>,
+      <span style="color:#f92672">&#34;etag&#34;</span>: <span style="color:#e6db74">&#34;1c3Fcigyy09KA7YJnFCyp57s0PE&#34;</span>,
+      <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;UgxUzdW-bddgCls3iD94AaABAg&#34;</span>,
+      <span style="color:#f92672">&#34;snippet&#34;</span>: {
+        <span style="color:#f92672">&#34;videoId&#34;</span>: <span style="color:#e6db74">&#34;9bZkp7q19f0&#34;</span>,
+        <span style="color:#f92672">&#34;topLevelComment&#34;</span>: {
+          <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;youtube#comment&#34;</span>,
+          <span style="color:#f92672">&#34;etag&#34;</span>: <span style="color:#e6db74">&#34;uygUBwAFfAKVXIf53X5F1582Qro&#34;</span>,
+          <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;UgxUzdW-bddgCls3iD94AaABAg&#34;</span>,
+          <span style="color:#f92672">&#34;snippet&#34;</span>: {
+            <span style="color:#f92672">&#34;videoId&#34;</span>: <span style="color:#e6db74">&#34;9bZkp7q19f0&#34;</span>,
+            <span style="color:#f92672">&#34;textDisplay&#34;</span>: <span style="color:#e6db74">&#34;Шок!на этом видео видно как Влад бумага ворует &lt;a href=\&#34;https://youtu.be/8rm6cRFVKHk\&#34;&gt;https://youtu.be/8rm6cRFVKHk&lt;/a&gt;&#34;</span>,
+            <span style="color:#f92672">&#34;textOriginal&#34;</span>: <span style="color:#e6db74">&#34;Шок!на этом видео видно как Влад бумага ворует https://youtu.be/8rm6cRFVKHk&#34;</span>,
+            <span style="color:#f92672">&#34;authorDisplayName&#34;</span>: <span style="color:#e6db74">&#34;alex mironov&#34;</span>,
+            <span style="color:#f92672">&#34;authorProfileImageUrl&#34;</span>: <span style="color:#e6db74">&#34;https://yt3.ggpht.com/a/AATXAJzpQccOUknezYdJwF1IyvLTJawgmTm4BdUcZcSG6w=s48-c-k-c0xffffffff-no-rj-mo&#34;</span>,
+            <span style="color:#f92672">&#34;authorChannelUrl&#34;</span>: <span style="color:#e6db74">&#34;http://www.youtube.com/channel/UCFYuhxGHrtfOcHf7QsTFdZw&#34;</span>,
+            <span style="color:#f92672">&#34;authorChannelId&#34;</span>: {
+              <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;UCFYuhxGHrtfOcHf7QsTFdZw&#34;</span>
+            },
+            <span style="color:#f92672">&#34;canRate&#34;</span>: <span style="color:#66d9ef">true</span>,
+            <span style="color:#f92672">&#34;viewerRating&#34;</span>: <span style="color:#e6db74">&#34;none&#34;</span>,
+            <span style="color:#f92672">&#34;likeCount&#34;</span>: <span style="color:#ae81ff">1</span>,
+            <span style="color:#f92672">&#34;publishedAt&#34;</span>: <span style="color:#e6db74">&#34;2020-08-17T15:42:06Z&#34;</span>,
+            <span style="color:#f92672">&#34;updatedAt&#34;</span>: <span style="color:#e6db74">&#34;2020-08-17T15:42:06Z&#34;</span>
+          }
+        },
+        <span style="color:#f92672">&#34;canReply&#34;</span>: <span style="color:#66d9ef">true</span>,
+        <span style="color:#f92672">&#34;totalReplyCount&#34;</span>: <span style="color:#ae81ff">0</span>,
+        <span style="color:#f92672">&#34;isPublic&#34;</span>: <span style="color:#66d9ef">true</span>
+      }
+    },
+    <span style="color:#960050;background-color:#1e0010">...</span>
+  ]
+}
+</code></pre></div><p>Tutta la documentazione è disponibile sull&rsquo;area <a href="https://developers.google.com/youtube/v3/docs/commentThreads/list">developers di Google</a></p>
+<p>Questo post mostra come interrogare l' API di yotube con Postman, mentre nel prossimo articolo vedremo <a href="https://angelopili.it/post/commenti-youtube-javascript/"><strong>Come ottenere i commenti Youtube tramite API con Javascript</strong></a>, andremmo quindi ad eseguire questa chiamata direttamente dal browser, dall&rsquo;API otterremo la risposta con i commenti di Youtube in formato JSON, e proveremo ad impaginarli in un widget Html.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>Ultimi post</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/pages/tipi-in-javascript/">I tipi di dati in Javascript</a></li>
+				
+				<li><a href="/pages/creare-un-dominio-locale-con-apache-con-https/">Abilitare https su Apache in locale</a></li>
+				
+				<li><a href="/pages/svelte-js/">Svelte Framework: come funziona, una veloce introduzione.</a></li>
+				
+				<li><a href="/pages/commenti-youtube-javascript/">Ottenere i commenti Youtube tramite API con Javascript</a></li>
+				
+				<li><a href="/pages/ottenere-commenti-video-youtube/">Ottenere i commenti di un video Youtube tramite API con Postman</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2020 <a href="https://angelopili.it/"><b>AngeloPili.it</b></a>.
+	<a href="https://github.com/angepili"><b>Github</b></a>.
+	<a href="https://www.linkedin.com/in/angelopili/"><b>Linkedin</b></a>.
+	<a href="https://twitter.com/ngpi71"><b>Twitter</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

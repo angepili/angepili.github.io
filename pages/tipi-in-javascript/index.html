@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+
+
+	<title>I tipi di dati in Javascript  - AngeloPili.it</title>
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="MobileOptimized" content="320">
+<meta name="generator" content="HUGO v0.77.0" />
+<meta name="msapplication-TileImage" content="/pwa/ms-icon-144x144.png">
+<meta name="author"      content="">
+<meta name="description" content="Cos&rsquo;è un valore di tipo numero, una stringa, o cos&rsquo;è undefined? Andiamo ad analizzire quali sono i tipi di dato in javascript, e come usarli.">
+<meta name="keywords"    content="Development, Javascript">
+<meta property="og:locale" content="it-it">
+<meta property="og:type" content="blog">
+<meta property="og:title"       content="I tipi di dati in Javascript">
+<meta property="og:description" content="Cos&rsquo;è un valore di tipo numero, una stringa, o cos&rsquo;è undefined? Andiamo ad analizzire quali sono i tipi di dato in javascript, e come usarli.">
+<meta property="og:url"         content="https://angelopili.it/pages/tipi-in-javascript/">
+<meta property="og:site_name"   content="I tipi di dati in Javascript">
+<meta property="og:image"       content="https://angelopili.it/uploads/tipi-javascript/tipi-javascript.png">
+<meta property="twitter:image"  content="https://angelopili.it/uploads/tipi-javascript/tipi-javascript.png">
+<meta property="og:latitude"    content="45.4642700"/>
+<meta property="og:longitude"   content="9.1895100"/>
+<meta property="og:locality"    content="Milan"/>
+<meta property="og:country-name"content="Italy"/>
+
+<meta name="twitter:title"      content="I tipi di dati in Javascript">
+<meta name="twitter:description" content="Cos&rsquo;è un valore di tipo numero, una stringa, o cos&rsquo;è undefined? Andiamo ad analizzire quali sono i tipi di dato in javascript, e come usarli.">
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@ngpi71" />
+<meta name="twitter:site" content="@ngpi71" />
+
+
+<meta name="robots" content="index, follow"/>
+<meta name="googlebot" content="index,follow" />
+
+<link rel="canonical" href="https://angelopili.it/pages/tipi-in-javascript/" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="/pwa/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/pwa/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/pwa/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/pwa/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/pwa/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/pwa/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/pwa/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/pwa/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/pwa/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/pwa/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/pwa/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/pwa/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/pwa/favicon-16x16.png">
+<link rel="manifest" href="/pwa/manifest.json?v=1604306831">
+
+<link rel="icon" type="image/x-icon" href="https://angelopili.it/favicon.ico?v=1604306831">
+<link rel="apple-touch-icon-precomposed" href="https://angelopili.it/favicon.png?v=1604306831">
+
+</head>
+<body>
+	<header>
+	===================<br>
+	== <a href="https://angelopili.it/">AngeloPili.it</a> ==<br>
+	===================
+	<div>Appunti di sviluppo</div>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>I tipi di dati in Javascript</h1>
+			<b><time>03.10.2020</time></b>
+		       
+		           <a href="/tags/javascript">Javascript</a>
+        	       
+
+			<div>
+				<p>Come qualsiasi altro linguaggio, anche javascript prevede i tipi di dato: ovvero quell&rsquo;informazione che ci dice che cos&rsquo;è quel dato.</p>
+<p><strong>Vanilla Javascript</strong>, ovvero javascript è anzitutto un linguaggio a tipizzazione debole o tipizzazione dinamica, questo vuo dire che quando si assegna una variabile non è vincolante conoscerne il tipo, e può anche essere riassegnata cambiandone il tipo, senza creare problemi in fase di interpretazione. Sembrerebbe una comodità, ma può rivelarsi un&rsquo;arma a doppio taglio per lo sviluppatore, infatti le best practice ci indicano che è sempre meglio conoscere che tipo di dato ci dobbiamo aspettiamo. Negli ultimi anni è nato <strong>Typescript</strong>, un super set di javascript che oltre a rendere disponibili nuove funzionalità, risolve anche questo problema introducendo la tipizzazione.</p>
+<p><strong>Javascript</strong> ha cinque tipi primitivi, ed uno complesso. Vediamo quindi quali sono e come si caraterizzano.</p>
+<h2 id="i-tipi-primtivi">I tipi primtivi</h2>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td>una sequenza di caratteri alfanumerici, quindi può contenere sia lettere che numeri; può contenere caratteri speciali, caratteri unicode, ed è delimitata da doppi o singoli apici.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Esempio di string
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Angelo&#34;</span>; <span style="color:#75715e">// solo lettere
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Angelo86&#34;</span> <span style="color:#75715e">// lettere e numeri
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;L\&#39;apostrofo&#39;</span>; <span style="color:#75715e">// se usiamo i singoli apici, ed abbiamo un&#39;apostrofo, usare backslash + apostrofo
+</span></code></pre></div><p> </p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number</td>
+<td>al contrario di altri linguaggi, tipo C# che ha diversi tipi per il formato numero, in javascript l&rsquo;unico messo a disposizione è number. Può contenere numeri positivi, negativi, 0, interi e decimali.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Esempio di number
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">year</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1986</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.5</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">negative</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">7</span>
+</code></pre></div><p> </p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>booleano</td>
+<td>come negli altri linguaggi, un valore booleano può essere <code>true</code> e <code>false</code>. E' quindi un&rsquo;entità logica per confermare o negare.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Esempio di booleano
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hasUser</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hasLogged</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</code></pre></div><p> </p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undefined</td>
+<td>è quel tipo per cui una variabile anche se è stata inizializzata, non ha nessun valore</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Esempio di undefined
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">lastname</span>; <span style="color:#75715e">// undefined
+</span></code></pre></div><p> </p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>null</td>
+<td>quando decidiamo che una variabile non ha ancora un valore possibile</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Esempio di null
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">activated</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</code></pre></div><h2 id="loggetto">L&rsquo;oggetto</h2>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>object</td>
+<td>è un tipo che possiamo definire complesso; è sostanzialmente un container di più dati su base chiave valore. Può contenere quindi diversi tipi di dati, assegnati grazie ad una chiave, divisi per virgola.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Person</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Angelo&#34;</span>,
+    <span style="color:#a6e22e">year</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1986</span>,
+    <span style="color:#a6e22e">hasLogged</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+    <span style="color:#a6e22e">activated</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+    <span style="color:#a6e22e">getAge</span> <span style="color:#f92672">:</span> () =&gt; <span style="color:#a6e22e">age</span>,
+    <span style="color:#a6e22e">cities</span> <span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;Milan&#39;</span>,<span style="color:#e6db74">&#39;Rome&#39;</span>,<span style="color:#e6db74">&#39;London&#39;</span>]
+}
+</code></pre></div><p>In javascript vengono definiti object anche le <code>function</code> e gli <code>array</code></p>
+<h2 id="come-verificare-il-tipo-con-typeof">Come verificare il tipo con Typeof</h2>
+<p>Per capire con che tipo di dato abbiamo a che fare, possiamo utilizzare l&rsquo;operatore typeof, in <code>if statement</code> o semplicemente stampandolo su un console.log.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">name</span> <span style="color:#75715e">// string
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">year</span> <span style="color:#75715e">// number
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">lastname</span> <span style="color:#75715e">// &#34;undefined&#34;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">activated</span> <span style="color:#75715e">// null
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">Person</span> <span style="color:#75715e">// object
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">function</span>(){} <span style="color:#75715e">// function
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typeof</span> [<span style="color:#e6db74">&#39;a&#39;</span>,<span style="color:#e6db74">&#39;b&#39;</span>,<span style="color:#e6db74">&#39;c&#39;</span>] <span style="color:#75715e">// object
+</span></code></pre></div><p>Come accennato sopra, le funzioni sono degli oggetti, anche se facendo un typeof viene restituito <code>function</code>: qui una <a href="http://www.ecma-international.org/ecma-262/7.0/index.html#sec-properties-of-the-function-prototype-object">spiegazione sulla doc ufficiale di ECMAScript</a></p>
+<h2 id="nullish">Nullish</h2>
+<p>Possiamo definie <strong>nullish</strong> tutti quei tipi e valori che portano a qualcosa di nullo o vuoto. Quindi possiamo raccogliere in questo gruppo: <code>null</code>, <code>undefined</code>, <code>0</code>, <code>[]</code>, <code>&quot;&quot;</code>, <code>false</code>.</p>
+<h2 id="cambiare-il-tipo">Cambiare il tipo</h2>
+<p>Javascript spesso potrebbe sorprenderci. Potremmo infatti trovarci nella situazione in cui abbiamo un numero, ma in formato stringa.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;472&#34;</span>
+<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">num</span> <span style="color:#75715e">// &#34;string&#34;
+</span></code></pre></div><p>Possiamo forzarne il tipo numero semplicemente così:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#f92672">+</span><span style="color:#a6e22e">num</span>;
+<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">num</span> <span style="color:#75715e">// &#34;number&#34;
+</span></code></pre></div><p>Possiamo anche fare qualcosa di questo tipo, negare 1 o 0 per ottenere il corrispettivo booleano:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">checked</span> <span style="color:#f92672">=</span> <span style="color:#f92672">!</span><span style="color:#ae81ff">0</span>; <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">checked</span> <span style="color:#75715e">// boolean
+</span><span style="color:#75715e">// O
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">checked</span> <span style="color:#f92672">=</span> <span style="color:#f92672">!</span><span style="color:#ae81ff">1</span> <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">checked</span> <span style="color:#75715e">// boolean
+</span></code></pre></div><p>Possiamo convertire un numero in una stringa</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">eta</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span> <span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">eta</span> <span style="color:#75715e">// number
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">eta</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&#34;</span>; <span style="color:#75715e">// &#34;18&#34;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">eta</span> <span style="color:#75715e">// &#34;string&#34;
+</span></code></pre></div><p>In javascript possiamo convertire un booleano in numero</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#f92672">+</span><span style="color:#66d9ef">true</span>) <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typeof</span> <span style="color:#f92672">+</span><span style="color:#66d9ef">true</span> <span style="color:#75715e">// boolean
+</span></code></pre></div>
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>Ultimi post</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/pages/tipi-in-javascript/">I tipi di dati in Javascript</a></li>
+				
+				<li><a href="/pages/creare-un-dominio-locale-con-apache-con-https/">Abilitare https su Apache in locale</a></li>
+				
+				<li><a href="/pages/svelte-js/">Svelte Framework: come funziona, una veloce introduzione.</a></li>
+				
+				<li><a href="/pages/commenti-youtube-javascript/">Ottenere i commenti Youtube tramite API con Javascript</a></li>
+				
+				<li><a href="/pages/ottenere-commenti-video-youtube/">Ottenere i commenti di un video Youtube tramite API con Postman</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2020 <a href="https://angelopili.it/"><b>AngeloPili.it</b></a>.
+	<a href="https://github.com/angepili"><b>Github</b></a>.
+	<a href="https://www.linkedin.com/in/angelopili/"><b>Linkedin</b></a>.
+	<a href="https://twitter.com/ngpi71"><b>Twitter</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+
+
+	<title>Ottenere i commenti Youtube tramite API con Javascript  - AngeloPili.it</title>
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="MobileOptimized" content="320">
+<meta name="generator" content="HUGO v0.77.0" />
+<meta name="msapplication-TileImage" content="/pwa/ms-icon-144x144.png">
+<meta name="author"      content="">
+<meta name="description" content="Attraverso le API di youtube viste nel precedente articolo, con Javascript proveremo ad eseguire questa chiamata direttamente dal browser: dall&rsquo;API otterremo la risposta con i commenti di Youtube in formato JSON, e proveremo ad impaginarli in un widget Html">
+<meta name="keywords"    content="Development, Youtube, API, Javascript">
+<meta property="og:locale" content="it-it">
+<meta property="og:type" content="blog">
+<meta property="og:title"       content="Ottenere i commenti Youtube tramite API con Javascript">
+<meta property="og:description" content="Attraverso le API di youtube viste nel precedente articolo, con Javascript proveremo ad eseguire questa chiamata direttamente dal browser: dall&rsquo;API otterremo la risposta con i commenti di Youtube in formato JSON, e proveremo ad impaginarli in un widget Html">
+<meta property="og:url"         content="https://angelopili.it/pages/commenti-youtube-javascript/">
+<meta property="og:site_name"   content="Ottenere i commenti Youtube tramite API con Javascript">
+<meta property="og:image"       content="https://angelopili.it/uploads/youtube-comments-javascript/youtube-commenti-javascript.png">
+<meta property="twitter:image"  content="https://angelopili.it/uploads/youtube-comments-javascript/youtube-commenti-javascript.png">
+<meta property="og:latitude"    content="45.4642700"/>
+<meta property="og:longitude"   content="9.1895100"/>
+<meta property="og:locality"    content="Milan"/>
+<meta property="og:country-name"content="Italy"/>
+
+<meta name="twitter:title"      content="Ottenere i commenti Youtube tramite API con Javascript">
+<meta name="twitter:description" content="Attraverso le API di youtube viste nel precedente articolo, con Javascript proveremo ad eseguire questa chiamata direttamente dal browser: dall&rsquo;API otterremo la risposta con i commenti di Youtube in formato JSON, e proveremo ad impaginarli in un widget Html">
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@ngpi71" />
+<meta name="twitter:site" content="@ngpi71" />
+
+
+<meta name="robots" content="index, follow"/>
+<meta name="googlebot" content="index,follow" />
+
+<link rel="canonical" href="https://angelopili.it/pages/commenti-youtube-javascript/" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="/pwa/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/pwa/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/pwa/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/pwa/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/pwa/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/pwa/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/pwa/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/pwa/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/pwa/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/pwa/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/pwa/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/pwa/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/pwa/favicon-16x16.png">
+<link rel="manifest" href="/pwa/manifest.json?v=1604306831">
+
+<link rel="icon" type="image/x-icon" href="https://angelopili.it/favicon.ico?v=1604306831">
+<link rel="apple-touch-icon-precomposed" href="https://angelopili.it/favicon.png?v=1604306831">
+
+</head>
+<body>
+	<header>
+	===================<br>
+	== <a href="https://angelopili.it/">AngeloPili.it</a> ==<br>
+	===================
+	<div>Appunti di sviluppo</div>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Ottenere i commenti Youtube tramite API con Javascript</h1>
+			<b><time>21.08.2020</time></b>
+		       
+		           <a href="/tags/youtube">Youtube</a>
+        	       
+		           <a href="/tags/api">API</a>
+        	       
+		           <a href="/tags/javascript">Javascript</a>
+        	       
+
+			<div>
+				<p>Nel precedente post <a href="https://angelopili.it/post/ottenere-commenti-video-youtube/">Ottenere i commenti di un video Youtube tramite API</a> abbiamo visto come consumare le API di youtube attraverso Postman. In questo nuovo post vediamo come sviluppare via Javascript un applicazione che ottenga i commenti Youtube in formato Json e li impagini in un widget Html.</p>
+<p>Per comodità possiamo inizializzare il progetto utilizzando lo scaffolding del <a href="https://angelopili.it/post/creare-progetto-parceljs/">bundler Parcel</a> già visto in un precendete articolo.</p>
+<p>Abbiamo bisogno prima di tutto dell&rsquo;API key; la possiamo creare utilizzando la <a href="https://console.developers.google.com/">console di Google</a>, andando poi in fase di configurazione ad abilitare il servizio Youtube.</p>
+<p>Prima di tutto nel nostro codice html occorre indicare quale sarà il wrapper, un semplice elemento div vuoto con id <em>comments</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;comments&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>Sul nostro Javascript andiamo a dichiarare le uniche due variabili che ci occorrono, le API key e l&rsquo;elemento html che andrà a contenere tutti i commenti Youtube:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">api_key</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1234567890xxxxxx&#39;</span> <span style="color:#75715e">// usa process.env.API_KEY se stai usando il .env con il parametro API_KEY, altrimenti dichiara il valore direttamente.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">container</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;comments&#39;</span>);
+</code></pre></div><p>La prima funzione necessaria, è quella che va a fare la chiamata GET alle <strong>API di Youtube</strong> all&rsquo;endpoint <em><a href="https://www.googleapis.com/youtube/v3/commentThreads">https://www.googleapis.com/youtube/v3/commentThreads</a></em> insieme ad i parametri:</p>
+<ul>
+<li><em>videoId</em>: l&rsquo;id del video Youtube da cui andremmo a prelevare i commenti</li>
+<li><em>part</em>: indichiamo quali contenuti richiedere nel contenuto della risposta Json</li>
+<li><em>maxResult</em>: il massimo di commenti che intendiamo ricevere</li>
+<li><em>key</em>: la nostra chiave Google</li>
+</ul>
+<p>Quindi andiamo a scrivere la nostra funzione asincrona in javascript, il cui solo parametro in entrata è l&rsquo;id del video youtube:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getComments</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">videoId</span>) =&gt; {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">`https://www.googleapis.com/youtube/v3/commentThreads?videoId=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">videoId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;part=snippet,replies&amp;maxResults=100&amp;key=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">api_key</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>()
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">data</span>;
+}
+</code></pre></div><h2 id="come-creare-un-template-html-per-i-commenti-youtube-con-javascript">Come creare un template html per i commenti Youtube con Javascript</h2>
+<p>Come già detto, la risposta dell&rsquo;API youtube è un oggetto Json, i cui commenti sono dentro la chiave <em>items</em>, e debbono essere ovviamente iterati: ad ogni iterazione avremmo a disposizione il commento, che dobbiamo stampare in un template html.</p>
+<p>Per fare questo la via più semplice e riusabile è utilizzare una funzione: ricevo il parametro che contiene il commento youtube e lo stampo.
+Ho immaginato il template con una struttura abbastanza classica: avatar e nickname dell&rsquo;utente linkati al canale, testo del commento al video, data di pubblicazione e quanti like ha ricevuto il video Youtube. Utilizziamo la sintassi javascript con i backtick e template literals.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">commentTemplate</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span> =&gt; {
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">snippet</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>; <span style="color:#75715e">// estraggo le variabili 
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">textDisplay</span>, <span style="color:#a6e22e">authorDisplayName</span>, <span style="color:#a6e22e">authorProfileImageUrl</span>, <span style="color:#a6e22e">authorChannelUrl</span>, <span style="color:#a6e22e">likeCount</span>, <span style="color:#a6e22e">publishedAt</span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">snippet</span>.<span style="color:#a6e22e">topLevelComment</span>.<span style="color:#a6e22e">snippet</span>; <span style="color:#75715e">// estraggo le variabili del commento
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">publishedAt</span>); <span style="color:#75715e">// inizializzo la data di pubblicazione
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">datePublished</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span> <span style="color:#75715e">// creo il formato leggibile della data di pubblicazione
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`
+</span><span style="color:#e6db74">        &lt;div class=&#34;card&#34; id=&#34;card-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&gt;
+</span><span style="color:#e6db74">            &lt;div class=&#34;card-content&#34;&gt;
+</span><span style="color:#e6db74">                &lt;div class=&#34;media&#34;&gt;
+</span><span style="color:#e6db74">                    &lt;div class=&#34;media-left&#34;&gt;
+</span><span style="color:#e6db74">                    &lt;figure class=&#34;image is-48x48&#34;&gt;
+</span><span style="color:#e6db74">                        &lt;img src=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">authorProfileImageUrl</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; alt=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">authorDisplayName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&gt;
+</span><span style="color:#e6db74">                    &lt;/figure&gt;
+</span><span style="color:#e6db74">                    &lt;/div&gt;
+</span><span style="color:#e6db74">                    &lt;div class=&#34;media-content&#34;&gt;
+</span><span style="color:#e6db74">                    &lt;p class=&#34;title is-6&#34;&gt;&lt;a href=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">authorChannelUrl</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; target=&#34;_blank&#34;&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">authorDisplayName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/a&gt;&lt;/p&gt;
+</span><span style="color:#e6db74">                    &lt;/div&gt;
+</span><span style="color:#e6db74">                &lt;/div&gt;
+</span><span style="color:#e6db74">                &lt;div class=&#34;content&#34;&gt;
+</span><span style="color:#e6db74">                    </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">textDisplay</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                &lt;/div&gt;
+</span><span style="color:#e6db74">                &lt;div class=&#34;tags has-addons&#34;&gt;
+</span><span style="color:#e6db74">                    &lt;time class=&#34;tag  is-primary is-light&#34; datetime=&#34;2016-1-1&#34;&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">datePublished</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/time&gt;
+</span><span style="color:#e6db74">                    &lt;span class=&#34;tag&#34;&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">likeCount</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/span&gt;
+</span><span style="color:#e6db74">                &lt;/div&gt;
+</span><span style="color:#e6db74">            &lt;/div&gt;
+</span><span style="color:#e6db74">        &lt;/div&gt;
+</span><span style="color:#e6db74">    `</span>;
+}
+</code></pre></div><p>Ora ci occorre una funzione che vada a iterare la lista dei commenti, che richiami la funzione <em>commentTemplate</em> per ogni commento, e che vada a stampare il contenuto dentro il nostro container con id <em>comments</em> che avevamo dichiarato all&rsquo;inizio nel nostro template Html.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">printComments</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span> =&gt; {
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">items</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>;
+    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">items</span>){
+        <span style="color:#a6e22e">container</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">commentTemplate</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+    }
+}
+</code></pre></div><p>Infine ora basterà richiamare la prima funzione javascript <em>getComments</em> che si occuperà di fare la <strong>chiamata GET alle API di youtube</strong>, nel momento i cui arriva la risposta con i commenti, richiamerà <em>printComments</em> che a sua volta stamperà ogni commento tramite <em>commentTemplate</em>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">getComments</span>(<span style="color:#e6db74">&#39;Re9PSburA-k&#39;</span>)
+    .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">data</span> =&gt; <span style="color:#a6e22e">printComments</span>(<span style="color:#a6e22e">data</span>)); 
+</code></pre></div><p>Ed ecco il risultato nello screen:</p>
+<p><img src="/uploads/youtube-comments-javascript/commenti-youtube-javascript-scree.png" alt=""></p>
+<p>Trovate il <a href="https://github.com/angepili/youtube-comments">progetto javascript completo</a> sul <a href="https://github.com/angepili">mio github</a>, dove ho completato stilisticamente il progetto utilizzando il <a href="https://bulma.io/">framework CSS Bulma</a>.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>Ultimi post</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/pages/tipi-in-javascript/">I tipi di dati in Javascript</a></li>
+				
+				<li><a href="/pages/creare-un-dominio-locale-con-apache-con-https/">Abilitare https su Apache in locale</a></li>
+				
+				<li><a href="/pages/svelte-js/">Svelte Framework: come funziona, una veloce introduzione.</a></li>
+				
+				<li><a href="/pages/commenti-youtube-javascript/">Ottenere i commenti Youtube tramite API con Javascript</a></li>
+				
+				<li><a href="/pages/ottenere-commenti-video-youtube/">Ottenere i commenti di un video Youtube tramite API con Postman</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2020 <a href="https://angelopili.it/"><b>AngeloPili.it</b></a>.
+	<a href="https://github.com/angepili"><b>Github</b></a>.
+	<a href="https://www.linkedin.com/in/angelopili/"><b>Linkedin</b></a>.
+	<a href="https://twitter.com/ngpi71"><b>Twitter</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

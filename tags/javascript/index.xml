@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on AngeloPili.it</title>
+    <link>https://angelopili.it/tags/javascript/</link>
+    <description>Recent content in Javascript on AngeloPili.it</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Oct 2020 00:45:33 +0200</lastBuildDate><atom:link href="https://angelopili.it/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I tipi di dati in Javascript</title>
+      <link>https://angelopili.it/pages/tipi-in-javascript/</link>
+      <pubDate>Sat, 03 Oct 2020 00:45:33 +0200</pubDate>
+      
+      <guid>https://angelopili.it/pages/tipi-in-javascript/</guid>
+      <description>Cos&amp;rsquo;è un valore di tipo numero, una stringa, o cos&amp;rsquo;è undefined? Andiamo ad analizzire quali sono i tipi di dato in javascript, e come usarli.</description>
+    </item>
+    
+    <item>
+      <title>Svelte Framework: come funziona, una veloce introduzione.</title>
+      <link>https://angelopili.it/pages/svelte-js/</link>
+      <pubDate>Wed, 02 Sep 2020 21:45:33 +0200</pubDate>
+      
+      <guid>https://angelopili.it/pages/svelte-js/</guid>
+      <description>Che cos&amp;rsquo;è e come funziona Svelte framework? Andiamo ad analizzare come funziona questo framework che fa dei suoi punti forti la reattività, la semplicità e velocità.</description>
+    </item>
+    
+    <item>
+      <title>Ottenere i commenti Youtube tramite API con Javascript</title>
+      <link>https://angelopili.it/pages/commenti-youtube-javascript/</link>
+      <pubDate>Fri, 21 Aug 2020 18:49:16 +0200</pubDate>
+      
+      <guid>https://angelopili.it/pages/commenti-youtube-javascript/</guid>
+      <description>Attraverso le API di youtube viste nel precedente articolo, con Javascript proveremo ad eseguire questa chiamata direttamente dal browser: dall&amp;rsquo;API otterremo la risposta con i commenti di Youtube in formato JSON, e proveremo ad impaginarli in un widget Html</description>
+    </item>
+    
+    <item>
+      <title>Linkedin Login con Javascript</title>
+      <link>https://angelopili.it/pages/linkedin-api-javascript/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://angelopili.it/pages/linkedin-api-javascript/</guid>
+      <description>Come sviluppare una login linkedin con le API in Javascript ES6: attraverso l&amp;rsquo;utilizzo delle Promise andiamo a fare l&amp;rsquo;autenticazione e prendere i dati del profilo.</description>
+    </item>
+    
+    <item>
+      <title>Creare un progetto Parcel.js</title>
+      <link>https://angelopili.it/pages/creare-progetto-parceljs/</link>
+      <pubDate>Fri, 03 Jul 2020 22:57:46 +0200</pubDate>
+      
+      <guid>https://angelopili.it/pages/creare-progetto-parceljs/</guid>
+      <description>Parcel.js è un semplice bundler, ma anche molto completo. Vediamo come è semplice per uno sviluppatore, creare un piccolo progetto di partenza che compili ES6 a Javascript compatibile e ci permetta di scrivere Scss, poi compilato in Css</description>
+    </item>
+    
+  </channel>
+</rss>
