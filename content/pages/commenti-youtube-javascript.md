@@ -18,7 +18,7 @@ summary : "Attraverso le API di youtube viste nel precedente articolo, con Javas
 
 Nel precedente post [Ottenere i commenti di un video Youtube tramite API](/pages/ottenere-commenti-video-youtube/) abbiamo visto come consumare le API di youtube attraverso Postman. In questo nuovo post vediamo come sviluppare via Javascript un applicazione che ottenga i commenti Youtube in formato Json e li impagini in un widget Html.
 
-Per comodità possiamo inizializzare il progetto utilizzando lo scaffolding del [bundler Parcel](https://angelopili.it/post/creare-progetto-parceljs/) già visto in un precendete articolo.
+Per comodità possiamo inizializzare il progetto utilizzando lo scaffolding del [bundler Parcel](/pages/creare-progetto-parceljs/) già visto in un precendete articolo.
 
 Abbiamo bisogno prima di tutto dell'API key; la possiamo creare utilizzando la [console di Google](https://console.developers.google.com/), andando poi in fase di configurazione ad abilitare il servizio Youtube.
 
