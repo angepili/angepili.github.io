@@ -91,4 +91,4 @@ Se tutto è andato a buon fine, la **API di youtube** ci restituirà una rispost
 
 Tutta la documentazione è disponibile sull'area [developers di Google](https://developers.google.com/youtube/v3/docs/commentThreads/list)
 
-Questo post mostra come interrogare l' API di yotube con Postman, mentre nel prossimo articolo vedremo [**Come ottenere i commenti Youtube tramite API con Javascript**](https://angelopili.it/post/commenti-youtube-javascript/), andremmo quindi ad eseguire questa chiamata direttamente dal browser, dall'API otterremo la risposta con i commenti di Youtube in formato JSON, e proveremo ad impaginarli in un widget Html.
+Questo post mostra come interrogare l' API di yotube con Postman, mentre nel prossimo articolo vedremo [**Come ottenere i commenti Youtube tramite API con Javascript**](/pages/commenti-youtube-javascript/), andremmo quindi ad eseguire questa chiamata direttamente dal browser, dall'API otterremo la risposta con i commenti di Youtube in formato JSON, e proveremo ad impaginarli in un widget Html.

@@ -99,4 +99,4 @@ commentare la relativa riga sul file hosts
 #127.0.0.1  $NOME_SITO 
 ```
 
-Nel post successivo vedremo come [creare un certificato ssl in locale ed abilitare https su localhost](https://angelopili.it/post/creare-un-dominio-locale-con-apache/).
+Nel post successivo vedremo come [creare un certificato ssl in locale ed abilitare https su localhost](/pages/creare-un-dominio-locale-con-apache/).

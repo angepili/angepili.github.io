@@ -17,7 +17,7 @@ aliases : ["domain-apache-https"]
 summary : "Dopo aver visto come creare un virtual host con Apache, oggi vediamo come abilitarne anche l'https in locale per lavorare in una ambiente di sviluppo completo."
 ---
 
-Dopo aver visto [come creare un virtual host apache su ubuntu](https://angelopili.it/post/creare-un-dominio-locale-con-apache/), vediamo come abilitare https in locale per l'ambiente di sviluppo.
+Dopo aver visto [come creare un virtual host apache su ubuntu](/pages/creare-un-dominio-locale-con-apache/), vediamo come abilitare https in locale per l'ambiente di sviluppo.
 
 Chiariamo fin da subito che https in locale non è necessario per problemi di sicurezza, ma potrebbe essere utile per replicare in toto l'ambiente di produzione, sopratutto per quei servizi di terze parti che eseguono un controllo sul dominio.
 
