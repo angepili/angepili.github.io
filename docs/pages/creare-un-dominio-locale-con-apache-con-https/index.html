@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Abilitare https su Apache in locale - AngeloPili.it</title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Abilitare https su Apache in locale | AngeloPili.it" />
+	<meta name="twitter:title" content="Abilitare https su Apache in locale | AngeloPili.it" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Abilitare https su Apache in locale | AngeloPili.it" />
+	<meta name="application-name" content="Abilitare https su Apache in locale | AngeloPili.it" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Abilitare https su Apache in locale" />
+<meta property="og:description" content="Dopo aver visto come creare un virtual host con Apache, oggi vediamo come abilitarne anche l&rsquo;https in locale per lavorare in una ambiente di sviluppo completo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://angelopili.it/pages/creare-un-dominio-locale-con-apache-con-https/" />
+<meta property="article:published_time" content="2020-09-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-23T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Abilitare https su Apache in locale"/>
+<meta name="twitter:description" content="Dopo aver visto come creare un virtual host con Apache, oggi vediamo come abilitarne anche l&rsquo;https in locale per lavorare in una ambiente di sviluppo completo."/>
+<script src="https://angelopili.it/js/feather.min.js"></script>
+	
+	<link href="https://angelopili.it/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://angelopili.it/css/main.css" /><link rel="stylesheet" type="text/css" href="https://angelopili.it/css/dark.css" media="(prefers-color-scheme: dark)" />
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://angelopili.it/">AngeloPili.it</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Abilitare https su Apache in locale</h1>
+			<div class="meta">Posted on Sep 23, 2020</div>
+		</div>
+		
+
+		<section class="body">
+			<p>Dopo aver visto <a href="https://angelopili.it/post/creare-un-dominio-locale-con-apache/">come creare un virtual host apache su ubuntu</a>, vediamo come abilitare https in locale per l&rsquo;ambiente di sviluppo.</p>
+<p>Chiariamo fin da subito che https in locale non è necessario per problemi di sicurezza, ma potrebbe essere utile per replicare in toto l&rsquo;ambiente di produzione, sopratutto per quei servizi di terze parti che eseguono un controllo sul dominio.</p>
+<p>Dobbiamo inanzitutto andare a modifiche il file di configurazione Apache chiamato default-ssl.conf. Da terminale:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo nano /etc/apache2/sites-available/default-ssl.conf
+</code></pre></div><p>Ed andiamo a copiare il codice qui di seguito, subito prima del tag di chiusura <code>&lt;/IfModule&gt;</code> e salviamo.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">    <span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">_default_:443</span><span style="color:#f92672">&gt;</span>
+        ServerAdmin admin@test.com
+        ServerName test.com
+
+        DocumentRoot <span style="color:#e6db74">/var/www/test.com/public_html</span>
+
+        <span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/var/www/test.com/public_html</span><span style="color:#f92672">&gt;</span>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride <span style="color:#66d9ef">All</span>
+                Order allow,deny
+                allow from <span style="color:#66d9ef">all</span>
+                Require <span style="color:#66d9ef">all</span> granted
+        <span style="color:#f92672">&lt;/Directory&gt;</span>
+
+        ErrorLog ${APACHE_LOG_DIR}/test-com-error.log
+        CustomLog ${APACHE_LOG_DIR}/test-com-access.log combined
+
+        SSLEngine <span style="color:#66d9ef">on</span>
+
+        SSLCertificateFile <span style="color:#e6db74">/etc/apache2/ssl/apache.crt</span>
+        SSLCertificateKeyFile <span style="color:#e6db74">/etc/apache2/ssl/apache.key</span>
+
+        <span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(cgi|shtml|phtml|php)$&#34;</span><span style="color:#f92672">&gt;</span>
+                        SSLOptions +StdEnvVars
+        <span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+        <span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/lib/cgi-bin</span><span style="color:#f92672">&gt;</span>
+                        SSLOptions +StdEnvVars
+        <span style="color:#f92672">&lt;/Directory&gt;</span>
+
+        BrowserMatch <span style="color:#e6db74">&#34;MSIE [2-6]&#34;</span> \
+                       nokeepalive ssl-unclean-shutdown \
+                       downgrade-1.0 force-response-1.0
+
+    <span style="color:#f92672">&lt;/VirtualHost&gt;</span>
+
+</code></pre></div><p>Ora, il <strong>modulo ssl</strong> è già disponibile di default su ubuntu, ma deve essere abilitato, quindi da terminale lanciare:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo a2enmod ssl
+</code></pre></div><p>Adesso dobbiamo andare a generare i certificati dentro una cartella di Apache, esattamente quelli che abbiamo già indicato sopra ai valori <em>SSLCertificateFile</em> e <em>SSLCertificateKeyFile</em>. Quindi creiamo la cartella che andrà ad ospirarli:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir /etc/apache2/ssl 
+</code></pre></div><p>Installiamo, se non lo avessimo già, il pacchetto openssl:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt install openssl
+</code></pre></div><p>Ed ora abbiamo tutto quanto per creare i certificati per abilitare https su Apache,  quindi lanciamo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo openssl req -x509 -nodes -days <span style="color:#ae81ff">365</span> -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+</code></pre></div><p>Ci verranno chiesti alcune informazioni:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Country Name <span style="color:#f92672">(</span><span style="color:#ae81ff">2</span> letter code<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>AU<span style="color:#f92672">]</span>:
+State or Province Name <span style="color:#f92672">(</span>full name<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Some-State<span style="color:#f92672">]</span>:
+Locality Name <span style="color:#f92672">(</span>eg, city<span style="color:#f92672">)</span> <span style="color:#f92672">[]</span>:
+Organization Name <span style="color:#f92672">(</span>eg, company<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Internet Widgits Pty Ltd<span style="color:#f92672">]</span>:
+Organizational Unit Name <span style="color:#f92672">(</span>eg, section<span style="color:#f92672">)</span> <span style="color:#f92672">[]</span>:
+Common Name <span style="color:#f92672">(</span>e.g. server FQDN or YOUR name<span style="color:#f92672">)</span> <span style="color:#f92672">[]</span>:
+Email Address <span style="color:#f92672">[]</span>:
+</code></pre></div><p>Non ci resta che attivare il tutto, e riavviare il nostro <strong>webserver Apache</strong>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo a2ensite /etc/apache2/sites-available/default-ssl.conf
+sudo service apache2 restart
+</code></pre></div><p>Ora dovremmo poter raggiungere il nostro host all&rsquo;indirizzo <a href="https://test.com">https://test.com</a>, in caso contrario proviamo a chiudere la sessione e riavviare per evitare problemi di cache.</p>
+<p>Tuttavia iIl browser ora potrebbe comunque comunicarci che il certificato ssl non è sicuro, nessun problema, occorre semplicemente accettare i rischi e proseguire.</p>
+<p>Ovviamente se abbiamo la necessità di farlo per altri domini successivamente, possiamo semplicemente replicare tutto il blocco racchiuso tra i tag <code>&lt;VirtualHost&gt;</code>  nello stesso file default-ssl.conf, cambiando solo i riferimenti appunto del dominio (ex: test.com nel file di esempio, e le rispettive directory), e poi riavviare il server.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<blockquote>
+</blockquote>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/apache">Apache</a></li>
+					
+					<li><a href="/tags/webserver">Webserver</a></li>
+					
+					<li><a href="/tags/linux">linux</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/angepili" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/ngpi71" title="Twitter"><i data-feather="twitter"></i></a>|⚡️
+	2020  © AngeloPili.it |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

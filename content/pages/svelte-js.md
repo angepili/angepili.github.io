@@ -98,7 +98,7 @@ L'esempio di `App.svelte` suggerisce già tutto, basterà creare un nuovo file c
 ```vue
 // App.svelte
 <script>
-    import App from './Header.svelte';
+    import Header from './Header.svelte';
 	export let name;
 </script>
 
@@ -130,7 +130,7 @@ p { color: red; }
 ```vue
 // App.svelte
 <script>
-    import App from './Header.svelte';
+    import Header from './Header.svelte';
 	export let name;
 </script>
 

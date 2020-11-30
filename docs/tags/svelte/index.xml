@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Svelte on AngeloPili.it</title>
+    <link>https://angelopili.it/tags/svelte/</link>
+    <description>Recent content in Svelte on AngeloPili.it</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© AngeloPili.it</copyright>
+    <lastBuildDate>Wed, 02 Sep 2020 21:45:33 +0200</lastBuildDate><atom:link href="https://angelopili.it/tags/svelte/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Svelte Framework: come funziona, una veloce introduzione.</title>
+      <link>https://angelopili.it/pages/svelte-js/</link>
+      <pubDate>Wed, 02 Sep 2020 21:45:33 +0200</pubDate>
+      
+      <guid>https://angelopili.it/pages/svelte-js/</guid>
+      <description>Che cos&amp;rsquo;è e come funziona Svelte framework? Andiamo ad analizzare come funziona questo framework che fa dei suoi punti forti la reattività, la semplicità e velocità.</description>
+    </item>
+    
+  </channel>
+</rss>

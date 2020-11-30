@@ -4,7 +4,7 @@ title : "Abilitare https su Apache in locale"
 date : "2020-09-23"
 image : "/uploads/domain-apache-https/domain-apache-https.png"
 type : 'pages'
-draft : false
+draft : true
 tags : [
     "Apache",
     "Webserver",

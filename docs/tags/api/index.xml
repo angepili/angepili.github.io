@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API on AngeloPili.it</title>
+    <link>https://angelopili.it/tags/api/</link>
+    <description>Recent content in API on AngeloPili.it</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© AngeloPili.it</copyright>
+    <lastBuildDate>Fri, 21 Aug 2020 18:49:16 +0200</lastBuildDate><atom:link href="https://angelopili.it/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ottenere i commenti Youtube tramite API con Javascript</title>
+      <link>https://angelopili.it/pages/commenti-youtube-javascript/</link>
+      <pubDate>Fri, 21 Aug 2020 18:49:16 +0200</pubDate>
+      
+      <guid>https://angelopili.it/pages/commenti-youtube-javascript/</guid>
+      <description>Attraverso le API di youtube viste nel precedente articolo, con Javascript proveremo ad eseguire questa chiamata direttamente dal browser: dall&amp;rsquo;API otterremo la risposta con i commenti di Youtube in formato JSON, e proveremo ad impaginarli in un widget Html</description>
+    </item>
+    
+    <item>
+      <title>Ottenere i commenti di un video Youtube tramite API con Postman</title>
+      <link>https://angelopili.it/pages/ottenere-commenti-video-youtube/</link>
+      <pubDate>Mon, 17 Aug 2020 17:22:42 +0200</pubDate>
+      
+      <guid>https://angelopili.it/pages/ottenere-commenti-video-youtube/</guid>
+      <description>Tramite le API di Youtube è possibile ottenere dati di canali, video, ed insighits in maniera molto semplice. In questo post vediamo come ottenere la lista dei commenti di un Video tramite API in formato Json.</description>
+    </item>
+    
+    <item>
+      <title>Linkedin Login con Javascript</title>
+      <link>https://angelopili.it/pages/linkedin-api-javascript/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://angelopili.it/pages/linkedin-api-javascript/</guid>
+      <description>Come sviluppare una login linkedin con le API in Javascript ES6: attraverso l&amp;rsquo;utilizzo delle Promise andiamo a fare l&amp;rsquo;autenticazione e prendere i dati del profilo.</description>
+    </item>
+    
+    <item>
+      <title>Linkedin Login con Postman</title>
+      <link>https://angelopili.it/pages/linkedin-api-postman/</link>
+      <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://angelopili.it/pages/linkedin-api-postman/</guid>
+      <description>Linkedin Login tramite le API, eseguire una semplice autenticazione, e ottenere i dati dell&amp;rsquo;utente e pubblicare qualcosa sulla propria bacheca.</description>
+    </item>
+    
+  </channel>
+</rss>

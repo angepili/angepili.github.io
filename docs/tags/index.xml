@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on AngeloPili.it</title>
+    <link>https://angelopili.it/tags/</link>
+    <description>Recent content in Tags on AngeloPili.it</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© AngeloPili.it</copyright>
+    <lastBuildDate>Sat, 03 Oct 2020 00:45:33 +0200</lastBuildDate><atom:link href="https://angelopili.it/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript</title>
+      <link>https://angelopili.it/tags/javascript/</link>
+      <pubDate>Sat, 03 Oct 2020 00:45:33 +0200</pubDate>
+      
+      <guid>https://angelopili.it/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Svelte</title>
+      <link>https://angelopili.it/tags/svelte/</link>
+      <pubDate>Wed, 02 Sep 2020 21:45:33 +0200</pubDate>
+      
+      <guid>https://angelopili.it/tags/svelte/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>https://angelopili.it/tags/api/</link>
+      <pubDate>Fri, 21 Aug 2020 18:49:16 +0200</pubDate>
+      
+      <guid>https://angelopili.it/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Youtube</title>
+      <link>https://angelopili.it/tags/youtube/</link>
+      <pubDate>Fri, 21 Aug 2020 18:49:16 +0200</pubDate>
+      
+      <guid>https://angelopili.it/tags/youtube/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Postman</title>
+      <link>https://angelopili.it/tags/postman/</link>
+      <pubDate>Mon, 17 Aug 2020 17:22:42 +0200</pubDate>
+      
+      <guid>https://angelopili.it/tags/postman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apache</title>
+      <link>https://angelopili.it/tags/apache/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://angelopili.it/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://angelopili.it/tags/linux/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://angelopili.it/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webserver</title>
+      <link>https://angelopili.it/tags/webserver/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://angelopili.it/tags/webserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linkedin</title>
+      <link>https://angelopili.it/tags/linkedin/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://angelopili.it/tags/linkedin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parcel.js</title>
+      <link>https://angelopili.it/tags/parcel.js/</link>
+      <pubDate>Fri, 03 Jul 2020 22:57:46 +0200</pubDate>
+      
+      <guid>https://angelopili.it/tags/parcel.js/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

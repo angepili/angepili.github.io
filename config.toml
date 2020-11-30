@@ -1,43 +1,47 @@
-baseurl = "https://angelopili.it/"
+baseURL = "https://angelopili.it/"
+languageCode = "en-us"
 title = "AngeloPili.it"
 description = "Software Engineer Analyst di Monza Brianza, sviluppo applicativi in Php e Mysql su framework Laravel, Javascript ES6, React e Svelte."
-theme = "smol"
-languageCode = "en-us"
-
-# Parameters
+theme="archie"
+copyright = "© AngeloPili.it"
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+publishDir = "docs"
 [params]
-    subtitle = "Appunti di sviluppo"
-    dateFmt = "02.01.2006"
+	mode="auto"
+	useCDN=false
+	subtitle = "Appunti di sviluppo"
 
-# Header
-[menu]
-  [[menu.main]]
-        identifier = "categories"
-        name = "Categories"
-        url = "/categories/"
-        weight = 2 
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/angepili"
 
-  [[menu.main]]
-        identifier = "tags"
-        name = "Tags"
-        url = "/tags/"
-        weight = 3
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://twitter.com/ngpi71"
 
-# Footer
-  [[menu.footer]]
-        name = "Github"
-        url = "https://github.com/angepili"
-        weight = 1 
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 
-    [[menu.footer]]
-        name = "Linkedin"
-        url = "https://www.linkedin.com/in/angelopili/"
-        weight = 2 
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
 
-    [[menu.footer]]
-        name = "Twitter"
-        url = "https://twitter.com/ngpi71"
-        weight = 3 
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
 
 
 
