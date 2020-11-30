@@ -1,4 +1,4 @@
-baseURL = "https://angepili.github.io"
+baseURL = "https://angepili.github.io/"
 languageCode = "en-us"
 title = "AngeloPili.it"
 description = "Software Engineer Analyst di Monza Brianza, sviluppo applicativi in Php e Mysql su framework Laravel, Javascript ES6, React e Svelte."
@@ -42,68 +42,3 @@ weight = 3
 name = "Tags"
 url = "/tags"
 weight = 4
-
-
-
-
-# baseURL = "https://angelopili.it"
-# languageCode = "it-it"
-# title = "Appunti di sviluppo | AngeloPili.it"
-# theme = "stack"
-# paginate = 10
-# pygmentsStyle = "monokai"
-# googleAnalytics = "UA-116693958-1"
-
-# [sitemap]
-#   changefreq = "weekly"
-#   filename = "sitemap.xml"
-#   priority = 0.8
-
-# [params]
-#   author = "AngeloPili.it"
-#   authorName = "Angelo Pili"
-#   description = "Software Engineer Analyst di Monza Brianza, sviluppo applicativi in Php e Mysql su framework Laravel, Javascript ES6, React e Svelte."
-#   opengraphimage = "/uploads/cover.png"
-#   titleheader = "AngeloPili.it"
-#   subtitle = "Appunti di sviluppo"
-
-# [menu]
-
-#   [[menu.main]]
-#     identifier = "chi-sono"
-#     name = "chi-sono"
-#     url = "/about/"
-#     weight = 1
-
-#   [[menu.main]]
-#     identifier = "github"
-#     name = "github"
-#     url = "https://github.com/angepili"
-#     weight = 2
-#     type = "external"
-
-#   [[menu.main]]
-#     identifier = "linkedin"
-#     name = "linkedin"
-#     url = "https://www.linkedin.com/in/angelopili/"
-#     weight = 3
-#     type = "external"
-
-#   [[menu.main]]
-#     identifier = "twitter"
-#     name = "twitter"
-#     url = "https://twitter.com/ngpi71"
-#     weight = 4
-#     type = "external"
-
-#   # [[menu.main]]
-#   #   identifier = "facebook"
-#   #   name = "facebook"
-#   #   url = "https://www.facebook.com/appuntisviluppatore"
-#   #   weight = 5
-#   #   type = "external"
-
-# [taxonomies]
-#   category = "categories"
-#   tag = "tags"
-#   series = "series"
