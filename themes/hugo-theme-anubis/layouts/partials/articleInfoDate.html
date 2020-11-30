@@ -1,0 +1,10 @@
+{{ $dateFormat := "02/01/2006" }}
+{{ $dateFormat2 := "2006-01-02" }}
+{{ if .Site.Params.dateFormat }}
+    {{ $dateFormat = .Site.Params.dateFormat }}
+{{ end }}
+
+{{ if .Params.date }}
+    <time itemprop="datePublished" datetime="{{ .Params.date.Format $dateFormat2 }} 09:00">{{ .Params.date.Format $dateFormat }}</time>
+    <time class="hide" itemprop="dateModified" datetime="{{ .Params.date.Format $dateFormat2 }} 09:00">{{ .Params.date.Format $dateFormat }}</time>
+{{ end }}

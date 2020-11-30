@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr" itemscope="" itemtype="http://schema.org/Blog" lang="{{ .Site.LanguageCode }}">
+<head>
+{{ block "head" . }}
+{{ partial "head.html" . }}
+{{ end }}
+</head>
+<body>
+    <a class="skip-main" href="#main" title="Salta il contenuto">{{ i18n "skipToContent" | humanize }}</a>
+    <header id="top">
+        <div class="container">
+            {{ block "header" . }}
+                {{ partial "header.html" . }}
+            {{ end }}
+        </div>
+    </header>
+    <div id="content">
+      
+            <div id="cover">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="cover-image" />
+            </div>
+     
+        <div class="container">
+
+            <main id="main" tabindex="-1"> 
+                {{ block "main" . }}{{ end }}
+            </main>
+
+            {{ partial "sidebar.html" . }}
+            
+        </div>
+    </div>
+    <footer id="bottom">
+        <div class="container">
+            {{ block "footer" . }}
+                {{ $languagesCount := $.Site.Home.AllTranslations }}
+                {{ if gt $languagesCount 1 }}
+                    {{ partial "languageSelect.html" . }}
+                {{ end }}
+    
+                {{ partial "footer.html" . }}
+            {{ end }}
+        </div>
+    </footer>
+    
+    {{ if .Type | eq "post" }}
+    {{ if not .Site.IsServer }} 
+        <script id="s9-sdk" async defer content="d15f961a2ed744ddb4f7bcede4ed6c4a" src="//cdn.social9.com/js/socialshare.min.js"></script>
+        {{ template "_internal/google_analytics.html" . }}
+        <script id="dsq-count-scr" src="//angelopili-it.disqus.com/count.js" async></script>
+    {{ end }}
+    {{ end }}
+
+    
+</body>
+</html>
