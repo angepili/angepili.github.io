@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Webserver on AngeloPili.it</title>
-    <link>https://angelopili.it/tags/webserver/</link>
+    <link>https://angepili.github.io/tags/webserver/</link>
     <description>Recent content in Webserver on AngeloPili.it</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
-    <lastBuildDate>Tue, 04 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://angelopili.it/tags/webserver/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://angepili.github.io/tags/webserver/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creare un virtual host con Apache su Ubuntu Linux</title>
-      <link>https://angelopili.it/pages/creare-un-dominio-locale-con-apache/</link>
+      <link>https://angepili.github.io/pages/creare-un-dominio-locale-con-apache/</link>
       <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://angelopili.it/pages/creare-un-dominio-locale-con-apache/</guid>
+      <guid>https://angepili.github.io/pages/creare-un-dominio-locale-con-apache/</guid>
       <description>Apache è uno dei webserver più utilizzati, insieme ad Nginx detiene il 70% del mercato server. Vediamo come creare un virtual e configurarlo per utilizzarlo in locale per un ambiente di sviluppo</description>
     </item>
     

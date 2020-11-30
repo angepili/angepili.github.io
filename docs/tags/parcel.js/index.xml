@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Parcel.js on AngeloPili.it</title>
-    <link>https://angelopili.it/tags/parcel.js/</link>
+    <link>https://angepili.github.io/tags/parcel.js/</link>
     <description>Recent content in Parcel.js on AngeloPili.it</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
-    <lastBuildDate>Fri, 03 Jul 2020 22:57:46 +0200</lastBuildDate><atom:link href="https://angelopili.it/tags/parcel.js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jul 2020 22:57:46 +0200</lastBuildDate><atom:link href="https://angepili.github.io/tags/parcel.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creare un progetto Parcel.js</title>
-      <link>https://angelopili.it/pages/creare-progetto-parceljs/</link>
+      <link>https://angepili.github.io/pages/creare-progetto-parceljs/</link>
       <pubDate>Fri, 03 Jul 2020 22:57:46 +0200</pubDate>
       
-      <guid>https://angelopili.it/pages/creare-progetto-parceljs/</guid>
+      <guid>https://angepili.github.io/pages/creare-progetto-parceljs/</guid>
       <description>Parcel.js è un semplice bundler, ma anche molto completo. Vediamo come è semplice per uno sviluppatore, creare un piccolo progetto di partenza che compili ES6 a Javascript compatibile e ci permetta di scrivere Scss, poi compilato in Css</description>
     </item>
     
