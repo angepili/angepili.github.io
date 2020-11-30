@@ -115,18 +115,13 @@ Possiamo definie **nullish** tutti quei tipi e valori che portano a qualcosa di 
 
 ## Cambiare il tipo
 
-Javascript spesso potrebbe sorprenderci. Potremmo infatti trovarci nella situazione in cui abbiamo un numero, ma in formato stringa.
-```js
-num = "472"
-typeof num // "string"
-```
-Possiamo forzarne il tipo numero semplicemente così:
+Stringa > Numero
 ```js
 num = +num;
 typeof num // "number"
 ```
 
-Possiamo anche fare qualcosa di questo tipo, negare 1 o 0 per ottenere il corrispettivo booleano:
+Numero > Booleano
 ```js
 let checked = !0; // true
 typeof checked // boolean
@@ -135,7 +130,7 @@ let checked = !1 // false
 typeof checked // boolean
 ```
 
-Possiamo convertire un numero in una stringa
+Numero > Stringa
 ```js
 let eta = 18 //
 typeof eta // number
@@ -144,7 +139,7 @@ eta += ""; // "18"
 typeof eta // "string"
 ```
 
-In javascript possiamo convertire un booleano in numero
+Booleano > Numero
 ```js
 console.log(+true) // 1
 typeof +true // boolean
