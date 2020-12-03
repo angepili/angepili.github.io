@@ -18,72 +18,29 @@ summary : "Parcel.js è un semplice bundler, ma anche molto completo. Vediamo co
 [Parcel.js](https://parceljs.org/) è un bundler che supporta nativamente Javascript, Css, Html ed addirittura Typescript, livereload del browser, code-splitting e dot env.
 A differenza di *webpack*, parte di default con già tutte queste funzionalità senza alcun bisogno di configurazioni, ed in più se questo non bastasse supporta una gran quantità di [plugin](https://www.npmjs.com/search?q=parcel-plugin*). 
 
+## Inizializzare un progetto con Parcel.js
+
 Iniziamo a creare un semplice progetto Parcel, apriamo il terminale:
 ```shell
 cd ~
 mkdir parceljs && cd $_
-npm init
+npm init -y
+npm i -g parcel-bundler
 ```
 
-Ora dentro la nostra cartella `parceljs` creiamo questa struttura con i relativi file javascript, html ed scss; il package.json dovrebbe essere già esistente poichè creato col comando `npm init`
+Ora dentro la nostra cartella `parceljs` dovremmo avere una struttura di base simile a questa:
 ```
 📦parceljs
- ┣ 📂src
- ┃ ┣ 📂styles
- ┃ ┃ ┗ 📜main.scss
- ┃ ┣ 📜hello.js
- ┃ ┣ 📜index.html
- ┃ ┗ 📜index.js
+ ┣ 📂node_modules
  ┗ 📜package.json
 ```
 
-Ora possiamo installare parcel.js, dalla root del progetto lanciamo:
+Passiamo quindi a creare i nostri file
 ```shell
-npm i -D parcel-bundler
+touch index.html index.js index.scss
 ```
 
-Basta, fin qui possiamo dire che sarebbe già tutto funzionante, infatti la struttura sulla quale lavoreremo "src" contiene tutti i file essenziali per lavorare in ambiente di sviluppo; successivamente vedremo come creare il pacchetto per produzione.
-
-Apriamo il progetto dentro il nostro editor, se si usa Visual Studio Code, allora da terminale basterà digitare:
-```shell
-code .
-```
-
-Per far girare l'applicativo, dobbiamo indicare quali sono i comandi per far avviare il nostro server di sviluppo, ed il comando per buildare il pacchetto di produzione.
-
-Quindi sul file `package.json` aggiungiamo queste due righe all'interno di **scripts**:
-```yaml
-    "dev": "parcel src/index.html",
-    "prod": "parcel build src/index.html"
-```
-
-dovremmo ottenere qualcosa del genere:
-```json
-{
-  "name": "parceltest",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "parcel src/index.html",
-    "prod": "parcel build src/index.html"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.26.9"
-  }
-}
-```
-
-ed ora avviamo il server di sviluppo in live-reload:
-```shell
-npm run dev
-```
-
-Torniamo su VsCode, inseriamo nel file index.html un markup di base: un heading, ed i riferimenti all'asset javascript che abbiamo chiamato `index.js`.
+Come pure esercizio, nel file index.html inseriamo questo markup di base: un heading, ed i riferimenti all'asset javascript che abbiamo chiamato `index.js`.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +48,7 @@ Torniamo su VsCode, inseriamo nel file index.html un markup di base: un heading,
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link href="./index.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
     <h1>My Page</h1>
@@ -100,55 +57,39 @@ Torniamo su VsCode, inseriamo nel file index.html un markup di base: un heading,
 </html>
 ```
 
-## Iniziamo a scrivere Javascript con Parcel.js
+Abbiamo a disposizione due modalità con cui avviare Parcel: una modalità sviluppo, ed una modalità per buildare i file per l'ambiente di produzione.
 
-Bene fin qui abbiamo visto come configurare il bundler Parcel e inizializzare la struttura di un progetto.
-Ora per testare che funzioni bene il transpiler di ES6, iniziamo a scrivere un pò di javascript sul file `hello.js` una semplice funzione che ha in ingresso un parametro, e restituisce Hello **parametro**:
-```javascript
-const title = (text) => {
-    return `Hello ${text}!`
-}
+Quindi lanciando da terminale `parcel index.html` verrà creato un server locale all'indirizzo http://localhost:1234; aggiungendo `--open` a seguire, ci verrà aperto direttamente il nostro browser di default.
+Col server in esecuzione, ovviamente il processo non si arresta, e lavorerà in modaltà livereload: ovvero sarà in ascolto di qualsiasi modifica avvenga al CSS e JS, ed aggiornerà automaticamente la pagina aperta sul nostro browser.
 
-export { title }
-```
-
-Sul file `index.js` importiamo la function title
-```javascript
-import { title } from './hello';
-
-document.querySelector('h1').textContent = title(`Angelo`);
-```
-
-Tornando al browser, e quindi alla pagina aperta in livereload, noteremo che il titolo non è più My Page, ma Hello Angelo!
-
-Questo significa che il nostro ES6 sta venendo convertito in javascript compatibile, e il nostro browser riesce a leggerlo tranquillamente.
-
-## Come usare SCSS con Parcel
-Infine manca la parte del css, andiamo sul file `main.scss` ed aggiungiamo una semplice regola SCSS:
-```scss
-$red: #cc0000;
-
-html {
-    body {
-        background: $red;
-    }
-}
-```
-
-Ora torniamo al file `index.js` ed importiamo il foglio di stile, aggiungendo questa riga subito in alto dove è già presente il primo import.
-```javascript
-import { title } from './hello';
-import './styles/main.scss';
-```
-
-Il file è ora importato, e sulla pagina vedremo che il colore dello sfondo diverrà rosso.
-
-
-## Buildare Parcel.js per produzione
-Ovviamente il codice sviluppato fin qui non è pronto per la messa online, bisogna compilarlo, basterà lanciare:
+Invece per eseguire la build per produzione, possiamo lanciamo il comando:
 ```shell
-npm run prod
+parcel build index.html
 ```
-Verrà creata la cartella **dist** contente i file javascript compressi e pronti per l'ambiente di produzione.
+Verrà creata in automatico una cartella dist, contenente gli asset js e css compilati, rinominati per evitare problemi di caching, e l'index.html minificato e con i riferimenti agli asset già aggiornati. Sul terminale, rispetto al comando che lancia il server locale, questo al contrario chiude il processo subito dopo aver eseguito i propri compiti.
+
+Questo è quindi il comportamento di default, tutto viene compilato direttamente dentro /dist; vedremo successivamente come personalizzare questo aspetto.
+
+
+## Parcel con ES6 e Typescript
+
+Parcel.js funziona da transpiler ES6, quindi possiamo tranquillamente scrivere i nostri file nelle ultime versioni di javascrpt, per cui possiamo restare tranquilli sulla compatibilità su i browser.
+
+## Usare i dotenv con Parcel.js
+
+Parcel mette a disposizione la possibilità di lavorare con i file .env, così da proteggere variabili sensibili e di ambiente.
+Basta creare un file .env con dentro i valori che ci servono, ad esempio:
+```dotenv
+APP_KEY=012345
+APP_SECRET=abcdefghi
+```
+E sul nostro javascript possiamo ottenere i relativi valori in questo modo, utilizzando `process.env`:
+```javascript
+const key = process.env.APP_KEY
+const secret = process.env.APP_SECRET
+```
+
+Avviando quindi un server di sviluppo, potremmo gestire in tutta sicurezza le variabili di ambiente.
+
 
 Qui il repository Github completo del post [https://github.com/angepili/parcel.js-scaffolding](https://github.com/angepili/parcel.js-scaffolding)
