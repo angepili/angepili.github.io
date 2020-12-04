@@ -62,94 +62,86 @@
 			<h2 id="che-cosè-parceljs">Che cos&rsquo;è Parcel.js</h2>
 <p><a href="https://parceljs.org/">Parcel.js</a> è un bundler che supporta nativamente Javascript, Css, Html ed addirittura Typescript, livereload del browser, code-splitting e dot env.
 A differenza di <em>webpack</em>, parte di default con già tutte queste funzionalità senza alcun bisogno di configurazioni, ed in più se questo non bastasse supporta una gran quantità di <a href="https://www.npmjs.com/search?q=parcel-plugin*">plugin</a>.</p>
+<h2 id="inizializzare-un-progetto-con-parceljs">Inizializzare un progetto con Parcel.js</h2>
 <p>Iniziamo a creare un semplice progetto Parcel, apriamo il terminale:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~
 mkdir parceljs <span style="color:#f92672">&amp;&amp;</span> cd $_
-npm init
-</code></pre></div><p>Ora dentro la nostra cartella <code>parceljs</code> creiamo questa struttura con i relativi file javascript, html ed scss; il package.json dovrebbe essere già esistente poichè creato col comando <code>npm init</code></p>
+npm init -y
+npm i --save-dev parcel
+</code></pre></div><p>Ora dentro la nostra cartella <code>parceljs</code> dovremmo avere una struttura di base simile a questa:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">📦parceljs
- ┣ 📂src
- ┃ ┣ 📂styles
- ┃ ┃ ┗ 📜main.scss
- ┃ ┣ 📜hello.js
- ┃ ┣ 📜index.html
- ┃ ┗ 📜index.js
+ ┣ 📂node_modules
+ ┣ 📜package-lock.json
  ┗ 📜package.json
-</code></pre></div><p>Ora possiamo installare parcel.js, dalla root del progetto lanciamo:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm i -D parcel-bundler
-</code></pre></div><p>Basta, fin qui possiamo dire che sarebbe già tutto funzionante, infatti la struttura sulla quale lavoreremo &ldquo;src&rdquo; contiene tutti i file essenziali per lavorare in ambiente di sviluppo; successivamente vedremo come creare il pacchetto per produzione.</p>
-<p>Apriamo il progetto dentro il nostro editor, se si usa Visual Studio Code, allora da terminale basterà digitare:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">code .
-</code></pre></div><p>Per far girare l&rsquo;applicativo, dobbiamo indicare quali sono i comandi per far avviare il nostro server di sviluppo, ed il comando per buildare il pacchetto di produzione.</p>
-<p>Quindi sul file <code>package.json</code> aggiungiamo queste due righe all&rsquo;interno di <strong>scripts</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">&#34;dev&#34;: </span><span style="color:#e6db74">&#34;parcel src/index.html&#34;</span>,
-    <span style="color:#f92672">&#34;prod&#34;: </span><span style="color:#e6db74">&#34;parcel build src/index.html&#34;</span>
-</code></pre></div><p>dovremmo ottenere qualcosa del genere:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;parceltest&#34;</span>,
-  <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0.0&#34;</span>,
-  <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">&#34;main&#34;</span>: <span style="color:#e6db74">&#34;index.js&#34;</span>,
-  <span style="color:#f92672">&#34;scripts&#34;</span>: {
-    <span style="color:#f92672">&#34;dev&#34;</span>: <span style="color:#e6db74">&#34;parcel src/index.html&#34;</span>,
-    <span style="color:#f92672">&#34;prod&#34;</span>: <span style="color:#e6db74">&#34;parcel build src/index.html&#34;</span>
-  },
-  <span style="color:#f92672">&#34;keywords&#34;</span>: [],
-  <span style="color:#f92672">&#34;author&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;ISC&#34;</span>,
-  <span style="color:#f92672">&#34;devDependencies&#34;</span>: {
-    <span style="color:#f92672">&#34;parcel-bundler&#34;</span>: <span style="color:#e6db74">&#34;^1.12.4&#34;</span>,
-    <span style="color:#f92672">&#34;sass&#34;</span>: <span style="color:#e6db74">&#34;^1.26.9&#34;</span>
-  }
-}
-</code></pre></div><p>ed ora avviamo il server di sviluppo in live-reload:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm run dev
-</code></pre></div><p>Torniamo su VsCode, inseriamo nel file index.html un markup di base: un heading, ed i riferimenti all&rsquo;asset javascript che abbiamo chiamato <code>index.js</code>.</p>
+</code></pre></div><p>Passiamo quindi a creare i nostri file</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">touch index.html index.js index.scss
+</code></pre></div><p>Come pure esercizio, nel file index.html inseriamo questo markup di base: un heading, ed i riferimenti all&rsquo;asset javascript che abbiamo chiamato <code>index.js</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
 &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
     &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
-
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./index.scss&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> /&gt;
 &lt;/<span style="color:#f92672">head</span>&gt;
 &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">h1</span>&gt;My Page&lt;/<span style="color:#f92672">h1</span>&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./index.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><h2 id="iniziamo-a-scrivere-javascript-con-parceljs">Iniziamo a scrivere Javascript con Parcel.js</h2>
-<p>Bene fin qui abbiamo visto come configurare il bundler Parcel e inizializzare la struttura di un progetto.
-Ora per testare che funzioni bene il transpiler di ES6, iniziamo a scrivere un pò di javascript sul file <code>hello.js</code> una semplice funzione che ha in ingresso un parametro, e restituisce Hello <strong>parametro</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">text</span>) =&gt; {
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`Hello </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">text</span><span style="color:#e6db74">}</span><span style="color:#e6db74">!`</span>
-}
+</code></pre></div><p>Abbiamo a disposizione due modalità con cui avviare Parcel: una modalità sviluppo, ed una modalità per buildare i file per l&rsquo;ambiente di produzione.</p>
+<p>Quindi lanciando da terminale <code>npx parcel index.html</code> verrà creato un server locale all&rsquo;indirizzo http://localhost:1234; aggiungendo <code>--open</code> a seguire, ci verrà aperto direttamente il nostro browser di default.
+Col server in esecuzione, ovviamente il processo non si arresta, e lavorerà in modaltà livereload: ovvero sarà in ascolto di qualsiasi modifica avvenga al CSS e JS, ed aggiornerà automaticamente la pagina aperta sul nostro browser.</p>
+<p>Invece per eseguire la build per produzione, possiamo lanciamo il comando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npx parcel build index.html
+</code></pre></div><p>Verrà creata in automatico una cartella dist, contenente gli asset js e css compilati, rinominati per evitare problemi di caching, e l&rsquo;index.html minificato e con i riferimenti agli asset già aggiornati. Sul terminale, rispetto al comando che lancia il server locale, questo al contrario chiude il processo subito dopo aver eseguito i propri compiti.</p>
+<p>Questo è quindi il comportamento di default, tutto viene compilato direttamente dentro /dist; vedremo successivamente come personalizzare questo aspetto.</p>
+<h2 id="parcel-con-es6-e-typescript">Parcel con ES6 e Typescript</h2>
+<p>Parcel.js funziona da transpiler ES6, quindi possiamo tranquillamente scrivere i nostri file nelle ultime versioni di javascrpt, per cui possiamo restare tranquilli sulla compatibilità su i browser.</p>
+<p>Quindi per utilizzare typscript basterà usare i file <code>.tsx</code> e cambiare la reference sull&rsquo;index.html con l&rsquo;estensione <code>tsx</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./index.tsx&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h2 id="usare-react-con-parceljs">Usare React con Parcel.js</h2>
+<p>Utilizzare react con Parcel è molto semplice, sostanzialmente basta installare il pacchetto npm, inizializzare il nostro index.tsx ed il gioco è fatto:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm i --save react react-dom
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// index.tsx
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDom</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;react-dom&#39;</span>;
 
-<span style="color:#66d9ef">export</span> { <span style="color:#a6e22e">title</span> }
-</code></pre></div><p>Sul file <code>index.js</code> importiamo la function title</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">title</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./hello&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">App</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> &lt;<span style="color:#f92672">div</span>&gt;<span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">world</span><span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">div</span>&gt;
 
-document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;h1&#39;</span>).<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">title</span>(<span style="color:#e6db74">`Angelo`</span>);
-</code></pre></div><p>Tornando al browser, e quindi alla pagina aperta in livereload, noteremo che il titolo non è più My Page, ma Hello Angelo!</p>
-<p>Questo significa che il nostro ES6 sta venendo convertito in javascript compatibile, e il nostro browser riesce a leggerlo tranquillamente.</p>
-<h2 id="come-usare-scss-con-parcel">Come usare SCSS con Parcel</h2>
-<p>Infine manca la parte del css, andiamo sul file <code>main.scss</code> ed aggiungiamo una semplice regola SCSS:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss">$red<span style="color:#f92672">:</span> <span style="color:#ae81ff">#cc0000</span>;
-
-<span style="color:#f92672">html</span> {
-    <span style="color:#f92672">body</span> {
-        <span style="color:#f92672">background</span><span style="color:#a6e22e">:</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#f92672">red</span>;
-    }
-}
-</code></pre></div><p>Ora torniamo al file <code>index.js</code> ed importiamo il foglio di stile, aggiungendo questa riga subito in alto dove è già presente il primo import.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">title</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./hello&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;./styles/main.scss&#39;</span>;
-</code></pre></div><p>Il file è ora importato, e sulla pagina vedremo che il colore dello sfondo diverrà rosso.</p>
-<h2 id="buildare-parceljs-per-produzione">Buildare Parcel.js per produzione</h2>
-<p>Ovviamente il codice sviluppato fin qui non è pronto per la messa online, bisogna compilarlo, basterà lanciare:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm run prod
-</code></pre></div><p>Verrà creata la cartella <strong>dist</strong> contente i file javascript compressi e pronti per l&rsquo;ambiente di produzione.</p>
-<p>Qui il repository Github completo del post <a href="https://github.com/angepili/parcel.js-scaffolding">https://github.com/angepili/parcel.js-scaffolding</a></p>
+<span style="color:#a6e22e">ReactDom</span>.<span style="color:#a6e22e">render</span>(
+    &lt;<span style="color:#f92672">App</span> /&gt;,
+    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>)
+);
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">// index.html
+...
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;root&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./index.tx&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+...
+</code></pre></div><h2 id="usare-i-dotenv-con-parceljs">Usare i dotenv con Parcel.js</h2>
+<p>Parcel mette a disposizione la possibilità di lavorare con i file .env, così da proteggere variabili sensibili e di ambiente.
+Basta creare un file .env con dentro i valori che ci servono, ad esempio:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">APP_KEY<span style="color:#f92672">=</span><span style="color:#ae81ff">012345</span>
+APP_SECRET<span style="color:#f92672">=</span>abcdefghi
+</code></pre></div><p>E sul nostro javascript possiamo ottenere i relativi valori in questo modo, utilizzando <code>process.env</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">APP_KEY</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">secret</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">APP_SECRET</span>
+</code></pre></div><p>Avviando quindi un server di sviluppo, potremmo gestire in tutta sicurezza le variabili di ambiente.</p>
+<h2 id="come-configurare-parcel">Come configurare Parcel</h2>
+<p>Parcel è un bundler zero-config, vero. Comodo sicuramente per sviluppi veloci o di test.
+In realtà abbiamo un pò di possibilità di personalizzare il nostro setup.</p>
+<p>Di default Parcel builda i file sulla cartella <code>dist</code>; possiamo cambiare questo aspetto utilizzando il paremtro con <code>--out-dir</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npx parcel index.html --out-dir /mio/nuovo/percorso/
+</code></pre></div><p>Personalizzare la porta, che di default è 1234</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npx parcel index.html --port <span style="color:#ae81ff">9000</span> --open
+</code></pre></div><p>Cambiare la path degli asset, che di default è <code>./</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npx parcel index.html --public-url ./nuova/path
+</code></pre></div><p>Il nome del virtual host</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npx parcel index.html --host dev.local.host
+</code></pre></div><p>Ci sono tante personalizzazione, <a href="https://parceljs.org/cli.html">sulla pagina dedicata di parcel</a> sono indicate tutte le restanti.</p>
 
 		</section>
 
