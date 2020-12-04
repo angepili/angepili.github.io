@@ -103,7 +103,7 @@ ReactDom.render(
 ...
 <body>
     <div id="root"></div>
-    <script src="./index.tx"></script>
+    <script src="./index.tsx"></script>
 </body>
 ...
 ```
