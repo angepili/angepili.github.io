@@ -8,7 +8,7 @@ pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 publishDir = "docs"
-googleAnalytics = "UA-116693958-1"
+# googleAnalytics = "UA-116693958-1"
 
 [params]
 	mode="auto"
