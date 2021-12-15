@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html><head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Creare un virtual host con Apache su Ubuntu Linux - AngeloPili.it</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Creare un virtual host con Apache su Ubuntu Linux - AngePili</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Apache è uno dei webserver più utilizzati, insieme ad Nginx detiene il 70% del mercato server. Vediamo come creare un virtual e configurarlo per utilizzarlo in locale per un ambiente di sviluppo" />
 	<meta property="og:image" content=""/>
 	<meta property="og:title" content="Creare un virtual host con Apache su Ubuntu Linux" />
 <meta property="og:description" content="Apache è uno dei webserver più utilizzati, insieme ad Nginx detiene il 70% del mercato server. Vediamo come creare un virtual e configurarlo per utilizzarlo in locale per un ambiente di sviluppo" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://angepili.github.io/pages/creare-un-dominio-locale-con-apache/" />
+<meta property="og:url" content="https://angepili.github.io/pages/creare-un-dominio-locale-con-apache/" /><meta property="article:section" content="pages" />
 <meta property="article:published_time" content="2020-08-04T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-08-04T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Creare un virtual host con Apache su Ubuntu Linux"/>
 <meta name="twitter:description" content="Apache è uno dei webserver più utilizzati, insieme ad Nginx detiene il 70% del mercato server. Vediamo come creare un virtual e configurarlo per utilizzarlo in locale per un ambiente di sviluppo"/>
@@ -20,7 +21,7 @@
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://angepili.github.io/css/main.6d1f4000976542fb91970e0462709636f9384480c47bd2df101e5427d6ec89cc.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://angepili.github.io/css/main.90343366835746b4835761d3009dba4aecb5b9acb8fff4df33b702e5713f7706.css" />
 		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://angepili.github.io/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css" media="(prefers-color-scheme: dark)"  />
 	
 	
@@ -29,7 +30,7 @@
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://angepili.github.io/">AngeloPili.it</a>
+		<a href="https://angepili.github.io/">AngePili</a>
 	</div>
 	<nav>
 		
@@ -63,12 +64,12 @@
 <li>disabilitare il dominio</li>
 </ul>
 <p>Se non ancora installato, dovremo avviare l&rsquo;installazione di Apache:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt install apache2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt install apache2
 </code></pre></div><h2 id="come-creare-il-virtual-host">Come creare il virtual host</h2>
 <p>Inanzitutto occorre creare il file di configurazione, che per convenzione riporta il nome del dominio ed estensione .conf. Quindi da terminale lanciamo:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo nano /etc/apache2/sites-available/$NOME_SITO.com.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo nano /etc/apache2/sites-available/$NOME_SITO.com.conf
 </code></pre></div><p>Lanciato questo comando, avremo il file aperto sull&rsquo;editor nano, dove inseriremo questa configurazione, con le dovute personalizzazione rispetto al nome a dominio e i relativi percorsi</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache"><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">*:80</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache"><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">*:80</span><span style="color:#f92672">&gt;</span>
     ServerAdmin admin@test.com
     ServerName test.com
     ServerAlias www.test.com
@@ -77,26 +78,26 @@
     CustomLog <span style="color:#e6db74">/var/www/test.com/logs/access.log</span> combined
 <span style="color:#f92672">&lt;/VirtualHost&gt;</span>
 </code></pre></div><p>Lanciare da terminale il comando per abilitare il nome a dominio, e successivamente il riavvio del webserver</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo a2ensite $NOME_SITO.com.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo a2ensite $NOME_SITO.com.conf
 sudo service apache2 restart
 </code></pre></div><p>Fin qui la parte di Apache è già concluso, ora dovremmo dire al server di puntare l&rsquo;indirizzo locale al nuovo nome a dominio</p>
 <p>Apriamo il file hosts</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo nano /etc/hosts
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo nano /etc/hosts
 </code></pre></div><p>E dentro il file ggiungere il nuovo dominio con indirizzo a locale 127.0.0.1</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">127.0.0.1   localhost
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">127.0.0.1   localhost
 127.0.1.1   guest-desktop
 
 127.0.0.1   $NOME_SITO.ext <span style="color:#75715e">#aggiungere questa riga</span>
 </code></pre></div><h3 id="come-disabilitare-il-virtual-host">Come disabilitare il virtual host</h3>
 <p>Nel caso in cui volessimo per qualsiasi motivo disabilitare il dominio, ecco la procedura:</p>
 <p>Entriamo dentro la directory di apache dove sono presenti tutti i file di configurazione:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /etc/apache2/sites-available/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /etc/apache2/sites-available/
 </code></pre></div><p>lanciare da terminale</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo a2dissite $NOME_SITO.com.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo a2dissite $NOME_SITO.com.conf
 </code></pre></div><p>riavviare apache</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo service apache2 restart
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo service apache2 restart
 </code></pre></div><p>commentare la relativa riga sul file hosts</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">127.0.0.1   localhost
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">127.0.0.1   localhost
 127.0.1.1   guest-desktop
 
 <span style="color:#75715e">#127.0.0.1  $NOME_SITO </span>

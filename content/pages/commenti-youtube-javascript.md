@@ -102,9 +102,5 @@ getComments('Re9PSburA-k')
     .then(data => printComments(data)); 
 ```
 
-Ed ecco il risultato nello screen:
-
-![](/uploads/youtube-comments-javascript/commenti-youtube-javascript-scree.png)
-
 
 Trovate il [progetto javascript completo](https://github.com/angepili/youtube-comments) sul [mio github](https://github.com/angepili), dove ho completato stilisticamente il progetto utilizzando il [framework CSS Bulma](https://bulma.io/).

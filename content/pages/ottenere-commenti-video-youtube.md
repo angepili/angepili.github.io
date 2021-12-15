@@ -37,9 +37,7 @@ Vediamo nel dettaglio i parametri:
 
 ## Usare Postman per testare l'API di youtube
 
-Ora possiamo fare un test di chiamata con Postman usando il metodo GET ed inserendo i parametri come da schermata qui sotto, così da verificare la corretta esecuzione e la risposta restituita.
-
-![](/uploads/youtube-comments/youtube-api-comments-postman.png)
+Ora possiamo fare un test di chiamata con Postman usando il metodo GET ed inserendo i paramet sotto, così da verificare la corretta esecuzione e la risposta restituita.
 
 Se tutto è andato a buon fine, la **API di youtube** ci restituirà una risposta che conterrà un oggetto Json con il token di paginazione ed i risultati dentro la voce `items`, con questa struttura:
 ```json

@@ -1,6 +1,6 @@
 baseURL = "https://angepili.github.io/"
 languageCode = "en-us"
-title = "AngeloPili.it"
+title = "AngePili"
 description = "Software Engineer Analyst di Monza Brianza, sviluppo applicativi in Php e Mysql su framework Laravel, Javascript ES6, React e Svelte."
 theme="archie"
 copyright = "© AngeloPili.it"

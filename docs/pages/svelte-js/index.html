@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html><head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Svelte Framework: come funziona, una veloce introduzione. - AngeloPili.it</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Svelte Framework: come funziona, una veloce introduzione. - AngePili</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Che cos&rsquo;è e come funziona Svelte framework? Andiamo ad analizzare come funziona questo framework che fa dei suoi punti forti la reattività, la semplicità e velocità." />
 	<meta property="og:image" content=""/>
 	<meta property="og:title" content="Svelte Framework: come funziona, una veloce introduzione." />
 <meta property="og:description" content="Che cos&rsquo;è e come funziona Svelte framework? Andiamo ad analizzare come funziona questo framework che fa dei suoi punti forti la reattività, la semplicità e velocità." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://angepili.github.io/pages/svelte-js/" />
+<meta property="og:url" content="https://angepili.github.io/pages/svelte-js/" /><meta property="article:section" content="pages" />
 <meta property="article:published_time" content="2020-09-02T21:45:33+02:00" />
 <meta property="article:modified_time" content="2020-09-02T21:45:33+02:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Svelte Framework: come funziona, una veloce introduzione."/>
 <meta name="twitter:description" content="Che cos&rsquo;è e come funziona Svelte framework? Andiamo ad analizzare come funziona questo framework che fa dei suoi punti forti la reattività, la semplicità e velocità."/>
@@ -20,7 +21,7 @@
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://angepili.github.io/css/main.6d1f4000976542fb91970e0462709636f9384480c47bd2df101e5427d6ec89cc.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://angepili.github.io/css/main.90343366835746b4835761d3009dba4aecb5b9acb8fff4df33b702e5713f7706.css" />
 		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://angepili.github.io/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css" media="(prefers-color-scheme: dark)"  />
 	
 	
@@ -29,7 +30,7 @@
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://angepili.github.io/">AngeloPili.it</a>
+		<a href="https://angepili.github.io/">AngePili</a>
 	</div>
 	<nav>
 		
@@ -68,13 +69,13 @@
 <p>Punti a sfavore: essendo un progetto giovane, ha ancora un comunity molto ridotta e si trova poco materiale in giro. In realtà la <a href="https://svelte.dev/docs">documentazione di Svelte</a> è molto semplice, e per impararlo basta conoscere Javascript; sicuramente aiuta aver già avuto a che fare con i suoi competitor React e Angular, più per i concetti che per sintassi.</p>
 <h2 id="come-iniziare-con-svelte-framework">Come iniziare con Svelte framework</h2>
 <p>Per iniziare a sviluppare con Svelte possiamo andare a posizionarci sulla nostra directory e lanciare questi comandi:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx degit sveltejs/template svelte-project
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx degit sveltejs/template svelte-project
 cd svelte-project
 
 npm install
 npm run dev
 </code></pre></div><p>Una volta avviato il tutto, andiamo nella cartella di lavoro <code>src</code>. Noteremo due file, il primo: <code>main.js</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./App.svelte&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./App.svelte&#39;</span>;
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">App</span>({
 	<span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> document.<span style="color:#a6e22e">body</span>,
@@ -86,7 +87,7 @@ npm run dev
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">app</span>;
 </code></pre></div><p>Da qui ha inizio la nostra applicazione, infatti inizilizzando <code>App</code>, tramite <code>target</code> scegliamo l&rsquo;elemento html in cui far girare il nostro applicativo, di default sul body; mentre tramite <code>props</code> possiamo passare delle properties di inizializzazione.</p>
 <p>Notiamo che prima viene eseguito un import del componente principale: un file App con estensione .svelte:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
 	<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span>;
 &lt;/<span style="color:#f92672">script</span>&gt;
 
@@ -120,7 +121,7 @@ npm run dev
 <p>Infine lo style è nativamente scoped, quindi per un componente semplice, possiamo anche non utilizzare classi css e id, in quanto, esattamente come l&rsquo;esempio, potremmo scrivere css indicando solo l&rsquo;elemento html così com&rsquo;è, e ci penserà svelte a indicare che è riferito solo a questo componente. Ovviamente per componenti più complessi, l&rsquo;uso di una classe è indicato, tuttavia sarà trattata sempre in maniera scoped e non globale.</p>
 <h2 id="come-creare-un-componente-svelte">Come creare un componente Svelte</h2>
 <p>L&rsquo;esempio di <code>App.svelte</code> suggerisce già tutto, basterà creare un nuovo file con estensione svelte, ad esempio <code>Header.svelte</code>, nel componente padre andrò ad importarlo a richiamarlo nel markup:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// App.svelte
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// App.svelte
 </span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
     <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Header</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./Header.svelte&#39;</span>;
 	<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span>;
@@ -136,7 +137,7 @@ npm run dev
 ...
 
 </code></pre></div><p>Adesso passare una property è molto semplice, come detto sopra, nel file del componente esporteremo la variabile, e nel file padre dove dichiariamo il componente lo passiamo come attributo:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// Header.svelte
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// Header.svelte
 </span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
     <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">companyName</span>;
 &lt;/<span style="color:#f92672">script</span>&gt;
@@ -146,7 +147,7 @@ npm run dev
 &lt;<span style="color:#f92672">style</span>&gt;
 <span style="color:#a6e22e">p</span> { <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">red</span>; }
 &lt;/<span style="color:#f92672">style</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// App.svelte
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// App.svelte
 </span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
     <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Header</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./Header.svelte&#39;</span>;
 	<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span>;
@@ -170,7 +171,7 @@ npm run dev
 </ul>
 <p>Non possono ovviamente sostituire le logiche impostate nel Javascript, ma possono tornare utili nei casi in cui si deve mostrare un componente o meno, o per verificare un dato velocemnte direttamente nel markup.</p>
 <p>Ad esempio con il framework Svelte possiamo fare qualcosa del genere:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">// Header.svelte
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">// Header.svelte
 &lt;<span style="color:#f92672">script</span>&gt;
     <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">companyName</span>;
 &lt;/<span style="color:#f92672">script</span>&gt;

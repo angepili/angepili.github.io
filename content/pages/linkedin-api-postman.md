@@ -26,23 +26,17 @@ Prima di tutto occorre registrare una nuova applicazione dalla [dashboard dedica
 
 Ci verranno richiesti alcuni campi da compilare come: nome dell'app, logo e privacy.
 
-![](/uploads/linkedin-part-1/schermata-linkedin-1.png)
-
 Dopo aver salvato invece potremmo accedere al pannello completo di amministrazione, infatti cliccando sul tab "Auth" avremmo il box chiamato "OAuth 2.0 settings", dove è importante inserire un nostro indirizzo di ritorno, per poter completare il processo di autenticazione. In fase di sviluppo è possibile utilizzare *localhost*, *127.0.0.1*, o anche l'indirizzo completo di porte, tipo *127.0.0.1:3000*.
 
 Per iniziare, quindi inseriamo il nostro indirizzo di svilippo con un */linkedin.html* alla fine, ex: *127.0.0.1:8000/linkedin.html*
 
 Poco sopra, ci sono 2 dati molto importati per la nostra applicazione: il *client_id* e il *client_secret*; questi sono gli identificatori del nostro applicativo, il primo pubblico, e quindi può essere utilizzato in chiaro nelle chiamate, il secondo è privato.
 
-![](/uploads/linkedin-part-1/schermata-linkedin-2.png)
-
 Dal tab "Products" aggiungiamo i prodotti:
 - Sign In with LinkedIn
 - Share on LinkedIn
 
 Il primo ci darà i permessi per poterci autenticare con la piattaforma, il secondo di condividere un post.
-
-![](/uploads/linkedin-part-1/schermata-linkedin-3.png)
 
 ## Usiamo l'autenticazione Oauth2
 Linkedin utilizza lo standard di autenticazione [Oauth2](https://oauth.net/2/), un metodo sicuro, adottato da tante piattaforme, che in parole molte semplici, permette di effettuare le operazioni su API attraverso un token con una certa data di scadenza, che rilascia il servizio dopo una prima autenticazione, e che verra inviato ad ogni chiamata.
@@ -85,8 +79,6 @@ PARAMETRI:
     redirect_uri: http://localhost:8000/linkedin.php
     code: ${code} # il "code" ottenuto nella chiamata precedente
 ```
-
-![](/uploads/linkedin-part-1/schermata-linkedin-4.png)
 
 A questo punto abbiamo ottenuto il token, e quindi ci siamo autenticati. Infatti d'ora in poi possiamo eseguire tutte le nuove chiamate utilizzando il token nei parametri dell'header della chiamata, e verremo sempre riconosciuti.
 
@@ -131,8 +123,6 @@ Response:
     "localizedFirstName": "Angelo"
 }
 ```
-
-![](/uploads/linkedin-part-1/schermata-linkedin-5.png)
 
 
 Nel prossimo post vedremo i passaggi successivi: la [login su linkedin con javascript](/post/linkedin-api-javascript) e ancora nel successivo **Pubblicare un post con le API di Linkedin**.
