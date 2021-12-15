@@ -19,6 +19,8 @@ Sono appassionato da sempre al mondo IT, ho iniziato a scrivere le prime righe d
 
 Nel 2015 chiudo la carriera di freelance ed inizio a lavorare in diverse aziende IT come Software Engineer Analyst, dove mi confronto con ambienti più strutturati, ho l'opportunità di lavorare su più tecnologie, imparare metodologie e standard di sviluppo, ed aquisire esperienza a 360 gradi in questo settore.
 
+Dal 2020 sono Lead Developer in [Socialidea](https://www.socialidea.it/)
+
 Abito e lavoro in provincia di Monza Brianza, territorio che adoro, ma sono originario di Cagliari, dove puntualmente torno con la mia compagna e mio figlio Lorenzo.
 
 Per entrare in contatto con me puoi usare i social indicati nel menu in alto.
