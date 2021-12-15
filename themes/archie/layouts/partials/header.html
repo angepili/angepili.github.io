@@ -14,23 +14,12 @@
 	{{- end -}}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<meta property="og:description" content="{{ .Params.description }}" />
-	<meta name="twitter:description" content="{{ .Params.description }}" />
-	<meta name="description" content="{{ $.Param "description" }}" />
-	<meta name="description" content="{{ $.Params.description }}" />
-
-	<meta property="og:title" content="{{ $title }} | {{ $siteTitle }}" />
-	<meta name="twitter:title" content="{{ $title }} | {{ $siteTitle }}" />
-
+	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
 	<meta property="og:image" content="{{ .Site.Params.og_image }}"/>
-	<meta itemprop="name" content="{{ $title }} | {{ $siteTitle }}" />
-	<meta name="application-name" content="{{ $title }} | {{ $siteTitle }}" />
-	<meta property="og:site_name" content="{{ .Site.Params.sitename }}" />
 	{{ with .OutputFormats.Get "rss" -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
-	
+
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
 	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
@@ -43,16 +32,23 @@
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 	{{- else -}}
-        <link href="{{ .Site.BaseURL }}css/fonts.css" rel="stylesheet">
+	{{ $fontstyle := resources.Get "css/fonts.css" | fingerprint }}
+        <link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
 	{{ end }}
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/main.css" />
-	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
-		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/dark.css" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
+
+	{{ $style := resources.Get "css/main.css" | fingerprint }}
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
+
+	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") (eq .Site.Params.mode "toggle") -}}
+		{{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} {{ if eq .Site.Params.mode "toggle" }}disabled{{ end }} />
 	{{ end }}
+	
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
 		{{ range .Site.Params.customCSS }}
-		<link rel="stylesheet" type="text/css" href="{{ . | relURL }}">
+		{{ $customstyle := resources.Get . | fingerprint }}
+		<link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
 		{{ end }}
 	{{- end -}}
 	{{- range .Site.Params.customJS }}
@@ -62,11 +58,4 @@
 	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
 	{{- end }}
 	{{- end }}
-
-	<script type="application/javascript">
-		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-		ga('create', 'UA-116693958-1', 'auto');
-		ga('send', 'pageview');
-	</script>
-	<script async src='https://www.google-analytics.com/analytics.js'></script>
 </head>

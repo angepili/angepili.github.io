@@ -11,7 +11,8 @@ tags : [
     "linux"
 ]
 categories : [
-    "Systems"
+    "Systems",
+    "DevOps"
 ]
 aliases : ["domain-apache-https"]
 summary : "Dopo aver visto come creare un virtual host con Apache, oggi vediamo come abilitarne anche l'https in locale per lavorare in una ambiente di sviluppo completo."
@@ -63,7 +64,6 @@ Ed andiamo a copiare il codice qui di seguito, subito prima del tag di chiusura 
                        downgrade-1.0 force-response-1.0
 
     </VirtualHost>
-
 ```
 
 Ora, il **modulo ssl** è già disponibile di default su ubuntu, ma deve essere abilitato, quindi da terminale lanciare:
