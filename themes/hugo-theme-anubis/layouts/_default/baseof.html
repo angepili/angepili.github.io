@@ -43,13 +43,15 @@
         </div>
     </footer>
     
-    {{ if .Type | eq "post" }}
-    {{ if not .Site.IsServer }} 
-        <script id="s9-sdk" async defer content="d15f961a2ed744ddb4f7bcede4ed6c4a" src="//cdn.social9.com/js/socialshare.min.js"></script>
-        {{ template "_internal/google_analytics.html" . }}
-        <script id="dsq-count-scr" src="//angelopili-it.disqus.com/count.js" async></script>
-    {{ end }}
-    {{ end }}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GY5N4E7T1T"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GY5N4E7T1T');
+    </script>
 
     
 </body>
