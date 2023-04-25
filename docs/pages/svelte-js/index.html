@@ -10,7 +10,6 @@
 <meta property="og:url" content="https://angepili.github.io/pages/svelte-js/" /><meta property="article:section" content="pages" />
 <meta property="article:published_time" content="2020-09-02T21:45:33+02:00" />
 <meta property="article:modified_time" content="2020-09-02T21:45:33+02:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Svelte Framework: come funziona, una veloce introduzione."/>
 <meta name="twitter:description" content="Che cos&rsquo;è e come funziona Svelte framework? Andiamo ad analizzare come funziona questo framework che fa dei suoi punti forti la reattività, la semplicità e velocità."/>
@@ -69,100 +68,98 @@
 <p>Punti a sfavore: essendo un progetto giovane, ha ancora un comunity molto ridotta e si trova poco materiale in giro. In realtà la <a href="https://svelte.dev/docs">documentazione di Svelte</a> è molto semplice, e per impararlo basta conoscere Javascript; sicuramente aiuta aver già avuto a che fare con i suoi competitor React e Angular, più per i concetti che per sintassi.</p>
 <h2 id="come-iniziare-con-svelte-framework">Come iniziare con Svelte framework</h2>
 <p>Per iniziare a sviluppare con Svelte possiamo andare a posizionarci sulla nostra directory e lanciare questi comandi:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx degit sveltejs/template svelte-project
-cd svelte-project
-
-npm install
-npm run dev
-</code></pre></div><p>Una volta avviato il tutto, andiamo nella cartella di lavoro <code>src</code>. Noteremo due file, il primo: <code>main.js</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./App.svelte&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">App</span>({
-	<span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> document.<span style="color:#a6e22e">body</span>,
-	<span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> {
-		<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;world&#39;</span>
-	}
-});
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">app</span>;
-</code></pre></div><p>Da qui ha inizio la nostra applicazione, infatti inizilizzando <code>App</code>, tramite <code>target</code> scegliamo l&rsquo;elemento html in cui far girare il nostro applicativo, di default sul body; mentre tramite <code>props</code> possiamo passare delle properties di inizializzazione.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx degit sveltejs/template svelte-project
+</span></span><span style="display:flex;"><span>cd svelte-project
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>npm install
+</span></span><span style="display:flex;"><span>npm run dev
+</span></span></code></pre></div><p>Una volta avviato il tutto, andiamo nella cartella di lavoro <code>src</code>. Noteremo due file, il primo: <code>main.js</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./App.svelte&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">App</span>({
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> document.<span style="color:#a6e22e">body</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;world&#39;</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">app</span>;
+</span></span></code></pre></div><p>Da qui ha inizio la nostra applicazione, infatti inizilizzando <code>App</code>, tramite <code>target</code> scegliamo l&rsquo;elemento html in cui far girare il nostro applicativo, di default sul body; mentre tramite <code>props</code> possiamo passare delle properties di inizializzazione.</p>
 <p>Notiamo che prima viene eseguito un import del componente principale: un file App con estensione .svelte:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
-	<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span>;
-&lt;/<span style="color:#f92672">script</span>&gt;
-
-&lt;<span style="color:#f92672">main</span>&gt;
-	&lt;<span style="color:#f92672">h1</span>&gt;Hello {name}!&lt;/<span style="color:#f92672">h1</span>&gt;
-	&lt;<span style="color:#f92672">p</span>&gt;Visit the &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://svelte.dev/tutorial&#34;</span>&gt;Svelte tutorial&lt;/<span style="color:#f92672">a</span>&gt; to learn how to build Svelte apps.&lt;/<span style="color:#f92672">p</span>&gt;
-&lt;/<span style="color:#f92672">main</span>&gt;
-
-&lt;<span style="color:#f92672">style</span>&gt;
-	<span style="color:#f92672">main</span> {
-		<span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
-		<span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>;
-		<span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">240</span><span style="color:#66d9ef">px</span>;
-		<span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>;
-	}
-	<span style="color:#f92672">h1</span> {
-		<span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#ff3e00</span>;
-		<span style="color:#66d9ef">text-transform</span>: <span style="color:#66d9ef">uppercase</span>;
-		<span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">em</span>;
-		<span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">100</span>;
-	}
-	@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">640px</span><span style="color:#f92672">)</span> {
-		<span style="color:#f92672">main</span> {
-			<span style="color:#66d9ef">max-width</span>: <span style="color:#66d9ef">none</span>;
-		}
-	}
-&lt;/<span style="color:#f92672">style</span>&gt;
-</code></pre></div><p>Come già suggerisce l&rsquo;estensione di questo file, tutti i componenti dovranno avere estensione .svelte. Notiamo subito appunto come dentro un file possiamo <strong>scrivere la parte di javascript, css e html</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">main</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">h1</span>&gt;Hello {name}!&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;Visit the &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://svelte.dev/tutorial&#34;</span>&gt;Svelte tutorial&lt;/<span style="color:#f92672">a</span>&gt; to learn how to build Svelte apps.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">main</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">main</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">240</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">h1</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#ff3e00</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">text-transform</span>: <span style="color:#66d9ef">uppercase</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">100</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">640px</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">main</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">max-width</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span></code></pre></div><p>Come già suggerisce l&rsquo;estensione di questo file, tutti i componenti dovranno avere estensione .svelte. Notiamo subito appunto come dentro un file possiamo <strong>scrivere la parte di javascript, css e html</strong>.</p>
 <p>Nella parte di script, viene esportata la variabile <code>name</code> che è appunto la proprietà passata dal file genitore, quindi in ogni componente dovremmo esportare le proprietà che vengono passate.</p>
 <p>L&rsquo;html è libero, non ha alcuna differenza con il classico markup, ma ci sono delle aggiunte. Infatti ogni variabile viene racchiusa tra le graffe <code>{name}</code>.</p>
 <p>Infine lo style è nativamente scoped, quindi per un componente semplice, possiamo anche non utilizzare classi css e id, in quanto, esattamente come l&rsquo;esempio, potremmo scrivere css indicando solo l&rsquo;elemento html così com&rsquo;è, e ci penserà svelte a indicare che è riferito solo a questo componente. Ovviamente per componenti più complessi, l&rsquo;uso di una classe è indicato, tuttavia sarà trattata sempre in maniera scoped e non globale.</p>
 <h2 id="come-creare-un-componente-svelte">Come creare un componente Svelte</h2>
 <p>L&rsquo;esempio di <code>App.svelte</code> suggerisce già tutto, basterà creare un nuovo file con estensione svelte, ad esempio <code>Header.svelte</code>, nel componente padre andrò ad importarlo a richiamarlo nel markup:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// App.svelte
-</span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
-    <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Header</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./Header.svelte&#39;</span>;
-	<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span>;
-&lt;/<span style="color:#f92672">script</span>&gt;
-
-&lt;<span style="color:#f92672">Header</span> /&gt;
-
-&lt;<span style="color:#f92672">main</span>&gt;
-	&lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Hello</span> {<span style="color:#a6e22e">name</span>}<span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">h1</span>&gt;
-	&lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Visit</span> <span style="color:#a6e22e">the</span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://svelte.dev/tutorial&#34;</span>&gt;<span style="color:#a6e22e">Svelte</span> <span style="color:#a6e22e">tutorial</span>&lt;/<span style="color:#f92672">a</span>&gt; <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">learn</span> <span style="color:#a6e22e">how</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">build</span> <span style="color:#a6e22e">Svelte</span> <span style="color:#a6e22e">apps</span>.&lt;/<span style="color:#f92672">p</span>&gt;
-&lt;/<span style="color:#f92672">main</span>&gt;
-
-...
-
-</code></pre></div><p>Adesso passare una property è molto semplice, come detto sopra, nel file del componente esporteremo la variabile, e nel file padre dove dichiariamo il componente lo passiamo come attributo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// Header.svelte
-</span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
-    <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">companyName</span>;
-&lt;/<span style="color:#f92672">script</span>&gt;
-
-&lt;<span style="color:#f92672">p</span>&gt;{<span style="color:#a6e22e">companyName</span>}&lt;/<span style="color:#f92672">p</span>&gt;
-
-&lt;<span style="color:#f92672">style</span>&gt;
-<span style="color:#a6e22e">p</span> { <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">red</span>; }
-&lt;/<span style="color:#f92672">style</span>&gt;
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#75715e">// App.svelte
-</span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
-    <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Header</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./Header.svelte&#39;</span>;
-	<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span>;
-&lt;/<span style="color:#f92672">script</span>&gt;
-
-&lt;<span style="color:#f92672">Header</span> <span style="color:#a6e22e">companyName</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;Google&#34;</span>} /&gt;
-
-&lt;<span style="color:#f92672">main</span>&gt;
-	&lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Hello</span> {<span style="color:#a6e22e">name</span>}<span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">h1</span>&gt;
-	&lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Visit</span> <span style="color:#a6e22e">the</span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://svelte.dev/tutorial&#34;</span>&gt;<span style="color:#a6e22e">Svelte</span> <span style="color:#a6e22e">tutorial</span>&lt;/<span style="color:#f92672">a</span>&gt; <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">learn</span> <span style="color:#a6e22e">how</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">build</span> <span style="color:#a6e22e">Svelte</span> <span style="color:#a6e22e">apps</span>.&lt;/<span style="color:#f92672">p</span>&gt;
-&lt;/<span style="color:#f92672">main</span>&gt;
-
-...
-
-</code></pre></div><h2 id="utilizzare-gli-if-statement">Utilizzare gli if statement</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#75715e">// App.svelte
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Header</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./Header.svelte&#39;</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">Header</span> /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">main</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Hello</span> {<span style="color:#a6e22e">name</span>}<span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Visit</span> <span style="color:#a6e22e">the</span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://svelte.dev/tutorial&#34;</span>&gt;<span style="color:#a6e22e">Svelte</span> <span style="color:#a6e22e">tutorial</span>&lt;/<span style="color:#f92672">a</span>&gt; <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">learn</span> <span style="color:#a6e22e">how</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">build</span> <span style="color:#a6e22e">Svelte</span> <span style="color:#a6e22e">apps</span>.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">main</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Adesso passare una property è molto semplice, come detto sopra, nel file del componente esporteremo la variabile, e nel file padre dove dichiariamo il componente lo passiamo come attributo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#75715e">// Header.svelte
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">companyName</span>;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;{<span style="color:#a6e22e">companyName</span>}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span> { <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">red</span>; }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#75715e">// App.svelte
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Header</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./Header.svelte&#39;</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">Header</span> <span style="color:#a6e22e">companyName</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;Google&#34;</span>} /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">main</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Hello</span> {<span style="color:#a6e22e">name</span>}<span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Visit</span> <span style="color:#a6e22e">the</span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://svelte.dev/tutorial&#34;</span>&gt;<span style="color:#a6e22e">Svelte</span> <span style="color:#a6e22e">tutorial</span>&lt;/<span style="color:#f92672">a</span>&gt; <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">learn</span> <span style="color:#a6e22e">how</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">build</span> <span style="color:#a6e22e">Svelte</span> <span style="color:#a6e22e">apps</span>.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">main</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h2 id="utilizzare-gli-if-statement">Utilizzare gli if statement</h2>
 <p>Con Svelte framework possiamo utilizzare le condizioni dentro l&rsquo;Html, sono disponibili infatti:</p>
 <ul>
 <li><code>if</code></li>
@@ -171,31 +168,31 @@ npm run dev
 </ul>
 <p>Non possono ovviamente sostituire le logiche impostate nel Javascript, ma possono tornare utili nei casi in cui si deve mostrare un componente o meno, o per verificare un dato velocemnte direttamente nel markup.</p>
 <p>Ad esempio con il framework Svelte possiamo fare qualcosa del genere:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">// Header.svelte
-&lt;<span style="color:#f92672">script</span>&gt;
-    <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">companyName</span>;
-&lt;/<span style="color:#f92672">script</span>&gt;
-
-{#if companyName == &#34;Google&#34;}
-	&lt;<span style="color:#f92672">p</span>&gt;Ok è Google&lt;/<span style="color:#f92672">p</span>&gt;
-{/if}
-
-{#if companyName == &#34;Google&#34;}
-	&lt;<span style="color:#f92672">p</span>&gt;Ok è Google&lt;/<span style="color:#f92672">p</span>&gt;
-{:else if companyName == &#34;Apple&#34;}
-	&lt;<span style="color:#f92672">p</span>&gt;Ah no è Apple&lt;/<span style="color:#f92672">p</span>&gt;
-{/if}
-
-{#if companyName == &#34;Google&#34;}
-	&lt;<span style="color:#f92672">p</span>&gt;Ok è Google&lt;/<span style="color:#f92672">p</span>&gt;
-{:else}
-	&lt;<span style="color:#f92672">p</span>&gt;Altra azienda&lt;/<span style="color:#f92672">p</span>&gt;
-{/if}
-
-&lt;<span style="color:#f92672">style</span>&gt;
-<span style="color:#f92672">p</span> { <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>; }
-&lt;/<span style="color:#f92672">style</span>&gt;
-</code></pre></div><h2 id="bello-svelte-framework-ma-questo-è-solo-linizio">Bello Svelte framework, ma questo è solo l&rsquo;inizio</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>// Header.svelte
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">companyName</span>;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{#if companyName == &#34;Google&#34;}
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;Ok è Google&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>{/if}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{#if companyName == &#34;Google&#34;}
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;Ok è Google&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>{:else if companyName == &#34;Apple&#34;}
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;Ah no è Apple&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>{/if}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{#if companyName == &#34;Google&#34;}
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;Ok è Google&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>{:else}
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;Altra azienda&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>{/if}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">p</span> { <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>; }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span></code></pre></div><h2 id="bello-svelte-framework-ma-questo-è-solo-linizio">Bello Svelte framework, ma questo è solo l&rsquo;inizio</h2>
 <p>In questo post abbiamo visto una piccola <strong>introduzione a Svelte framework</strong>, infatti questo framework è molto più: lifecycle dei componenti, binding, slot, eventi, gestioni dello stato, più tante altre cose. E non è tutto, gli stessi creatori hanno anche sviluppato <a href="https://sapper.svelte.dev/">Sapper</a>, un framework completo per creare webapp, basato su svelte, con routing, server side rendering, code splitting, insomma un sistema strutturato molto interessante.</p>
 <p>Nei prossimi articoli cercherò di approfondire Svelte sempre più, partendo sempre da piccoli esempi; iniziamo con questo primo progettino di test che ho realizzato: <a href="https://github.com/angepili/youtube-svelte">Youtube Svelte</a> disponibile sul <a href="https://github.com/angepili/">mio github</a> dove ho provato a sviluppare un piccolo motore di ricerca di youtube utilizzando le API, Svelte e Bulma. come framework Css.</p>
 
@@ -220,7 +217,7 @@ npm run dev
 </main>
 <footer>
 <hr><a class="soc" href="https://github.com/angepili" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/ngpi71" title="Twitter"><i data-feather="twitter"></i></a>|⚡️
-	2021  © AngeloPili.it |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+	2023  © AngeloPili.it |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 </footer>
 
 

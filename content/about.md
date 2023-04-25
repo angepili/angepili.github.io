@@ -3,7 +3,7 @@ title: "Chi sono"
 date: 2020-10-03T21:25:38+02:00
 type: "page"
 draft: false
-summary : "Software Engineer Analyst, e mi occupo dal 2008 di sviluppo, architettura e design di applicativi su tecnologie web."
+summary : "Software Engineer Analyst, dal 2008 sviluppo e disegno architetture di applicativi su tecnologie web."
 contactform : true
 sitemap:
   changefreq: monthly
@@ -15,12 +15,6 @@ Questo è il mio blog, uno spazio dove annoto degli appunti, guide e snippets ch
 
 Sono un Software Engineer Analyst e mi occupo dal 2008 di sviluppo, architettura e design di applicativi su tecnologie web.
 
-Sono appassionato da sempre al mondo IT, ho iniziato a scrivere le prime righe di Html e Javascript nel 2001 a 15 anni, nel 2008 nel pieno boom del web 2.0 apro il mio primo blog dove tratto temi di Web Design e sviluppo; nel 2010 apro la mia attività di sviluppatore Freelance dove mi specializzo sopratutto su WordPress e Drupal.
+Sono appassionato da sempre al mondo IT, ho iniziato a scrivere le prime righe di Html e Javascript nel 2001 a 15 anni, nel 2008 nel pieno boom del web 2.0 apro il mio primo blog dove tratto temi di Web Design e sviluppo; nel 2010 divento uno sviluppatore Freelance dove mi specializzo sopratutto su WordPress, Drupal, e sviluppo Frontend, per poi passare da system integrator come Accenture a digital agency come ZampeDiverse e Socialidea.
 
-Nel 2015 chiudo la carriera di freelance ed inizio a lavorare in diverse aziende IT come Software Engineer Analyst, dove mi confronto con ambienti più strutturati, ho l'opportunità di lavorare su più tecnologie, imparare metodologie e standard di sviluppo, ed aquisire esperienza a 360 gradi in questo settore.
-
-Dal 2020 sono Lead Developer in [Socialidea](https://www.socialidea.it/)
-
-Abito e lavoro in provincia di Monza Brianza, territorio che adoro, ma sono originario di Cagliari, dove puntualmente torno con la mia compagna e mio figlio Lorenzo.
-
-Per entrare in contatto con me puoi usare i social indicati nel menu in alto.
+Per contattarmi: https://linkedin.com/in/angelopili
