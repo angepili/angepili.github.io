@@ -2,7 +2,6 @@
 title: "Creare un progetto Parcel.js"
 date: 2020-07-03T22:57:46+02:00
 draft: false
-image: '/uploads/parcel-js/parcel-js.png'
 type : 'pages'
 tags : [
     "Parcel.js",

@@ -1,0 +1,62 @@
+// Base styles
+html {
+  color: $text-color;
+  font-family: $body-font;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+body {
+  display: block;
+  margin: 8px;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+::selection {
+  background: $main-color;
+  color: #fff;
+}
+
+p {
+  font-family: 'Roboto Mono', sans-serif;
+  line-height: 1.5;
+}
+
+hr {
+  border: 0;
+  border-top: 3px dotted $border-color;
+  margin: 1em 0;
+}
+
+blockquote {
+  border-left: 3px solid $border-color;
+  color: #737373;
+  margin: 0;
+  padding-left: 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 2ch;
+  
+  li {
+    text-indent: -2ch;
+  }
+  
+  > li::before {
+    content: '* ';
+    font-weight: bold;
+  }
+}

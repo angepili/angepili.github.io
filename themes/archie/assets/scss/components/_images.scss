@@ -1,0 +1,30 @@
+// Images
+img {
+  border: 3px solid #ececec;
+  max-width: 100%;
+}
+
+figure {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  max-width: 100%;
+  
+  img {
+    max-height: 500px;
+  }
+  
+  h4 {
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 1em;
+    
+    &::before {
+      content: '↳ ';
+    }
+  }
+  
+  @media screen and (min-width: 600px) {
+    padding: 0 40px;
+  }
+}

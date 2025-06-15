@@ -3,7 +3,6 @@ title: "I tipi di dati in Javascript"
 date: 2020-10-03T00:45:33+02:00
 draft: false
 author : "Angelo"
-image : "/uploads/tipi-javascript/tipi-javascript.png"
 type : 'pages'
 tags : [
     "Javascript"

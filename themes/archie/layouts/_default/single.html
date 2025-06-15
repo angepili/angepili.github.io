@@ -1,5 +1,11 @@
 {{ define "main" }}
 <main>
+	<!-- Aggiungiamo il componente site-description -->
+	<div class="site-description">
+		{{- if isset .Site.Params "subtitle" -}}
+		<p>{{ .Site.Params.Subtitle | markdownify }}</p>
+		{{- end -}}
+	</div>
 	<article>
 		<div class="title">
 			<h1 class="title">{{ .Title }}</h1>

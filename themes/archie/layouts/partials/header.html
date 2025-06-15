@@ -28,16 +28,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 	{{- else -}}
-	{{ $fontstyle := resources.Get "css/fonts.css" | fingerprint }}
-        <link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
+	    {{/* Use SCSS compilation for fonts */}}
+        {{ $fontsStyle := resources.Get "scss/_fonts.scss" | css.Sass | resources.Fingerprint }}
+        <link href="{{ $fontsStyle.Permalink }}" rel="stylesheet" integrity="{{ $fontsStyle.Data.Integrity }}">
 	{{ end }}
 
-	{{ $style := resources.Get "css/main.css" | fingerprint }}
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
+	{{/* Use SCSS compilation for main styles */}}
+	{{ partial "scss/main.html" . }}
 
 	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") (eq .Site.Params.mode "toggle") -}}
-		{{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} {{ if eq .Site.Params.mode "toggle" }}disabled{{ end }} />
+		{{ partial "scss/dark.html" . }}
 	{{ end }}
 	
 	<!-- Custom CSS style get applied last -->

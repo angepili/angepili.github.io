@@ -1,0 +1,66 @@
+// Layout
+.content {
+  margin-bottom: 4em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: 0 1ch;
+  word-wrap: break-word;
+}
+
+// Header
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1em 0;
+  
+  .main {
+    font-size: 1.5rem;
+  }
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1.2rem;
+  margin-top: 2em;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background: $highlighter-color;
+    z-index: -1;
+    transition: width 0.3s ease-in-out;
+    transform-origin: left;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+h1::before { color: $dark-main-color; content: '# '; }
+h2::before { color: $dark-main-color; content: '## '; }
+h3::before { color: $dark-main-color; content: '### '; }
+h4::before { color: $dark-main-color; content: '#### '; }
+h5::before { color: $dark-main-color; content: '##### '; }
+h6::before { color: $dark-main-color; content: '###### '; }
+
+.meta {
+  color: #999;
+  letter-spacing: -0.5px;
+  font-size: 1rem;
+}
+
+// Footer
+footer {
+  margin-top: 1em;
+}

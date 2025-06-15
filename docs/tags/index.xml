@@ -2,101 +2,271 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on AngePili</title>
-    <link>https://angepili.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on AngePili</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
-    <lastBuildDate>Sat, 03 Oct 2020 00:45:33 +0200</lastBuildDate><atom:link href="https://angepili.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Mar 2025 09:15:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agile</title>
+      <link>http://localhost:1313/tags/agile/</link>
+      <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/agile/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Headless CMS</title>
+      <link>http://localhost:1313/tags/headless-cms/</link>
+      <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/headless-cms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Leadership</title>
+      <link>http://localhost:1313/tags/leadership/</link>
+      <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/leadership/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Project Management</title>
+      <link>http://localhost:1313/tags/project-management/</link>
+      <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/project-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Scrum</title>
+      <link>http://localhost:1313/tags/scrum/</link>
+      <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/scrum/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/tags/ai/</link>
+      <pubDate>Wed, 17 Jan 2024 08:45:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ChatGPT</title>
+      <link>http://localhost:1313/tags/chatgpt/</link>
+      <pubDate>Wed, 17 Jan 2024 08:45:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/chatgpt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Produttività</title>
+      <link>http://localhost:1313/tags/produttivit%C3%A0/</link>
+      <pubDate>Wed, 17 Jan 2024 08:45:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/produttivit%C3%A0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sviluppo Software</title>
+      <link>http://localhost:1313/tags/sviluppo-software/</link>
+      <pubDate>Wed, 17 Jan 2024 08:45:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/sviluppo-software/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:1313/tags/automation/</link>
+      <pubDate>Thu, 09 Feb 2023 11:20:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Frontend</title>
+      <link>http://localhost:1313/tags/frontend/</link>
+      <pubDate>Thu, 09 Feb 2023 11:20:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/frontend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Playwright</title>
+      <link>http://localhost:1313/tags/playwright/</link>
+      <pubDate>Thu, 09 Feb 2023 11:20:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/playwright/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Testing</title>
+      <link>http://localhost:1313/tags/testing/</link>
+      <pubDate>Thu, 09 Feb 2023 11:20:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CSS</title>
+      <link>http://localhost:1313/tags/css/</link>
+      <pubDate>Tue, 21 Jun 2022 09:30:00 +0200</pubDate>
+      <guid>http://localhost:1313/tags/css/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Responsive Design</title>
+      <link>http://localhost:1313/tags/responsive-design/</link>
+      <pubDate>Tue, 21 Jun 2022 09:30:00 +0200</pubDate>
+      <guid>http://localhost:1313/tags/responsive-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Angular</title>
+      <link>http://localhost:1313/tags/angular/</link>
+      <pubDate>Fri, 05 Nov 2021 10:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/angular/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Javascript</title>
-      <link>https://angepili.github.io/tags/javascript/</link>
-      <pubDate>Sat, 03 Oct 2020 00:45:33 +0200</pubDate>
-      
-      <guid>https://angepili.github.io/tags/javascript/</guid>
+      <link>http://localhost:1313/tags/javascript/</link>
+      <pubDate>Fri, 05 Nov 2021 10:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Svelte</title>
-      <link>https://angepili.github.io/tags/svelte/</link>
-      <pubDate>Wed, 02 Sep 2020 21:45:33 +0200</pubDate>
-      
-      <guid>https://angepili.github.io/tags/svelte/</guid>
+      <title>TypeScript</title>
+      <link>http://localhost:1313/tags/typescript/</link>
+      <pubDate>Fri, 05 Nov 2021 10:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/typescript/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>API</title>
-      <link>https://angepili.github.io/tags/api/</link>
-      <pubDate>Fri, 21 Aug 2020 18:49:16 +0200</pubDate>
-      
-      <guid>https://angepili.github.io/tags/api/</guid>
+      <link>http://localhost:1313/tags/api/</link>
+      <pubDate>Thu, 18 Mar 2021 10:15:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/api/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Youtube</title>
-      <link>https://angepili.github.io/tags/youtube/</link>
-      <pubDate>Fri, 21 Aug 2020 18:49:16 +0200</pubDate>
-      
-      <guid>https://angepili.github.io/tags/youtube/</guid>
+      <title>Backend</title>
+      <link>http://localhost:1313/tags/backend/</link>
+      <pubDate>Thu, 18 Mar 2021 10:15:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/backend/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Postman</title>
-      <link>https://angepili.github.io/tags/postman/</link>
-      <pubDate>Mon, 17 Aug 2020 17:22:42 +0200</pubDate>
-      
-      <guid>https://angepili.github.io/tags/postman/</guid>
+      <title>GraphQL</title>
+      <link>http://localhost:1313/tags/graphql/</link>
+      <pubDate>Thu, 18 Mar 2021 10:15:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/graphql/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>REST</title>
+      <link>http://localhost:1313/tags/rest/</link>
+      <pubDate>Thu, 18 Mar 2021 10:15:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/rest/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Apache</title>
-      <link>https://angepili.github.io/tags/apache/</link>
-      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://angepili.github.io/tags/apache/</guid>
+      <link>http://localhost:1313/tags/apache/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/apache/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>linux</title>
-      <link>https://angepili.github.io/tags/linux/</link>
-      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://angepili.github.io/tags/linux/</guid>
+      <title>HTTPS</title>
+      <link>http://localhost:1313/tags/https/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/https/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MacOS</title>
+      <link>http://localhost:1313/tags/macos/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/macos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSL</title>
+      <link>http://localhost:1313/tags/ssl/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ssl/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Webserver</title>
-      <link>https://angepili.github.io/tags/webserver/</link>
-      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://angepili.github.io/tags/webserver/</guid>
+      <link>http://localhost:1313/tags/webserver/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/webserver/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Svelte</title>
+      <link>http://localhost:1313/tags/svelte/</link>
+      <pubDate>Wed, 02 Sep 2020 21:45:33 +0200</pubDate>
+      <guid>http://localhost:1313/tags/svelte/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Youtube</title>
+      <link>http://localhost:1313/tags/youtube/</link>
+      <pubDate>Fri, 21 Aug 2020 18:49:16 +0200</pubDate>
+      <guid>http://localhost:1313/tags/youtube/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Postman</title>
+      <link>http://localhost:1313/tags/postman/</link>
+      <pubDate>Mon, 17 Aug 2020 17:22:42 +0200</pubDate>
+      <guid>http://localhost:1313/tags/postman/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Linkedin</title>
-      <link>https://angepili.github.io/tags/linkedin/</link>
+      <link>http://localhost:1313/tags/linkedin/</link>
       <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://angepili.github.io/tags/linkedin/</guid>
+      <guid>http://localhost:1313/tags/linkedin/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Parcel.js</title>
-      <link>https://angepili.github.io/tags/parcel.js/</link>
+      <link>http://localhost:1313/tags/parcel.js/</link>
       <pubDate>Fri, 03 Jul 2020 22:57:46 +0200</pubDate>
-      
-      <guid>https://angepili.github.io/tags/parcel.js/</guid>
+      <guid>http://localhost:1313/tags/parcel.js/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>HTML5</title>
+      <link>http://localhost:1313/tags/html5/</link>
+      <pubDate>Fri, 15 May 2020 14:30:00 +0200</pubDate>
+      <guid>http://localhost:1313/tags/html5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Components</title>
+      <link>http://localhost:1313/tags/web-components/</link>
+      <pubDate>Fri, 15 May 2020 14:30:00 +0200</pubDate>
+      <guid>http://localhost:1313/tags/web-components/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Class Components</title>
+      <link>http://localhost:1313/tags/class-components/</link>
+      <pubDate>Sat, 15 Jun 2019 14:20:00 +0200</pubDate>
+      <guid>http://localhost:1313/tags/class-components/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>React</title>
+      <link>http://localhost:1313/tags/react/</link>
+      <pubDate>Sat, 15 Jun 2019 14:20:00 +0200</pubDate>
+      <guid>http://localhost:1313/tags/react/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,62 @@
+// Stili per le icone semplici in sostituzione di Feather
+.icon-github:before {
+  content: '🐙';
+}
+
+.icon-twitter:before {
+  content: '🐦';
+}
+
+.icon-linkedin:before {
+  content: '🔗';
+}
+
+.icon-facebook:before {
+  content: '👍';
+}
+
+.icon-sun:before {
+  content: '☀️';
+}
+
+.icon-moon:before {
+  content: '🌙';
+}
+
+.icon-auto:before {
+  content: '🔄';
+}
+
+.soc {
+  display: inline-block;
+  margin-right: 5px;
+  text-decoration: none;
+  color: inherit;
+}
+
+// Stile per le icone nei pulsanti di navigazione
+#dark-mode-toggle i {
+  font-style: normal;
+  cursor: pointer;
+}
+
+// Aggiunto tooltip per il toggle del tema
+#dark-mode-toggle {
+  position: relative;
+  display: inline-block;
+}
+
+#dark-mode-toggle:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+}

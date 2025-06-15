@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Web Components e Shadow DOM: componenti riutilizzabili senza framework - AngePili</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Scopri come creare componenti riutilizzabili nativi senza dipendere da framework come React o Vue grazie ai Web Components e Shadow DOM, una tecnologia web standard supportata da tutti i browser moderni." />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="http://localhost:1313/pages/web-components-shadow-dom/">
+  <meta property="og:site_name" content="AngePili">
+  <meta property="og:title" content="Web Components e Shadow DOM: componenti riutilizzabili senza framework">
+  <meta property="og:description" content="Scopri come creare componenti riutilizzabili nativi senza dipendere da framework come React o Vue grazie ai Web Components e Shadow DOM, una tecnologia web standard supportata da tutti i browser moderni.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="pages">
+    <meta property="article:published_time" content="2020-05-15T14:30:00+02:00">
+    <meta property="article:modified_time" content="2020-05-15T14:30:00+02:00">
+    <meta property="article:tag" content="Javascript">
+    <meta property="article:tag" content="HTML5">
+    <meta property="article:tag" content="Web Components">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Web Components e Shadow DOM: componenti riutilizzabili senza framework">
+  <meta name="twitter:description" content="Scopri come creare componenti riutilizzabili nativi senza dipendere da framework come React o Vue grazie ai Web Components e Shadow DOM, una tecnologia web standard supportata da tutti i browser moderni.">
+
+        
+        <link href="http://localhost:1313/scss/_fonts.07ad31bf7dba20c04100cc297f6f910c8b5b03e34ef85fde6bd781e8cb65d769.css" rel="stylesheet" integrity="sha256-B60xv326IMBBAMwpf2&#43;RDItbA&#43;NO&#43;F/ea9eB6Mtl12k=">
+	
+
+	
+	
+<link rel="stylesheet" href="http://localhost:1313/scss/main.75d9068f3d6a3a22c09314e74d6044162a5af12ae678431fdde4068d017b0431.css" integrity="sha256-ddkGjz1qOiLAkxTnTWBEFipa8SrmeEMf3eQGjQF7BDE=">
+
+
+
+    <link id="darkModeStyle" rel="stylesheet" href="http://localhost:1313/scss/dark.ba089b71318c833f0952376e9d05bbaa87afe37152d5ad1121ae3d63ec7ca545.css" integrity="sha256-ugibcTGMgz8JUjdunQW7qoev43FS1a0RIa49Y&#43;x8pUU=" media="(prefers-color-scheme: dark)">
+    
+    
+    <style>
+        body.darkmode {
+            color: white;
+            background-color: #202124;
+        }
+    </style>
+
+
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">AngePili</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/pages">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		| <a id="dark-mode-toggle" onclick="toggleTheme()" href="javascript:void(0);" data-tooltip="Cambia tema"><i class="icon-moon">🌙</i></a>
+		<script src="http://localhost:1313/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Web Components e Shadow DOM: componenti riutilizzabili senza framework</h1>
+			<div class="meta">Posted on May 15, 2020</div>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="cosa-sono-i-web-components">Cosa sono i Web Components</h2>
+<p>I Web Components rappresentano una serie di tecnologie web standard che ci permettono di creare elementi HTML personalizzati, riutilizzabili ed incapsulati. Si tratta di un approccio nativo supportato dai browser moderni, che non richiede l&rsquo;utilizzo di framework o librerie esterne come React, Angular o Vue.</p>
+<p>Le principali tecnologie alla base dei Web Components sono:</p>
+<ol>
+<li><strong>Custom Elements</strong>: API che permette di definire nuovi elementi HTML</li>
+<li><strong>Shadow DOM</strong>: Incapsula il markup, lo stile e il comportamento, separandoli dal resto del documento</li>
+<li><strong>HTML Templates</strong>: Definisce frammenti di HTML che possono essere riutilizzati</li>
+<li><strong>HTML Imports</strong>: Meccanismo per importare HTML in altri documenti (ormai deprecato)</li>
+</ol>
+<h2 id="vantaggi-dei-web-components">Vantaggi dei Web Components</h2>
+<p>I Web Components offrono numerosi vantaggi:</p>
+<ul>
+<li><strong>Standard nativi del browser</strong>: Non richiedono l&rsquo;installazione di framework o dipendenze esterne</li>
+<li><strong>Riutilizzabilità</strong>: Possono essere utilizzati in qualsiasi applicazione HTML</li>
+<li><strong>Incapsulamento</strong>: Grazie al Shadow DOM, stili e comportamenti sono isolati dal resto della pagina</li>
+<li><strong>Interoperabilità</strong>: Funzionano con tutti i principali framework (React, Vue, Angular)</li>
+<li><strong>Manutenibilità</strong>: Promuovono un approccio modulare allo sviluppo front-end</li>
+</ul>
+<h2 id="shadow-dom-lisolamento-dei-componenti">Shadow DOM: l&rsquo;isolamento dei componenti</h2>
+<p>Il Shadow DOM è una delle caratteristiche più potenti dei Web Components. Consente di creare un DOM secondario, isolato dal DOM principale della pagina. Questo significa che:</p>
+<ul>
+<li>Gli stili CSS definiti nel componente non &ldquo;fuoriescono&rdquo; nel resto della pagina</li>
+<li>Gli stili CSS esterni non influenzano il componente</li>
+<li>Il markup interno è incapsulato e protetto</li>
+<li>Si possono usare ID duplicati senza conflitti</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Creazione di un elemento con Shadow DOM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomCard</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>();
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Creiamo un shadow root
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">shadow</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">attachShadow</span>({<span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;open&#39;</span>});
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Creiamo gli elementi
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">wrapper</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">wrapper</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;class&#39;</span>, <span style="color:#e6db74">&#39;card&#39;</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;h2&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;title&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;Default Title&#39;</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">content</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;class&#39;</span>, <span style="color:#e6db74">&#39;card-content&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">content</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;slot&gt;&lt;/slot&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Aggiungiamo stile
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">style</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;style&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      .card {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        border: 1px solid #ccc;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        border-radius: 5px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        padding: 16px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        margin: 16px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      .card-content {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        margin-top: 8px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      h2 {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        margin: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        color: #333;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    `</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Aggiungiamo gli elementi al shadow DOM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">shadow</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">style</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">shadow</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">wrapper</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">wrapper</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">title</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">wrapper</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">content</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Registriamo il custom element
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;custom-card&#39;</span>, <span style="color:#a6e22e">CustomCard</span>);
+</span></span></code></pre></div><h2 id="come-utilizzare-un-web-component">Come utilizzare un Web Component</h2>
+<p>Una volta definito e registrato, il Web Component può essere utilizzato nel documento HTML proprio come qualsiasi altro elemento HTML:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">custom-card</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Il mio primo Web Component&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  Questo è il contenuto del mio primo Web Component!
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">custom-card</span>&gt;
+</span></span></code></pre></div><h2 id="ciclo-di-vita-dei-custom-elements">Ciclo di vita dei Custom Elements</h2>
+<p>I Custom Elements hanno un ciclo di vita gestito attraverso dei callback specifici:</p>
+<ul>
+<li><strong>constructor</strong>: chiamato quando viene creata l&rsquo;istanza dell&rsquo;elemento</li>
+<li><strong>connectedCallback</strong>: chiamato quando l&rsquo;elemento viene aggiunto al DOM</li>
+<li><strong>disconnectedCallback</strong>: chiamato quando l&rsquo;elemento viene rimosso dal DOM</li>
+<li><strong>attributeChangedCallback</strong>: chiamato quando gli attributi dell&rsquo;elemento vengono modificati</li>
+<li><strong>adoptedCallback</strong>: chiamato quando l&rsquo;elemento viene spostato in un nuovo documento</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyElement</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Elemento costruito!&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">connectedCallback</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Elemento aggiunto al DOM!&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">disconnectedCallback</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Elemento rimosso dal DOM!&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">attributeChangedCallback</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">oldValue</span>, <span style="color:#a6e22e">newValue</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`L&#39;attributo </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> è cambiato da </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">oldValue</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> a </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">newValue</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Specifica gli attributi da osservare
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">observedAttributes</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#39;title&#39;</span>, <span style="color:#e6db74">&#39;description&#39;</span>];
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;my-element&#39;</span>, <span style="color:#a6e22e">MyElement</span>);
+</span></span></code></pre></div><h2 id="web-components-vs-framework">Web Components vs Framework</h2>
+<p>Nel 2020, sempre più sviluppatori stanno esplorando i Web Components come alternativa o complemento ai framework JavaScript. A differenza di React, Vue o Angular, i Web Components:</p>
+<ul>
+<li>Non richiedono un processo di build</li>
+<li>Hanno un ciclo di vita più lungo (non dipendono dalle versioni del framework)</li>
+<li>Hanno prestazioni native senza overhead di framework</li>
+<li>Funzionano in qualsiasi contesto HTML</li>
+</ul>
+<p>Tuttavia, i Web Components non sostituiscono completamente i framework:</p>
+<ul>
+<li>Mancano di funzionalità avanzate come state management</li>
+<li>Non hanno un sistema di routing integrato</li>
+<li>Richiedono maggiore codice boilerplate per funzionalità comuni</li>
+</ul>
+<h2 id="supporto-browser">Supporto browser</h2>
+<p>Nel 2020, i Web Components sono supportati nativamente da tutti i browser moderni:</p>
+<ul>
+<li>Chrome e browsers basati su Chromium (Edge, Opera)</li>
+<li>Firefox</li>
+<li>Safari</li>
+</ul>
+<p>Internet Explorer rimane l&rsquo;unico browser che non supporta i Web Components, ma con l&rsquo;uso di polyfill è possibile garantire la compatibilità.</p>
+<h2 id="conclusioni">Conclusioni</h2>
+<p>I Web Components rappresentano un modo standard e potente per creare componenti riutilizzabili senza dipendere da framework. Offrono un livello di incapsulamento che permette di creare elementi veramente indipendenti e riutilizzabili. Se stai sviluppando librerie di componenti che devono funzionare in diversi contesti o se vuoi ridurre le dipendenze esterne, i Web Components sono sicuramente una tecnologia da considerare nel 2020.</p>
+<p>Con la crescente maturità dell&rsquo;ecosistema e un ottimo supporto browser, è un ottimo momento per iniziare a esplorare questa tecnologia e aggiungere un potente strumento al proprio arsenale di sviluppo web.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/javascript">Javascript</a></li>
+					
+					<li><a href="/tags/html5">HTML5</a></li>
+					
+					<li><a href="/tags/web-components">Web Components</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/angepili" title="GitHub"><i class="icon-github"></i></a>|<a class="soc" href="https://twitter.com/ngpi71" title="Twitter"><i class="icon-twitter"></i></a>|⚡️
+	2025  © AngeloPili.it |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+
+<script src="http://localhost:1313/js/feather-polyfill.js"></script>
+<script src="http://localhost:1313/js/block-rokt.js"></script>
+<script src="http://localhost:1313/js/themetoggle.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+</div>
+    </body>
+</html>

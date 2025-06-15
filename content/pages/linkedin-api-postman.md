@@ -2,7 +2,6 @@
 author : "Angelo"
 title : "Linkedin Login con Postman"
 date : "2020-07-19"
-image : "/uploads/linkedin-part-1/linkedin-api-postman.png"
 type : 'pages'
 draft : false
 tags : [

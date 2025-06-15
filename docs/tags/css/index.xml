@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS on AngePili</title>
+    <link>http://localhost:1313/tags/css/</link>
+    <description>Recent content in CSS on AngePili</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© AngeloPili.it</copyright>
+    <lastBuildDate>Tue, 21 Jun 2022 09:30:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS Container Queries: il futuro del responsive design oltre i media queries</title>
+      <link>http://localhost:1313/pages/css-container-queries/</link>
+      <pubDate>Tue, 21 Jun 2022 09:30:00 +0200</pubDate>
+      <guid>http://localhost:1313/pages/css-container-queries/</guid>
+      <description>CSS Container Queries rappresentano un&amp;rsquo;evoluzione fondamentale nel responsive design: scopri come creare layout che rispondono alle dimensioni del container invece che della viewport, con esempi pratici e casi d&amp;rsquo;uso.</description>
+    </item>
+  </channel>
+</rss>

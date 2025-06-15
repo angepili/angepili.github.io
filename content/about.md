@@ -11,10 +11,11 @@ sitemap:
   priority: 0.5
 ---
 
-Questo è il mio blog, uno spazio dove annoto degli appunti, guide e snippets che possono ritornarmi utili e che magari potrano servire agli utenti della rete.
+Benvenuto nel mio blog, qui metto appunti, guide e snippet di codice che mi aiutano nel lavoro… e magari possono essere utili anche a te.
 
-Sono un Software Engineer Analyst e mi occupo dal 2008 di sviluppo, architettura e design di applicativi su tecnologie web.
+Sono programmatore dal 2010 e Software Engineer Analyst dal 2015. Ho iniziato a smanettare col codice HTML e JavaScript e PHP da ragazzino, e da allora non ho più smesso.
 
-Sono appassionato da sempre al mondo IT, ho iniziato a scrivere le prime righe di Html e Javascript nel 2001 a 15 anni, nel 2008 nel pieno boom del web 2.0 apro il mio primo blog dove tratto temi di Web Design e sviluppo; nel 2010 divento uno sviluppatore Freelance dove mi specializzo sopratutto su WordPress, Drupal, e sviluppo Frontend, per poi passare da system integrator come Accenture a digital agency come ZampeDiverse e Socialidea.
+Ho lavorato come Freelance per 5 anni, poi sono passato da Accenture Technologies ( Milano ), ZampeDiverse srl ( Carate Brianza), Socialidea srl ( Lissone ), e ora in Retex spa ( Milano ) come Tech Project Manager dove seguo dei progetti su Nuxt3.
 
-Per contattarmi: https://linkedin.com/in/angelopili
+Se vuoi scambiare due parole, trovi il mio LinkedIn qui:
+linkedin.com/in/angelopili

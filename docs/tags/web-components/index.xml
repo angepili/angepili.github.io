@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Components on AngePili</title>
+    <link>http://localhost:1313/tags/web-components/</link>
+    <description>Recent content in Web Components on AngePili</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© AngeloPili.it</copyright>
+    <lastBuildDate>Fri, 15 May 2020 14:30:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/web-components/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web Components e Shadow DOM: componenti riutilizzabili senza framework</title>
+      <link>http://localhost:1313/pages/web-components-shadow-dom/</link>
+      <pubDate>Fri, 15 May 2020 14:30:00 +0200</pubDate>
+      <guid>http://localhost:1313/pages/web-components-shadow-dom/</guid>
+      <description>Scopri come creare componenti riutilizzabili nativi senza dipendere da framework come React o Vue grazie ai Web Components e Shadow DOM, una tecnologia web standard supportata da tutti i browser moderni.</description>
+    </item>
+  </channel>
+</rss>

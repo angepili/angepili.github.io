@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>React Class Components: guida completa - AngePili</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Una guida completa ai Class Components di React: come strutturarli, gestire lo stato, usare lifecycle methods, e implementare pattern comuni per applicazioni React robuste e manutenibili." />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="http://localhost:1313/pages/react-class-components-guida/">
+  <meta property="og:site_name" content="AngePili">
+  <meta property="og:title" content="React Class Components: guida completa">
+  <meta property="og:description" content="Una guida completa ai Class Components di React: come strutturarli, gestire lo stato, usare lifecycle methods, e implementare pattern comuni per applicazioni React robuste e manutenibili.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="pages">
+    <meta property="article:published_time" content="2019-06-15T14:20:00+02:00">
+    <meta property="article:modified_time" content="2019-06-15T14:20:00+02:00">
+    <meta property="article:tag" content="React">
+    <meta property="article:tag" content="Javascript">
+    <meta property="article:tag" content="Frontend">
+    <meta property="article:tag" content="Class Components">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="React Class Components: guida completa">
+  <meta name="twitter:description" content="Una guida completa ai Class Components di React: come strutturarli, gestire lo stato, usare lifecycle methods, e implementare pattern comuni per applicazioni React robuste e manutenibili.">
+
+        
+        <link href="http://localhost:1313/scss/_fonts.07ad31bf7dba20c04100cc297f6f910c8b5b03e34ef85fde6bd781e8cb65d769.css" rel="stylesheet" integrity="sha256-B60xv326IMBBAMwpf2&#43;RDItbA&#43;NO&#43;F/ea9eB6Mtl12k=">
+	
+
+	
+	
+<link rel="stylesheet" href="http://localhost:1313/scss/main.75d9068f3d6a3a22c09314e74d6044162a5af12ae678431fdde4068d017b0431.css" integrity="sha256-ddkGjz1qOiLAkxTnTWBEFipa8SrmeEMf3eQGjQF7BDE=">
+
+
+
+    <link id="darkModeStyle" rel="stylesheet" href="http://localhost:1313/scss/dark.ba089b71318c833f0952376e9d05bbaa87afe37152d5ad1121ae3d63ec7ca545.css" integrity="sha256-ugibcTGMgz8JUjdunQW7qoev43FS1a0RIa49Y&#43;x8pUU=" media="(prefers-color-scheme: dark)">
+    
+    
+    <style>
+        body.darkmode {
+            color: white;
+            background-color: #202124;
+        }
+    </style>
+
+
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">AngePili</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/pages">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		| <a id="dark-mode-toggle" onclick="toggleTheme()" href="javascript:void(0);" data-tooltip="Cambia tema"><i class="icon-moon">🌙</i></a>
+		<script src="http://localhost:1313/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">React Class Components: guida completa</h1>
+			<div class="meta">Posted on Jun 15, 2019</div>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="react-class-components-nel-2019">React Class Components nel 2019</h2>
+<p>Nel panorama dello sviluppo React del 2019, i Class Components rappresentano ancora l&rsquo;approccio principale per creare componenti con stato e logica complessa. Anche se gli Hooks sono stati introdotti nella versione 16.8 a febbraio, molti sviluppatori e progetti esistenti continuano a utilizzare il paradigma dei Class Components per la loro robustezza e familiarità.</p>
+<p>In questo articolo esploreremo in profondità i Class Components di React, imparando come trarre il massimo dalle loro caratteristiche e come implementare pattern comuni di sviluppo.</p>
+<h2 id="anatomia-di-un-class-component">Anatomia di un Class Component</h2>
+<p>Un Class Component estende <code>React.Component</code> e deve implementare almeno il metodo <code>render()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">Component</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserProfile</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;profile&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h2</span>&gt;{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">name</span>}&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span>&gt;{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">bio</span>}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">UserProfile</span>;
+</span></span></code></pre></div><h2 id="gestione-dello-stato">Gestione dello stato</h2>
+<p>Una delle caratteristiche principali dei Class Components è la capacità di gestire uno stato interno:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Counter</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">increment</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">prevState</span>.<span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    }));
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Count</span><span style="color:#f92672">:</span> {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span>}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">increment</span>}&gt;<span style="color:#a6e22e">Incrementa</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="caratteristiche-chiave-di-thissetstate">Caratteristiche chiave di <code>this.setState()</code></h3>
+<ol>
+<li><strong>Aggiornamenti asincroni</strong>: <code>setState</code> non aggiorna immediatamente lo stato</li>
+<li><strong>Aggiornamenti batch</strong>: React può raggruppare più chiamate a <code>setState</code></li>
+<li><strong>Aggiornamenti parziali</strong>: lo stato viene unito superficialmente (shallow merge)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Aggiornamento basato sullo stato precedente (affidabile)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">counter</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">prevState</span>.<span style="color:#a6e22e">counter</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Accesso allo stato aggiornato tramite callback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({<span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">42</span>}, () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Stato aggiornato:&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">count</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="lifecycle-methods">Lifecycle Methods</h2>
+<p>I Class Components offrono un controllo granulare sul ciclo di vita del componente. Ecco i metodi principali disponibili nel 2019:</p>
+<h3 id="fase-di-mounting">Fase di Mounting</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MountingExample</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [] };
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inizializzazione, ma non effetti collaterali
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">getDerivedStateFromProps</span>(<span style="color:#a6e22e">props</span>, <span style="color:#a6e22e">state</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Raramente usato - per derivare stato dalle props
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">componentDidMount</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Ideale per fetch API, sottoscrizioni, manipolazione DOM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://api.example.com/data&#39;</span>)
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>())
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">data</span> =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">data</span> }));
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span>&gt;{<span style="color:#75715e">/* rendering del componente */</span>}&lt;/<span style="color:#f92672">div</span>&gt;;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="fase-di-updating">Fase di Updating</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UpdatingExample</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">shouldComponentUpdate</span>(<span style="color:#a6e22e">nextProps</span>, <span style="color:#a6e22e">nextState</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Ottimizzazione delle performance
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">nextProps</span>.<span style="color:#a6e22e">id</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getSnapshotBeforeUpdate</span>(<span style="color:#a6e22e">prevProps</span>, <span style="color:#a6e22e">prevState</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Cattura informazioni pre-aggiornamento (es. posizione scroll)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">scrollPos</span><span style="color:#f92672">:</span> window.<span style="color:#a6e22e">scrollY</span> };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">componentDidUpdate</span>(<span style="color:#a6e22e">prevProps</span>, <span style="color:#a6e22e">prevState</span>, <span style="color:#a6e22e">snapshot</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Operazioni dopo l&#39;aggiornamento del componente
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">prevProps</span>.<span style="color:#a6e22e">userId</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">userId</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fetchUserData</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">userId</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Uso dello snapshot
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">snapshot</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">snapshot</span>.<span style="color:#a6e22e">scrollPos</span>) {
+</span></span><span style="display:flex;"><span>      window.<span style="color:#a6e22e">scrollTo</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">snapshot</span>.<span style="color:#a6e22e">scrollPos</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span>&gt;{<span style="color:#75715e">/* rendering del componente */</span>}&lt;/<span style="color:#f92672">div</span>&gt;;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="fase-di-unmounting">Fase di Unmounting</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UnmountingExample</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">componentWillUnmount</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Pulizia: cancellare timer, sottoscrizioni, ecc.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleClick</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">clearInterval</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">interval</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="pattern-avanzati-con-class-components">Pattern avanzati con Class Components</h2>
+<h3 id="higher-order-components-hoc">Higher-Order Components (HOC)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Higher-Order Component per aggiungere funzionalità di logging
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">withLogging</span>(<span style="color:#a6e22e">WrappedComponent</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">componentDidMount</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Component </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">WrappedComponent</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> mounted`</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">componentWillUnmount</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Component </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">WrappedComponent</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> will unmount`</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">WrappedComponent</span> {<span style="color:#a6e22e">...this.props</span>} /&gt;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Utilizzo dell&#39;HOC
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">EnhancedComponent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">withLogging</span>(<span style="color:#a6e22e">UserProfile</span>);
+</span></span></code></pre></div><h3 id="render-props">Render Props</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MouseTracker</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> };
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">handleMouseMove</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">event</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">clientX</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">clientY</span>
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">onMouseMove</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleMouseMove</span>} <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{ <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;100vh&#39;</span> }}&gt;
+</span></span><span style="display:flex;"><span>        {<span style="color:#75715e">/* Passa lo stato come function prop */</span>}
+</span></span><span style="display:flex;"><span>        {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">render</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>)}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Utilizzo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">MouseTracker</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span><span style="color:#f92672">=</span>{({ <span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> }) =&gt; (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Il</span> <span style="color:#a6e22e">mouse</span> <span style="color:#a6e22e">è</span> <span style="color:#a6e22e">alla</span> <span style="color:#a6e22e">posizione</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">x</span>}, {<span style="color:#a6e22e">y</span>}&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>  )}
+</span></span><span style="display:flex;"><span>/&gt;
+</span></span></code></pre></div><h3 id="ref-e-dom">Ref e DOM</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AutoFocusInput</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Creazione ref
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inputRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createRef</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">componentDidMount</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Accesso al DOM node
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inputRef</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">focus</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">inputRef</span>} /&gt;;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="gestione-degli-errori">Gestione degli errori</h2>
+<p>I Class Components offrono meccanismi dedicati per la gestione degli errori:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ErrorBoundary</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">hasError</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#a6e22e">errorInfo</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span> };
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">getDerivedStateFromError</span>(<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Aggiorna lo stato in modo che il prossimo render mostri l&#39;UI di fallback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">hasError</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">componentDidCatch</span>(<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">errorInfo</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Puoi registrare l&#39;errore in un servizio di reporting
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Errore catturato:&#34;</span>, <span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">errorInfo</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">errorInfo</span> });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">hasError</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error-boundary&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">h2</span>&gt;<span style="color:#a6e22e">Qualcosa</span> <span style="color:#a6e22e">è</span> <span style="color:#a6e22e">andato</span> <span style="color:#a6e22e">storto</span>.&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">details</span>&gt;
+</span></span><span style="display:flex;"><span>            {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">errorInfo</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">errorInfo</span>.<span style="color:#a6e22e">componentStack</span>}
+</span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">details</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      );
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">children</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Utilizzo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">ErrorBoundary</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">MyComponent</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ErrorBoundary</span>&gt;
+</span></span></code></pre></div><h2 id="considerazioni-sulle-performance">Considerazioni sulle performance</h2>
+<p>Per ottimizzare le performance dei Class Components:</p>
+<ol>
+<li><strong>Usare <code>shouldComponentUpdate</code></strong> per prevenire rendering non necessari</li>
+<li><strong>Implementare <code>React.PureComponent</code></strong> per confronti superficiali automatici</li>
+<li><strong>Memorizzare handler di eventi</strong> per prevenire creazioni inutili di funzioni</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OptimizedComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">PureComponent</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Metodi memorizzati come proprietà di classe usando arrow functions
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">handleClick</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">clicked</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleClick</span>}&gt;
+</span></span><span style="display:flex;"><span>        {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">label</span>}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="conclusione-e-prospettive-future">Conclusione e prospettive future</h2>
+<p>I Class Components sono stati la colonna portante dello sviluppo React fino al 2019. Con l&rsquo;introduzione degli Hooks, React sta prendendo una nuova direzione, ma la comprensione dei Class Components rimane fondamentale per:</p>
+<ul>
+<li>Manutenzione di codice esistente</li>
+<li>Comprensione dei pattern React fondamentali</li>
+<li>Casi d&rsquo;uso specifici dove i Class Components potrebbero ancora brillare</li>
+</ul>
+<p>Nel prossimo futuro, ci aspettiamo di vedere una graduale migrazione verso gli Hooks, ma la conoscenza dei Class Components rimarrà preziosa ancora per molto tempo, specialmente nei progetti enterprise di grandi dimensioni dove la migrazione sarà più lenta.</p>
+<p>I Class Components continueranno a essere supportati da React anche con l&rsquo;avvento degli Hooks, quindi non c&rsquo;è fretta di migrare il codice esistente, ma è bene iniziare a familiarizzare con il nuovo paradigma per i nuovi sviluppi.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/react">React</a></li>
+					
+					<li><a href="/tags/javascript">JavaScript</a></li>
+					
+					<li><a href="/tags/frontend">Frontend</a></li>
+					
+					<li><a href="/tags/class-components">Class Components</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/angepili" title="GitHub"><i class="icon-github"></i></a>|<a class="soc" href="https://twitter.com/ngpi71" title="Twitter"><i class="icon-twitter"></i></a>|⚡️
+	2025  © AngeloPili.it |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+
+<script src="http://localhost:1313/js/feather-polyfill.js"></script>
+<script src="http://localhost:1313/js/block-rokt.js"></script>
+<script src="http://localhost:1313/js/themetoggle.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+</div>
+    </body>
+</html>

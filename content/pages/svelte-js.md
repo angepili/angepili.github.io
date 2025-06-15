@@ -3,7 +3,6 @@ title: "Svelte Framework: come funziona, una veloce introduzione."
 date: 2020-09-02T21:45:33+02:00
 draft: false
 author : "Angelo"
-image : "/uploads/svelte-js/svelte-js.png"
 type : 'pages'
 tags : [
     "Svelte",

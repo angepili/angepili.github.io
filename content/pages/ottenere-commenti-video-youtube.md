@@ -3,7 +3,6 @@ author : "Angelo"
 title: "Ottenere i commenti di un video Youtube tramite API con Postman"
 date: 2020-08-17T17:22:42+02:00
 draft: false
-image : "/uploads/youtube-comments/youtube-comments.png"
 type : 'pages'
 tags : [
     "Youtube",

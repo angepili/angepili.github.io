@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on AngePili</title>
+    <link>http://localhost:1313/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on AngePili</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© AngeloPili.it</copyright>
+    <lastBuildDate>Thu, 03 Apr 2025 15:40:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WebAssembly (WASM) e il futuro del web nel 2025</title>
+      <link>http://localhost:1313/pages/webassembly-futuro-web/</link>
+      <pubDate>Thu, 03 Apr 2025 15:40:00 +0200</pubDate>
+      <guid>http://localhost:1313/pages/webassembly-futuro-web/</guid>
+      <description>Un&amp;rsquo;analisi approfondita di WebAssembly nel 2025: come WASM sta trasformando lo sviluppo web, casi d&amp;rsquo;uso emergenti, integrazione con linguaggi come Rust e C++, e il futuro dell&amp;rsquo;esecuzione di codice ad alte prestazioni nel browser.</description>
+    </item>
+  </channel>
+</rss>

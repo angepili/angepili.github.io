@@ -1,0 +1,102 @@
+// Code blocks
+code {
+  background-color: #f1f1f1;
+  padding: .1em .2em;
+}
+
+pre {
+  background-color: #ececec;
+  line-height: 1.4;
+  overflow-x: auto;
+  padding: 1em;
+  
+  code {
+    background-color: transparent;
+    color: inherit;
+    font-size: 100%;
+    padding: 0;
+  }
+}
+
+.highlight {
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  
+  pre {
+    ::selection {
+      background: rgba(255, 255, 255, 0.2);
+      color: inherit;
+    }
+    
+    code[class*="language-"] {
+      -webkit-overflow-scrolling: touch;
+      
+      &::before {
+        background: black;
+        border-radius: 0 0 0.25rem 0.25rem;
+        color: white;
+        font-size: 12px;
+        letter-spacing: 0.025rem;
+        padding: 0.1rem 0.5rem;
+        position: absolute;
+        right: 1rem;
+        text-align: right;
+        text-transform: uppercase;
+        top: 0;
+      }
+      
+      &[class=language-javaScript]::before,
+      &[class="language-js"]::before {
+        content: "js";
+        background: #f7df1e;
+        color: black;
+      }
+      
+      &[class*='language-yml']::before,
+      &[class*='language-yaml']::before {
+        content: 'yaml';
+        background: #f71e6a;
+        color: white;
+      }
+      
+      &[class*='language-shell']::before,
+      &[class*='language-bash']::before,
+      &[class*='language-sh']::before {
+        content: 'shell';
+        background: green;
+        color: white;
+      }
+      
+      &[class*='language-json']::before {
+        content: 'json';
+        background: dodgerblue;
+        color: #000000;
+      }
+      
+      &[class*='language-python']::before,
+      &[class*='language-py']::before {
+        content: 'py';
+        background: blue;
+        color: yellow;
+      }
+      
+      &[class*='language-css']::before {
+        content: 'css';
+        background: cyan;
+        color: black;
+      }
+      
+      &[class*='language-go']::before {
+        content: 'Go';
+        background: cyan;
+        color: royalblue;
+      }
+      
+      &[class*='language-md']::before {
+        content: 'Markdown';
+        background: royalblue;
+        color: whitesmoke;
+      }
+    }
+  }
+}

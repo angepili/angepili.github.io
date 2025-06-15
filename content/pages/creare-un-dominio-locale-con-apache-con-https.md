@@ -1,33 +1,52 @@
 ---
 author : "Angelo"
-title : "Abilitare https su Apache in locale"
+title : "Abilitare HTTPS su Apache in ambiente locale"
 date : "2020-09-23"
 image : "/uploads/domain-apache-https/domain-apache-https.png"
 type : 'pages'
-draft : true
+draft : false
 tags : [
     "Apache",
     "Webserver",
-    "linux"
+    "HTTPS",
+    "SSL",
+    "Linux",
+    "macOS"
 ]
 categories : [
     "Systems",
     "DevOps"
 ]
 aliases : ["domain-apache-https"]
-summary : "Dopo aver visto come creare un virtual host con Apache, oggi vediamo come abilitarne anche l'https in locale per lavorare in una ambiente di sviluppo completo."
+summary : "Dopo aver visto come configurare virtual host con Apache, scopriamo come abilitare HTTPS in ambiente locale per replicare completamente un ambiente di produzione sicuro."
 ---
 
-Dopo aver visto [come creare un virtual host apache su ubuntu](/pages/creare-un-dominio-locale-con-apache/), vediamo come abilitare https in locale per l'ambiente di sviluppo.
+Nel precedente articolo abbiamo visto [come creare un virtual host Apache su Linux](/pages/creare-un-dominio-locale-con-apache/). Oggi proseguiamo configurando HTTPS in locale per avere un ambiente di sviluppo ancora più completo.
 
-Chiariamo fin da subito che https in locale non è necessario per problemi di sicurezza, ma potrebbe essere utile per replicare in toto l'ambiente di produzione, sopratutto per quei servizi di terze parti che eseguono un controllo sul dominio.
+## Perché configurare HTTPS in locale?
 
-Dobbiamo inanzitutto andare a modifiche il file di configurazione Apache chiamato default-ssl.conf. Da terminale:
+Configurare HTTPS in ambiente locale non è generalmente necessario per motivi di sicurezza, ma offre diversi vantaggi:
+
+- Replica fedele dell'ambiente di produzione
+- Test di funzionalità che richiedono connessioni sicure (come l'API Geolocation)
+- Compatibilità con servizi di terze parti che richiedono HTTPS
+- Prevenzione di problemi di sviluppo legati al contesto di sicurezza misto
+
+## Configurazione di SSL su Apache
+
+Iniziamo modificando il file di configurazione SSL di Apache. Su sistemi basati su Ubuntu/Debian, eseguiamo:
+
 ```shell
 sudo nano /etc/apache2/sites-available/default-ssl.conf
 ```
 
-Ed andiamo a copiare il codice qui di seguito, subito prima del tag di chiusura `</IfModule>` e salviamo.
+Su macOS con Homebrew, il percorso sarà diverso:
+
+```shell
+sudo nano /usr/local/etc/httpd/extra/httpd-ssl.conf
+```
+
+Indichiamo al file di configurazione SSL come gestire il nostro dominio locale. Aggiungiamo questa configurazione all'interno del file, prima del tag di chiusura `</IfModule>` (se presente):
 
 ```apache
     <VirtualHost _default_:443>
@@ -66,55 +85,135 @@ Ed andiamo a copiare il codice qui di seguito, subito prima del tag di chiusura 
     </VirtualHost>
 ```
 
-Ora, il **modulo ssl** è già disponibile di default su ubuntu, ma deve essere abilitato, quindi da terminale lanciare:
+## Abilitazione del modulo SSL
+
+Il modulo SSL potrebbe essere già disponibile ma non attivato. Su Ubuntu/Debian, attiviamolo:
 
 ```shell
 sudo a2enmod ssl
 ```
 
-Adesso dobbiamo andare a generare i certificati dentro una cartella di Apache, esattamente quelli che abbiamo già indicato sopra ai valori *SSLCertificateFile* e *SSLCertificateKeyFile*. Quindi creiamo la cartella che andrà ad ospirarli:
+Su macOS, dovremo modificare il file di configurazione principale per abilitare SSL:
 
 ```shell
-mkdir /etc/apache2/ssl 
+sudo nano /usr/local/etc/httpd/httpd.conf
 ```
 
-Installiamo, se non lo avessimo già, il pacchetto openssl:
+E scommentare (rimuovendo il `#` all'inizio) la riga:
+
+```apache
+#LoadModule ssl_module libexec/apache2/mod_ssl.so
+```
+
+## Generazione dei certificati SSL autofirmati
+
+Ora dobbiamo generare i certificati SSL autofirmati. Prima creiamo la directory che li conterrà:
+
+### Linux (Ubuntu/Debian)
 ```shell
+sudo mkdir -p /etc/apache2/ssl
+```
+
+### macOS
+```shell
+sudo mkdir -p /usr/local/etc/httpd/ssl
+```
+
+Assicuriamoci di avere OpenSSL installato:
+
+```shell
+# Ubuntu/Debian
 sudo apt install openssl
+
+# macOS
+brew install openssl
 ```
 
-Ed ora abbiamo tutto quanto per creare i certificati per abilitare https su Apache,  quindi lanciamo:
-```shell
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
-```
-
-Ci verranno chiesti alcune informazioni:
-```shell
-Country Name (2 letter code) [AU]:
-State or Province Name (full name) [Some-State]:
-Locality Name (eg, city) []:
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:
-Organizational Unit Name (eg, section) []:
-Common Name (e.g. server FQDN or YOUR name) []:
-Email Address []:
-```
-
-Non ci resta che attivare il tutto, e riavviare il nostro **webserver Apache**:
+Generiamo i certificati (adattare il percorso in base al sistema operativo):
 
 ```shell
-sudo a2ensite /etc/apache2/sites-available/default-ssl.conf
-sudo service apache2 restart
+# Ubuntu/Debian
+sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+
+# macOS
+sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /usr/local/etc/httpd/ssl/apache.key -out /usr/local/etc/httpd/ssl/apache.crt
 ```
 
-Ora dovremmo poter raggiungere il nostro host all'indirizzo https://test.com, in caso contrario proviamo a chiudere la sessione e riavviare per evitare problemi di cache. 
+> **Nota**: Abbiamo aumentato la validità del certificato a 10 anni (3650 giorni) per evitare di doverlo rigenerare frequentemente in ambiente di sviluppo.
 
-Tuttavia iIl browser ora potrebbe comunque comunicarci che il certificato ssl non è sicuro, nessun problema, occorre semplicemente accettare i rischi e proseguire.
+Durante la generazione del certificato, vi verrà chiesto di inserire alcune informazioni. Ecco come compilarle:
 
-Ovviamente se abbiamo la necessità di farlo per altri domini successivamente, possiamo semplicemente replicare tutto il blocco racchiuso tra i tag `<VirtualHost>`  nello stesso file default-ssl.conf, cambiando solo i riferimenti appunto del dominio (ex: test.com nel file di esempio, e le rispettive directory), e poi riavviare il server.
+```shell
+Country Name (2 letter code) [AU]: IT
+State or Province Name (full name) [Some-State]: Lombardia
+Locality Name (eg, city) []: Milano
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: Local Development
+Organizational Unit Name (eg, section) []: Development
+Common Name (e.g. server FQDN or YOUR name) []: test.com
+Email Address []: admin@test.com
+```
 
-<!--
-cd /usr/local/
-sudo git clone https://github.com/letsencrypt/letsencrypt
-cd letsencrypt
-sudo ./letsencrypt-auto --apache -d testing.performahrm.com
--->
+> **Importante**: Nel campo "Common Name" inserite esattamente il nome del dominio locale che userete.
+
+## Attivazione della configurazione SSL
+
+Ora attiviamo la configurazione e riavviamo il server Apache:
+
+### Linux (Ubuntu/Debian)
+```shell
+sudo a2ensite default-ssl.conf
+sudo systemctl restart apache2
+```
+
+### macOS
+```shell
+sudo apachectl -k restart
+```
+
+## Test della configurazione
+
+Ora dovremmo poter accedere al nostro sito tramite HTTPS:
+
+```
+https://test.com
+```
+
+Il browser mostrerà un avviso di sicurezza perché stiamo utilizzando un certificato autofirmato. In ambiente di sviluppo possiamo tranquillamente procedere cliccando su "Avanzate" e poi "Procedi su test.com (non sicuro)".
+
+## Aggiungere altri domini
+
+Se abbiamo bisogno di aggiungere altri domini con HTTPS, dobbiamo:
+
+1. Replicare il blocco `<VirtualHost>` nel file di configurazione SSL
+2. Modificare il ServerName e il DocumentRoot per il nuovo dominio
+3. Riavviare Apache
+
+## Configurazione avanzata
+
+Per un'esperienza di sviluppo ancora migliore, possiamo:
+
+1. **Aggiungere il certificato alle eccezioni del browser** - Così non vedremo più gli avvisi di sicurezza
+2. **Configurare la redirezione automatica da HTTP a HTTPS**:
+
+```apache
+<VirtualHost *:80>
+    ServerName test.com
+    Redirect permanent / https://test.com/
+</VirtualHost>
+```
+
+3. **Abilitare HTTP/2 per prestazioni migliori**:
+
+```apache
+<VirtualHost _default_:443>
+    ...
+    Protocols h2 http/1.1
+    ...
+</VirtualHost>
+```
+
+## Conclusione
+
+Abbiamo configurato con successo HTTPS su Apache in ambiente locale, permettendoci di sviluppare applicazioni che richiedono connessioni sicure. Questo setup replica fedelmente un ambiente di produzione, aiutando a prevenire sorprese quando si passa dal test alla produzione.
+
+Questo approccio è ideale per sviluppare applicazioni moderne che utilizzano API sensibili o servizi di terze parti che richiedono HTTPS.

@@ -3,7 +3,6 @@ title: "Ottenere i commenti Youtube tramite API con Javascript"
 date: 2020-08-21T18:49:16+02:00
 draft: false
 author : "Angelo"
-image : "/uploads/youtube-comments-javascript/youtube-commenti-javascript.png"
 type : 'pages'
 tags : [
     "Youtube",

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backend on AngePili</title>
+    <link>http://localhost:1313/tags/backend/</link>
+    <description>Recent content in Backend on AngePili</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© AngeloPili.it</copyright>
+    <lastBuildDate>Thu, 18 Mar 2021 10:15:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/backend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API GraphQL vs REST: quando scegliere l&#39;uno o l&#39;altro</title>
+      <link>http://localhost:1313/pages/graphql-vs-rest/</link>
+      <pubDate>Thu, 18 Mar 2021 10:15:00 +0100</pubDate>
+      <guid>http://localhost:1313/pages/graphql-vs-rest/</guid>
+      <description>Confronto approfondito tra le API GraphQL e REST: vantaggi, svantaggi e scenari d&amp;rsquo;uso ideali per ciascuna tecnologia. Quando scegliere GraphQL e quando restare con REST nel 2021.</description>
+    </item>
+  </channel>
+</rss>

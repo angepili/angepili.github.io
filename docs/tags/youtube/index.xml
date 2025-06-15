@@ -2,29 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Youtube on AngePili</title>
-    <link>https://angepili.github.io/tags/youtube/</link>
+    <link>http://localhost:1313/tags/youtube/</link>
     <description>Recent content in Youtube on AngePili</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
-    <lastBuildDate>Fri, 21 Aug 2020 18:49:16 +0200</lastBuildDate><atom:link href="https://angepili.github.io/tags/youtube/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Aug 2020 18:49:16 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/youtube/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ottenere i commenti Youtube tramite API con Javascript</title>
-      <link>https://angepili.github.io/pages/commenti-youtube-javascript/</link>
+      <link>http://localhost:1313/pages/commenti-youtube-javascript/</link>
       <pubDate>Fri, 21 Aug 2020 18:49:16 +0200</pubDate>
-      
-      <guid>https://angepili.github.io/pages/commenti-youtube-javascript/</guid>
+      <guid>http://localhost:1313/pages/commenti-youtube-javascript/</guid>
       <description>Attraverso le API di youtube viste nel precedente articolo, con Javascript proveremo ad eseguire questa chiamata direttamente dal browser: dall&amp;rsquo;API otterremo la risposta con i commenti di Youtube in formato JSON, e proveremo ad impaginarli in un widget Html</description>
     </item>
-    
     <item>
       <title>Ottenere i commenti di un video Youtube tramite API con Postman</title>
-      <link>https://angepili.github.io/pages/ottenere-commenti-video-youtube/</link>
+      <link>http://localhost:1313/pages/ottenere-commenti-video-youtube/</link>
       <pubDate>Mon, 17 Aug 2020 17:22:42 +0200</pubDate>
-      
-      <guid>https://angepili.github.io/pages/ottenere-commenti-video-youtube/</guid>
+      <guid>http://localhost:1313/pages/ottenere-commenti-video-youtube/</guid>
       <description>Tramite le API di Youtube è possibile ottenere dati di canali, video, ed insighits in maniera molto semplice. In questo post vediamo come ottenere la lista dei commenti di un Video tramite API in formato Json.</description>
     </item>
-    
   </channel>
 </rss>

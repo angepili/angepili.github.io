@@ -2,7 +2,6 @@
 author : "Angelo"
 title : "Creare un virtual host con Apache su Ubuntu Linux"
 date : "2020-08-04"
-image : "/uploads/domain-apache/domain-apache.png"
 type : 'pages'
 draft : false
 tags : [

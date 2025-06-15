@@ -2,7 +2,6 @@
 author : "Angelo"
 title : "Linkedin Login con Javascript"
 date : "2020-07-24"
-image : "/uploads/linkedin-part-2/linkedin-api-javascript.png"
 type : 'pages'
 draft : false
 tags : [

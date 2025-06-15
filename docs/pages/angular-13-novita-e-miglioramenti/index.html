@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Angular 13: novità e miglioramenti - AngePili</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Scopriamo tutte le novità di Angular 13: View Engine rimosso a favore di Ivy, componenti più performanti, miglioramenti significativi nelle form API e nel CLI, e cosa significa questo per lo sviluppo di applicazioni moderne." />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="http://localhost:1313/pages/angular-13-novita-e-miglioramenti/">
+  <meta property="og:site_name" content="AngePili">
+  <meta property="og:title" content="Angular 13: novità e miglioramenti">
+  <meta property="og:description" content="Scopriamo tutte le novità di Angular 13: View Engine rimosso a favore di Ivy, componenti più performanti, miglioramenti significativi nelle form API e nel CLI, e cosa significa questo per lo sviluppo di applicazioni moderne.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="pages">
+    <meta property="article:published_time" content="2021-11-05T10:30:00+01:00">
+    <meta property="article:modified_time" content="2021-11-05T10:30:00+01:00">
+    <meta property="article:tag" content="Angular">
+    <meta property="article:tag" content="TypeScript">
+    <meta property="article:tag" content="Frontend">
+    <meta property="article:tag" content="Javascript">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Angular 13: novità e miglioramenti">
+  <meta name="twitter:description" content="Scopriamo tutte le novità di Angular 13: View Engine rimosso a favore di Ivy, componenti più performanti, miglioramenti significativi nelle form API e nel CLI, e cosa significa questo per lo sviluppo di applicazioni moderne.">
+
+        
+        <link href="http://localhost:1313/scss/_fonts.07ad31bf7dba20c04100cc297f6f910c8b5b03e34ef85fde6bd781e8cb65d769.css" rel="stylesheet" integrity="sha256-B60xv326IMBBAMwpf2&#43;RDItbA&#43;NO&#43;F/ea9eB6Mtl12k=">
+	
+
+	
+	
+<link rel="stylesheet" href="http://localhost:1313/scss/main.75d9068f3d6a3a22c09314e74d6044162a5af12ae678431fdde4068d017b0431.css" integrity="sha256-ddkGjz1qOiLAkxTnTWBEFipa8SrmeEMf3eQGjQF7BDE=">
+
+
+
+    <link id="darkModeStyle" rel="stylesheet" href="http://localhost:1313/scss/dark.ba089b71318c833f0952376e9d05bbaa87afe37152d5ad1121ae3d63ec7ca545.css" integrity="sha256-ugibcTGMgz8JUjdunQW7qoev43FS1a0RIa49Y&#43;x8pUU=" media="(prefers-color-scheme: dark)">
+    
+    
+    <style>
+        body.darkmode {
+            color: white;
+            background-color: #202124;
+        }
+    </style>
+
+
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">AngePili</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/pages">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		| <a id="dark-mode-toggle" onclick="toggleTheme()" href="javascript:void(0);" data-tooltip="Cambia tema"><i class="icon-moon">🌙</i></a>
+		<script src="http://localhost:1313/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Angular 13: novità e miglioramenti</h1>
+			<div class="meta">Posted on Nov 5, 2021</div>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="angular-13-una-nuova-era-per-il-framework">Angular 13: una nuova era per il framework</h2>
+<p>Angular 13 è stato rilasciato a novembre 2021, segnando un passo importante nell&rsquo;evoluzione del framework. Questa versione segna l&rsquo;abbandono definitivo di View Engine a favore di Ivy, il sistema di rendering più moderno ed efficiente introdotto negli ultimi anni.</p>
+<p>Vediamo insieme tutte le novità e i miglioramenti di questa release importante che consolida il ruolo di Angular nell&rsquo;ecosistema frontend del 2021.</p>
+<h2 id="addio-a-view-engine-benvenuto-ivy">Addio a View Engine, benvenuto Ivy</h2>
+<p>La novità più importante di Angular 13 è l&rsquo;eliminazione completa di View Engine. Ora Ivy è l&rsquo;unico motore di rendering e compilazione per Angular. Questo passaggio rappresenta l&rsquo;abbandono di un sistema legacy a favore di una tecnologia più moderna, con numerosi vantaggi:</p>
+<ul>
+<li><strong>Bundle più piccoli</strong>: la compilazione con Ivy produce pacchetti più compatti</li>
+<li><strong>Migliore tree-shaking</strong>: riduzione significativa del codice inutilizzato</li>
+<li><strong>Debugging più semplice</strong>: errori più chiari e significativi</li>
+<li><strong>Compilazione più veloce</strong>: riduzione dei tempi di build</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// Esempio di componente Angular 13 con tipizzazione stretta
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">@Component</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">selector</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;app-user-profile&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;div class=&#34;user-card&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;h2&gt;{{ user.name }}&lt;/h2&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;p&gt;{{ user.email }}&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;button (click)=&#34;updateUser()&#34;&gt;Aggiorna&lt;/button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  `</span>
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserProfileComponent</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Tipizzazione stretta migliorata in Angular 13
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">user</span>: <span style="color:#66d9ef">User</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Mario Rossi&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;mario.rossi@example.com&#39;</span>
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">updateUser</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// logica di aggiornamento
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="miglioramenti-nelle-form-api">Miglioramenti nelle Form API</h2>
+<p>Angular 13 porta significativi miglioramenti nelle form API:</p>
+<h3 id="typescript-44-e-tipizzazione-più-stretta">TypeScript 4.4 e tipizzazione più stretta</h3>
+<p>Con il supporto a TypeScript 4.4, Angular 13 migliora la tipizzazione delle form:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// Prima di Angular 13
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormGroup</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormControl</span>(<span style="color:#e6db74">&#39;&#39;</span>), <span style="color:#75715e">// tipo any
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">email</span>: <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormControl</span>(<span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Con Angular 13
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormGroup</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormControl</span>&lt;<span style="color:#f92672">string</span>&gt;(<span style="color:#e6db74">&#39;&#39;</span>), <span style="color:#75715e">// tipizzazione esplicita
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">email</span>: <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormControl</span>&lt;<span style="color:#f92672">string</span>&gt;(<span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="nuova-api-per-i-formcontrol">Nuova API per i FormControl</h3>
+<p>Angular 13 introduce un modo più intuitivo per gestire lo stato dei controlli:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// Nuovo approccio in Angular 13
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nameControl</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormControl</span>(<span style="color:#e6db74">&#39;Mario&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Ora è possibile usare metodi più intuitivi
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">nameControl</span>.<span style="color:#a6e22e">disable</span>(); <span style="color:#75715e">// disabilita il controllo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">nameControl</span>.<span style="color:#a6e22e">setValidators</span>([<span style="color:#a6e22e">Validators</span>.<span style="color:#a6e22e">required</span>]); <span style="color:#75715e">// imposta validatori
+</span></span></span></code></pre></div><h2 id="miglioramenti-nel-cli">Miglioramenti nel CLI</h2>
+<p>Il Command Line Interface di Angular ha ricevuto importanti aggiornamenti:</p>
+<ol>
+<li><strong>Supporto nativo per Node.js 16</strong>: ora Angular CLI supporta ufficialmente Node.js 16</li>
+<li><strong>Rimozione del supporto per IE11</strong>: Angular ora si concentra sui browser moderni</li>
+<li><strong>Supporto per la persistenza della cache di Webpack</strong>: build più veloci con la memorizzazione nella cache</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Nuovo comando per pulire la cache del CLI</span>
+</span></span><span style="display:flex;"><span>ng cache clean
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Creare un nuovo progetto Angular 13</span>
+</span></span><span style="display:flex;"><span>ng new my-app --strict
+</span></span></code></pre></div><h2 id="gestione-delle-dipendenze-semplificata">Gestione delle dipendenze semplificata</h2>
+<p>Una delle novità più apprezzate è la rimozione della necessità di specificare la versione di TypeScript nelle dipendenze del progetto. Angular ora gestisce automaticamente la versione compatibile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#75715e">// package.json più semplice
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;dependencies&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;@angular/core&#34;</span>: <span style="color:#e6db74">&#34;^13.0.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;@angular/common&#34;</span>: <span style="color:#e6db74">&#34;^13.0.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// TypeScript non deve più essere specificato qui
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="nuova-api-per-il-rendering-delle-componenti">Nuova API per il rendering delle componenti</h2>
+<p>Angular 13 introduce una nuova API per il rendering dinamico dei componenti:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">@Component</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">selector</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;app-dynamic-rendering&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;div #container&gt;&lt;/div&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DynamicRenderingComponent</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@ViewChild</span>(<span style="color:#e6db74">&#39;container&#39;</span>, {<span style="color:#a6e22e">read</span>: <span style="color:#66d9ef">ViewContainerRef</span>}) <span style="color:#a6e22e">container</span><span style="color:#f92672">!:</span> <span style="color:#a6e22e">ViewContainerRef</span>;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">loadComponent() {</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Creazione dinamica migliorata in Angular 13
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">componentRef</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">container</span>.<span style="color:#a6e22e">createComponent</span>(<span style="color:#a6e22e">DynamicComponent</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">componentRef</span>.<span style="color:#a6e22e">instance</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Dati passati dinamicamente&#39;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="conclusioni-e-prospettive-future">Conclusioni e prospettive future</h2>
+<p>Angular 13 segna un passo importante nell&rsquo;evoluzione del framework. Con l&rsquo;adozione completa di Ivy e l&rsquo;abbandono di tecnologie legacy, Angular si conferma una scelta affidabile e moderna per lo sviluppo di applicazioni enterprise.</p>
+<p>Le novità introdotte migliorano notevolmente l&rsquo;esperienza dello sviluppatore, con tipizzazione più stretta, API più intuitive e strumenti di build più efficienti.</p>
+<p>Nei prossimi mesi ci aspettiamo ulteriori miglioramenti, soprattutto nell&rsquo;ambito delle prestazioni e nella semplificazione dell&rsquo;API. La roadmap futura sembra promettente, con un focus particolare sull&rsquo;esperienza sviluppatore e sull&rsquo;ottimizzazione delle prestazioni per applicazioni di grandi dimensioni.</p>
+<p>Angular rimane una delle scelte principali per progetti aziendali che richiedono struttura, manutenibilità e scalabilità nel lungo periodo.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/angular">Angular</a></li>
+					
+					<li><a href="/tags/typescript">TypeScript</a></li>
+					
+					<li><a href="/tags/frontend">Frontend</a></li>
+					
+					<li><a href="/tags/javascript">JavaScript</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/angepili" title="GitHub"><i class="icon-github"></i></a>|<a class="soc" href="https://twitter.com/ngpi71" title="Twitter"><i class="icon-twitter"></i></a>|⚡️
+	2025  © AngeloPili.it |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+
+<script src="http://localhost:1313/js/feather-polyfill.js"></script>
+<script src="http://localhost:1313/js/block-rokt.js"></script>
+<script src="http://localhost:1313/js/themetoggle.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+</div>
+    </body>
+</html>

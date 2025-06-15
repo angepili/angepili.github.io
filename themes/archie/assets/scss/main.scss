@@ -1,0 +1,20 @@
+// Main SCSS file that imports all components
+
+// Import variables first
+@import 'variables';
+
+// Import fonts
+@import 'fonts';
+
+// Import base styles
+@import 'base';
+
+// Import custom icons (sostituiscono feather)
+@import 'icons';
+
+// Import components
+@import 'components/layout';
+@import 'components/images';
+@import 'components/code';
+@import 'components/common';
+@import 'components/tables';

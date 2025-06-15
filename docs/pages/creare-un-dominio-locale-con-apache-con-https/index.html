@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Abilitare HTTPS su Apache in ambiente locale - AngePili</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Dopo aver visto come configurare virtual host con Apache, scopriamo come abilitare HTTPS in ambiente locale per replicare completamente un ambiente di produzione sicuro." />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="http://localhost:1313/pages/creare-un-dominio-locale-con-apache-con-https/">
+  <meta property="og:site_name" content="AngePili">
+  <meta property="og:title" content="Abilitare HTTPS su Apache in ambiente locale">
+  <meta property="og:description" content="Dopo aver visto come configurare virtual host con Apache, scopriamo come abilitare HTTPS in ambiente locale per replicare completamente un ambiente di produzione sicuro.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="pages">
+    <meta property="article:published_time" content="2020-09-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-09-23T00:00:00+00:00">
+    <meta property="article:tag" content="Apache">
+    <meta property="article:tag" content="Webserver">
+    <meta property="article:tag" content="HTTPS">
+    <meta property="article:tag" content="SSL">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="MacOS">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Abilitare HTTPS su Apache in ambiente locale">
+  <meta name="twitter:description" content="Dopo aver visto come configurare virtual host con Apache, scopriamo come abilitare HTTPS in ambiente locale per replicare completamente un ambiente di produzione sicuro.">
+
+        
+        <link href="http://localhost:1313/scss/_fonts.07ad31bf7dba20c04100cc297f6f910c8b5b03e34ef85fde6bd781e8cb65d769.css" rel="stylesheet" integrity="sha256-B60xv326IMBBAMwpf2&#43;RDItbA&#43;NO&#43;F/ea9eB6Mtl12k=">
+	
+
+	
+	
+<link rel="stylesheet" href="http://localhost:1313/scss/main.75d9068f3d6a3a22c09314e74d6044162a5af12ae678431fdde4068d017b0431.css" integrity="sha256-ddkGjz1qOiLAkxTnTWBEFipa8SrmeEMf3eQGjQF7BDE=">
+
+
+
+    <link id="darkModeStyle" rel="stylesheet" href="http://localhost:1313/scss/dark.ba089b71318c833f0952376e9d05bbaa87afe37152d5ad1121ae3d63ec7ca545.css" integrity="sha256-ugibcTGMgz8JUjdunQW7qoev43FS1a0RIa49Y&#43;x8pUU=" media="(prefers-color-scheme: dark)">
+    
+    
+    <style>
+        body.darkmode {
+            color: white;
+            background-color: #202124;
+        }
+    </style>
+
+
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">AngePili</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/pages">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		| <a id="dark-mode-toggle" onclick="toggleTheme()" href="javascript:void(0);" data-tooltip="Cambia tema"><i class="icon-moon">🌙</i></a>
+		<script src="http://localhost:1313/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Abilitare HTTPS su Apache in ambiente locale</h1>
+			<div class="meta">Posted on Sep 23, 2020</div>
+		</div>
+		
+
+		<section class="body">
+			<p>Nel precedente articolo abbiamo visto <a href="/pages/creare-un-dominio-locale-con-apache/">come creare un virtual host Apache su Linux</a>. Oggi proseguiamo configurando HTTPS in locale per avere un ambiente di sviluppo ancora più completo.</p>
+<h2 id="perché-configurare-https-in-locale">Perché configurare HTTPS in locale?</h2>
+<p>Configurare HTTPS in ambiente locale non è generalmente necessario per motivi di sicurezza, ma offre diversi vantaggi:</p>
+<ul>
+<li>Replica fedele dell&rsquo;ambiente di produzione</li>
+<li>Test di funzionalità che richiedono connessioni sicure (come l&rsquo;API Geolocation)</li>
+<li>Compatibilità con servizi di terze parti che richiedono HTTPS</li>
+<li>Prevenzione di problemi di sviluppo legati al contesto di sicurezza misto</li>
+</ul>
+<h2 id="configurazione-di-ssl-su-apache">Configurazione di SSL su Apache</h2>
+<p>Iniziamo modificando il file di configurazione SSL di Apache. Su sistemi basati su Ubuntu/Debian, eseguiamo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo nano /etc/apache2/sites-available/default-ssl.conf
+</span></span></code></pre></div><p>Su macOS con Homebrew, il percorso sarà diverso:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo nano /usr/local/etc/httpd/extra/httpd-ssl.conf
+</span></span></code></pre></div><p>Indichiamo al file di configurazione SSL come gestire il nostro dominio locale. Aggiungiamo questa configurazione all&rsquo;interno del file, prima del tag di chiusura <code>&lt;/IfModule&gt;</code> (se presente):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span>    <span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">_default_:443</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        ServerAdmin admin@test.com
+</span></span><span style="display:flex;"><span>        ServerName test.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        DocumentRoot <span style="color:#e6db74">/var/www/test.com/public_html</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/var/www/test.com/public_html</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                Options Indexes FollowSymLinks MultiViews
+</span></span><span style="display:flex;"><span>                AllowOverride <span style="color:#66d9ef">All</span>
+</span></span><span style="display:flex;"><span>                Order allow,deny
+</span></span><span style="display:flex;"><span>                allow from <span style="color:#66d9ef">all</span>
+</span></span><span style="display:flex;"><span>                Require <span style="color:#66d9ef">all</span> granted
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        ErrorLog ${APACHE_LOG_DIR}/test-com-error.log
+</span></span><span style="display:flex;"><span>        CustomLog ${APACHE_LOG_DIR}/test-com-access.log combined
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        SSLEngine <span style="color:#66d9ef">on</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        SSLCertificateFile <span style="color:#e6db74">/etc/apache2/ssl/apache.crt</span>
+</span></span><span style="display:flex;"><span>        SSLCertificateKeyFile <span style="color:#e6db74">/etc/apache2/ssl/apache.key</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(cgi|shtml|phtml|php)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                        SSLOptions +StdEnvVars
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/lib/cgi-bin</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                        SSLOptions +StdEnvVars
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        BrowserMatch <span style="color:#e6db74">&#34;MSIE [2-6]&#34;</span> \
+</span></span><span style="display:flex;"><span>                       nokeepalive ssl-unclean-shutdown \
+</span></span><span style="display:flex;"><span>                       downgrade-1.0 force-response-1.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/VirtualHost&gt;</span>
+</span></span></code></pre></div><h2 id="abilitazione-del-modulo-ssl">Abilitazione del modulo SSL</h2>
+<p>Il modulo SSL potrebbe essere già disponibile ma non attivato. Su Ubuntu/Debian, attiviamolo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo a2enmod ssl
+</span></span></code></pre></div><p>Su macOS, dovremo modificare il file di configurazione principale per abilitare SSL:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo nano /usr/local/etc/httpd/httpd.conf
+</span></span></code></pre></div><p>E scommentare (rimuovendo il <code>#</code> all&rsquo;inizio) la riga:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#75715e">#LoadModule ssl_module libexec/apache2/mod_ssl.so</span>
+</span></span></code></pre></div><h2 id="generazione-dei-certificati-ssl-autofirmati">Generazione dei certificati SSL autofirmati</h2>
+<p>Ora dobbiamo generare i certificati SSL autofirmati. Prima creiamo la directory che li conterrà:</p>
+<h3 id="linux-ubuntudebian">Linux (Ubuntu/Debian)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo mkdir -p /etc/apache2/ssl
+</span></span></code></pre></div><h3 id="macos">macOS</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo mkdir -p /usr/local/etc/httpd/ssl
+</span></span></code></pre></div><p>Assicuriamoci di avere OpenSSL installato:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>sudo apt install openssl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># macOS</span>
+</span></span><span style="display:flex;"><span>brew install openssl
+</span></span></code></pre></div><p>Generiamo i certificati (adattare il percorso in base al sistema operativo):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>sudo openssl req -x509 -nodes -days <span style="color:#ae81ff">3650</span> -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># macOS</span>
+</span></span><span style="display:flex;"><span>sudo openssl req -x509 -nodes -days <span style="color:#ae81ff">3650</span> -newkey rsa:2048 -keyout /usr/local/etc/httpd/ssl/apache.key -out /usr/local/etc/httpd/ssl/apache.crt
+</span></span></code></pre></div><blockquote>
+<p><strong>Nota</strong>: Abbiamo aumentato la validità del certificato a 10 anni (3650 giorni) per evitare di doverlo rigenerare frequentemente in ambiente di sviluppo.</p></blockquote>
+<p>Durante la generazione del certificato, vi verrà chiesto di inserire alcune informazioni. Ecco come compilarle:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Country Name <span style="color:#f92672">(</span><span style="color:#ae81ff">2</span> letter code<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>AU<span style="color:#f92672">]</span>: IT
+</span></span><span style="display:flex;"><span>State or Province Name <span style="color:#f92672">(</span>full name<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Some-State<span style="color:#f92672">]</span>: Lombardia
+</span></span><span style="display:flex;"><span>Locality Name <span style="color:#f92672">(</span>eg, city<span style="color:#f92672">)</span> <span style="color:#f92672">[]</span>: Milano
+</span></span><span style="display:flex;"><span>Organization Name <span style="color:#f92672">(</span>eg, company<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Internet Widgits Pty Ltd<span style="color:#f92672">]</span>: Local Development
+</span></span><span style="display:flex;"><span>Organizational Unit Name <span style="color:#f92672">(</span>eg, section<span style="color:#f92672">)</span> <span style="color:#f92672">[]</span>: Development
+</span></span><span style="display:flex;"><span>Common Name <span style="color:#f92672">(</span>e.g. server FQDN or YOUR name<span style="color:#f92672">)</span> <span style="color:#f92672">[]</span>: test.com
+</span></span><span style="display:flex;"><span>Email Address <span style="color:#f92672">[]</span>: admin@test.com
+</span></span></code></pre></div><blockquote>
+<p><strong>Importante</strong>: Nel campo &ldquo;Common Name&rdquo; inserite esattamente il nome del dominio locale che userete.</p></blockquote>
+<h2 id="attivazione-della-configurazione-ssl">Attivazione della configurazione SSL</h2>
+<p>Ora attiviamo la configurazione e riavviamo il server Apache:</p>
+<h3 id="linux-ubuntudebian-1">Linux (Ubuntu/Debian)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo a2ensite default-ssl.conf
+</span></span><span style="display:flex;"><span>sudo systemctl restart apache2
+</span></span></code></pre></div><h3 id="macos-1">macOS</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apachectl -k restart
+</span></span></code></pre></div><h2 id="test-della-configurazione">Test della configurazione</h2>
+<p>Ora dovremmo poter accedere al nostro sito tramite HTTPS:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>https://test.com
+</span></span></code></pre></div><p>Il browser mostrerà un avviso di sicurezza perché stiamo utilizzando un certificato autofirmato. In ambiente di sviluppo possiamo tranquillamente procedere cliccando su &ldquo;Avanzate&rdquo; e poi &ldquo;Procedi su test.com (non sicuro)&rdquo;.</p>
+<h2 id="aggiungere-altri-domini">Aggiungere altri domini</h2>
+<p>Se abbiamo bisogno di aggiungere altri domini con HTTPS, dobbiamo:</p>
+<ol>
+<li>Replicare il blocco <code>&lt;VirtualHost&gt;</code> nel file di configurazione SSL</li>
+<li>Modificare il ServerName e il DocumentRoot per il nuovo dominio</li>
+<li>Riavviare Apache</li>
+</ol>
+<h2 id="configurazione-avanzata">Configurazione avanzata</h2>
+<p>Per un&rsquo;esperienza di sviluppo ancora migliore, possiamo:</p>
+<ol>
+<li><strong>Aggiungere il certificato alle eccezioni del browser</strong> - Così non vedremo più gli avvisi di sicurezza</li>
+<li><strong>Configurare la redirezione automatica da HTTP a HTTPS</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">*:80</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    ServerName test.com
+</span></span><span style="display:flex;"><span>    Redirect permanent / https://test.com/
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/VirtualHost&gt;</span>
+</span></span></code></pre></div><ol start="3">
+<li><strong>Abilitare HTTP/2 per prestazioni migliori</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">_default_:443</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    Protocols h2 http/1.1
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/VirtualHost&gt;</span>
+</span></span></code></pre></div><h2 id="conclusione">Conclusione</h2>
+<p>Abbiamo configurato con successo HTTPS su Apache in ambiente locale, permettendoci di sviluppare applicazioni che richiedono connessioni sicure. Questo setup replica fedelmente un ambiente di produzione, aiutando a prevenire sorprese quando si passa dal test alla produzione.</p>
+<p>Questo approccio è ideale per sviluppare applicazioni moderne che utilizzano API sensibili o servizi di terze parti che richiedono HTTPS.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/apache">Apache</a></li>
+					
+					<li><a href="/tags/webserver">Webserver</a></li>
+					
+					<li><a href="/tags/https">HTTPS</a></li>
+					
+					<li><a href="/tags/ssl">SSL</a></li>
+					
+					<li><a href="/tags/linux">Linux</a></li>
+					
+					<li><a href="/tags/macos">macOS</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/angepili" title="GitHub"><i class="icon-github"></i></a>|<a class="soc" href="https://twitter.com/ngpi71" title="Twitter"><i class="icon-twitter"></i></a>|⚡️
+	2025  © AngeloPili.it |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+
+<script src="http://localhost:1313/js/feather-polyfill.js"></script>
+<script src="http://localhost:1313/js/block-rokt.js"></script>
+<script src="http://localhost:1313/js/themetoggle.js"></script>
+<script src="http://localhost:1313/js/main.js"></script>
+</div>
+    </body>
+</html>

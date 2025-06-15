@@ -1,0 +1,17 @@
+{{ $darkStyle := resources.Get "scss/dark.scss" | css.Sass | resources.Fingerprint }}
+
+{{ if eq .Site.Params.mode "dark" }}
+    <link id="darkModeStyle" rel="stylesheet" href="{{ $darkStyle.Permalink }}" integrity="{{ $darkStyle.Data.Integrity }}">
+{{ else if eq .Site.Params.mode "auto" }}
+    <link id="darkModeStyle" rel="stylesheet" href="{{ $darkStyle.Permalink }}" integrity="{{ $darkStyle.Data.Integrity }}" media="(prefers-color-scheme: dark)">
+    
+    <!-- Stile alternativo per JavaScript quando rileva dark mode -->
+    <style>
+        body.darkmode {
+            color: white;
+            background-color: #202124;
+        }
+    </style>
+{{ else if eq .Site.Params.mode "toggle" }}
+    <link id="darkModeStyle" rel="stylesheet" href="{{ $darkStyle.Permalink }}" integrity="{{ $darkStyle.Data.Integrity }}" disabled>
+{{ end }}

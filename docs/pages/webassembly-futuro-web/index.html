@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>WebAssembly (WASM) e il futuro del web nel 2025 - AngePili</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Un&rsquo;analisi approfondita di WebAssembly nel 2025: come WASM sta trasformando lo sviluppo web, casi d&rsquo;uso emergenti, integrazione con linguaggi come Rust e C&#43;&#43;, e il futuro dell&rsquo;esecuzione di codice ad alte prestazioni nel browser." />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="http://localhost:1313/pages/webassembly-futuro-web/">
+  <meta property="og:site_name" content="AngePili">
+  <meta property="og:title" content="WebAssembly (WASM) e il futuro del web nel 2025">
+  <meta property="og:description" content="Un’analisi approfondita di WebAssembly nel 2025: come WASM sta trasformando lo sviluppo web, casi d’uso emergenti, integrazione con linguaggi come Rust e C&#43;&#43;, e il futuro dell’esecuzione di codice ad alte prestazioni nel browser.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="pages">
+    <meta property="article:published_time" content="2025-04-03T15:40:00+02:00">
+    <meta property="article:modified_time" content="2025-04-03T15:40:00+02:00">
+    <meta property="article:tag" content="WebAssembly">
+    <meta property="article:tag" content="WASM">
+    <meta property="article:tag" content="Rust">
+    <meta property="article:tag" content="C&#43;&#43;">
+    <meta property="article:tag" content="Web Development">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="WebAssembly (WASM) e il futuro del web nel 2025">
+  <meta name="twitter:description" content="Un’analisi approfondita di WebAssembly nel 2025: come WASM sta trasformando lo sviluppo web, casi d’uso emergenti, integrazione con linguaggi come Rust e C&#43;&#43;, e il futuro dell’esecuzione di codice ad alte prestazioni nel browser.">
+
+        <link href="http://localhost:1313/css/fonts.b685ac6f654695232de7b82a9143a46f9e049c8e3af3a21d9737b01f4be211d1.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.c25d852cd558459677e60ac7522dbd78c449da60f5032d6098a4c441771a8fb3.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css" media="(prefers-color-scheme: dark)"  />
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">AngePili</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/pages">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">WebAssembly (WASM) e il futuro del web nel 2025</h1>
+			<div class="meta">Posted on Apr 3, 2025</div>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="webassembly-nel-2025-una-tecnologia-matura">WebAssembly nel 2025: una tecnologia matura</h2>
+<p>WebAssembly (WASM) è passato dall&rsquo;essere una tecnologia promettente a una componente fondamentale dell&rsquo;ecosistema web moderno. Nel 2025, WASM ha raggiunto una maturità che lo rende una scelta solida per numerosi casi d&rsquo;uso, ed è supportato nativamente da tutti i principali browser.</p>
+<p>Lanciato inizialmente nel 2017, WebAssembly è un formato di codice binario progettato come target di compilazione per linguaggi di alto livello come C, C++, e Rust, permettendo l&rsquo;esecuzione di codice a velocità quasi nativa nei browser web. Oggi, nel 2025, WASM si è evoluto ben oltre le sue origini, diventando un pilastro dell&rsquo;informatica moderna, sia nel browser che oltre.</p>
+<h2 id="i-fondamenti-di-webassembly">I fondamenti di WebAssembly</h2>
+<p>WebAssembly è un formato di bytecode binario che fornisce un formato di compilazione per linguaggi ad alto livello che possono essere eseguiti nei browser moderni. I suoi principali vantaggi includono:</p>
+<h3 id="caratteristiche-principali">Caratteristiche principali</h3>
+<ol>
+<li><strong>Efficienza</strong>: il formato binario è compatto e veloce da caricare</li>
+<li><strong>Performance vicina al nativo</strong>: l&rsquo;esecuzione è molto più veloce del JavaScript tradizionale</li>
+<li><strong>Sicurezza</strong>: esecuzione in sandbox con lo stesso modello di sicurezza di JavaScript</li>
+<li><strong>Portabilità</strong>: funziona su tutti i browser moderni senza plugin</li>
+<li><strong>Interoperabilità</strong>: comunica facilmente con JavaScript e gli API del browser</li>
+</ol>
+<h3 id="larchitettura-di-webassembly">L&rsquo;architettura di WebAssembly</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>+-------------------+
+</span></span><span style="display:flex;"><span>|     JavaScript    |
+</span></span><span style="display:flex;"><span>+--------+----------+
+</span></span><span style="display:flex;"><span>         |
+</span></span><span style="display:flex;"><span>         v
+</span></span><span style="display:flex;"><span>+-------------------+
+</span></span><span style="display:flex;"><span>| WebAssembly API   |
+</span></span><span style="display:flex;"><span>+--------+----------+
+</span></span><span style="display:flex;"><span>         |
+</span></span><span style="display:flex;"><span>         v
+</span></span><span style="display:flex;"><span>+-------------------+
+</span></span><span style="display:flex;"><span>|   WASM Runtime    |
+</span></span><span style="display:flex;"><span>+--------+----------+
+</span></span><span style="display:flex;"><span>         |
+</span></span><span style="display:flex;"><span>         v
+</span></span><span style="display:flex;"><span>+-------------------+
+</span></span><span style="display:flex;"><span>|  Browser Engine   |
+</span></span><span style="display:flex;"><span>+-------------------+
+</span></span></code></pre></div><h2 id="levoluzione-di-wasm-2017-2025">L&rsquo;evoluzione di WASM: 2017-2025</h2>
+<h3 id="le-tappe-fondamentali">Le tappe fondamentali</h3>
+<ul>
+<li><strong>2017</strong>: Prima versione MVP (Minimum Viable Product)</li>
+<li><strong>2019</strong>: WebAssembly diventa standard W3C ufficiale</li>
+<li><strong>2020-2021</strong>: Introduzione di WASI (WebAssembly System Interface)</li>
+<li><strong>2022-2023</strong>: Integrazione di GC (Garbage Collection) nativa</li>
+<li><strong>2024</strong>: Interface Types e Component Model diventano standard</li>
+<li><strong>2025</strong>: WASM sul server diventa mainstream, adozione massiccia di microservizi WASM</li>
+</ul>
+<h3 id="caratteristiche-emergenti-nel-2025">Caratteristiche emergenti nel 2025</h3>
+<p>Nel 2025, WebAssembly ha introdotto diverse caratteristiche che hanno ampliato significativamente il suo utilizzo:</p>
+<ol>
+<li><strong>Garbage Collection nativa</strong>: Elimina la necessità di portare interi runtime GC, rendendo l&rsquo;esecuzione di linguaggi come Java e C# molto più efficiente</li>
+<li><strong>WASI esteso</strong>: L&rsquo;interfaccia di sistema WASM ora supporta accesso ai file, networking e altri servizi di sistema in modo sicuro e portabile</li>
+<li><strong>Threading avanzato</strong>: Supporto migliorato per applicazioni multi-thread</li>
+<li><strong>Component Model</strong>: Composizione di moduli WASM da diversi linguaggi con interfacce ben definite</li>
+<li><strong>Accesso diretto alle API Web</strong>: Accesso più semplice alle API del browser senza dover passare per JavaScript</li>
+</ol>
+<h2 id="linguaggi-e-toolchain-per-webassembly-nel-2025">Linguaggi e toolchain per WebAssembly nel 2025</h2>
+<h3 id="rust-e-webassembly">Rust e WebAssembly</h3>
+<p>Nel 2025, Rust è diventato il linguaggio preferito per lo sviluppo WebAssembly grazie alla sua sicurezza della memoria, prestazioni e toolchain matura:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// Esempio di un modulo WASM in Rust nel 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">use</span> wasm_bindgen::prelude::<span style="color:#f92672">*</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#[wasm_bindgen]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ImageProcessor</span> {
+</span></span><span style="display:flex;"><span>    width: <span style="color:#66d9ef">u32</span>,
+</span></span><span style="display:flex;"><span>    height: <span style="color:#66d9ef">u32</span>,
+</span></span><span style="display:flex;"><span>    data: Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span><span style="color:#f92672">&gt;</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#[wasm_bindgen]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">impl</span> ImageProcessor {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[wasm_bindgen(constructor)]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">new</span>(width: <span style="color:#66d9ef">u32</span>, height: <span style="color:#66d9ef">u32</span>) -&gt; <span style="color:#a6e22e">Self</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> size <span style="color:#f92672">=</span> (width <span style="color:#f92672">*</span> height <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">usize</span>;
+</span></span><span style="display:flex;"><span>        Self {
+</span></span><span style="display:flex;"><span>            width,
+</span></span><span style="display:flex;"><span>            height,
+</span></span><span style="display:flex;"><span>            data: <span style="color:#a6e22e">vec</span><span style="color:#f92672">!</span>[<span style="color:#ae81ff">0</span>; size],
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">apply_filter</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self, filter_type: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">str</span>) -&gt; Result<span style="color:#f92672">&lt;</span>(), JsValue<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">match</span> filter_type {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;grayscale&#34;</span> <span style="color:#f92672">=&gt;</span> self.apply_grayscale(),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;blur&#34;</span> <span style="color:#f92672">=&gt;</span> self.apply_blur(),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;sharpen&#34;</span> <span style="color:#f92672">=&gt;</span> self.apply_sharpen(),
+</span></span><span style="display:flex;"><span>            _ <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">return</span> Err(<span style="color:#e6db74">&#34;Unknown filter type&#34;</span>.into()),
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        Ok(())
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">get_result_ptr</span>(<span style="color:#f92672">&amp;</span>self) -&gt; <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">u8</span> {
+</span></span><span style="display:flex;"><span>        self.data.as_ptr()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">apply_grayscale</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Implementazione del filtro grayscale
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> (<span style="color:#ae81ff">0</span><span style="color:#f92672">..</span>self.data.len()).step_by(<span style="color:#ae81ff">4</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> r <span style="color:#f92672">=</span> self.data[i] <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">f32</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> g <span style="color:#f92672">=</span> self.data[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">f32</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> b <span style="color:#f92672">=</span> self.data[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>] <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">f32</span>;
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> gray <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.299</span> <span style="color:#f92672">*</span> r <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.587</span> <span style="color:#f92672">*</span> g <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.114</span> <span style="color:#f92672">*</span> b;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> gray_u8 <span style="color:#f92672">=</span> gray <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">u8</span>;
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            self.data[i] <span style="color:#f92672">=</span> gray_u8;
+</span></span><span style="display:flex;"><span>            self.data[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> gray_u8;
+</span></span><span style="display:flex;"><span>            self.data[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> gray_u8;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Altri metodi implementati qui...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h3 id="c-e-emscripten">C++ e Emscripten</h3>
+<p>Emscripten rimane una scelta popolare per portare codice C/C++ esistente sul web:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Esempio di codice C++ compilato per WebAssembly con Emscripten
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;emscripten/bind.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;emscripten/val.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PhysicsEngine</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> positions;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> velocities;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> gravity;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> numParticles;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    PhysicsEngine(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> particles, <span style="color:#66d9ef">double</span> g)
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">:</span> numParticles(particles), gravity(g) {
+</span></span><span style="display:flex;"><span>        positions.resize(particles <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0.0</span>);  <span style="color:#75715e">// x, y, z per particle
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        velocities.resize(particles <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0.0</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Initialize with some random positions
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> particles; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            positions[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>] <span style="color:#f92672">=</span> (<span style="color:#66d9ef">double</span>)rand() <span style="color:#f92672">/</span> RAND_MAX <span style="color:#f92672">*</span> <span style="color:#ae81ff">100.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">50.0</span>;    <span style="color:#75715e">// x
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            positions[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> (<span style="color:#66d9ef">double</span>)rand() <span style="color:#f92672">/</span> RAND_MAX <span style="color:#f92672">*</span> <span style="color:#ae81ff">100.0</span>;         <span style="color:#75715e">// y
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            positions[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> (<span style="color:#66d9ef">double</span>)rand() <span style="color:#f92672">/</span> RAND_MAX <span style="color:#f92672">*</span> <span style="color:#ae81ff">100.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">50.0</span>;  <span style="color:#75715e">// z
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update</span>(<span style="color:#66d9ef">double</span> deltaTime) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> numParticles; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Apply gravity
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            velocities[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">-=</span> gravity <span style="color:#f92672">*</span> deltaTime;
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Update positions
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            positions[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>] <span style="color:#f92672">+=</span> velocities[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>] <span style="color:#f92672">*</span> deltaTime;
+</span></span><span style="display:flex;"><span>            positions[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> velocities[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> deltaTime;
+</span></span><span style="display:flex;"><span>            positions[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">+=</span> velocities[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">*</span> deltaTime;
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Simple ground collision
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (positions[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>                positions[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>                velocities[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>velocities[i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.8</span>; <span style="color:#75715e">// Bounce with damping
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    emscripten<span style="color:#f92672">::</span>val getPositions() <span style="color:#66d9ef">const</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> emscripten<span style="color:#f92672">::</span>val(emscripten<span style="color:#f92672">::</span>typed_memory_view(
+</span></span><span style="display:flex;"><span>            positions.size(),
+</span></span><span style="display:flex;"><span>            positions.data()
+</span></span><span style="display:flex;"><span>        ));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Binding code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>EMSCRIPTEN_BINDINGS(physics_module) {
+</span></span><span style="display:flex;"><span>    emscripten<span style="color:#f92672">::</span>class_<span style="color:#f92672">&lt;</span>PhysicsEngine<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74">&#34;PhysicsEngine&#34;</span>)
+</span></span><span style="display:flex;"><span>        .constructor<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span>()
+</span></span><span style="display:flex;"><span>        .function(<span style="color:#e6db74">&#34;update&#34;</span>, <span style="color:#f92672">&amp;</span>PhysicsEngine<span style="color:#f92672">::</span>update)
+</span></span><span style="display:flex;"><span>        .function(<span style="color:#e6db74">&#34;getPositions&#34;</span>, <span style="color:#f92672">&amp;</span>PhysicsEngine<span style="color:#f92672">::</span>getPositions);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="assemblyscript">AssemblyScript</h3>
+<p>AssemblyScript, un sottoinsieme di TypeScript che compila in WebAssembly, è diventato popolare per gli sviluppatori JavaScript:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// Esempio di AssemblyScript nel 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">@external</span>(<span style="color:#e6db74">&#34;env&#34;</span>, <span style="color:#e6db74">&#34;console_log&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">declare</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">consoleLog</span>(<span style="color:#a6e22e">ptr</span>: <span style="color:#66d9ef">usize</span>, <span style="color:#a6e22e">len</span>: <span style="color:#66d9ef">usize</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Vector3</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">f64</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">f64</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">z</span>: <span style="color:#66d9ef">f64</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  ) {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@inline</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">other</span>: <span style="color:#66d9ef">Vector3</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Vector3</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vector3</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">other</span>.<span style="color:#a6e22e">x</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">other</span>.<span style="color:#a6e22e">y</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">z</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">other</span>.<span style="color:#a6e22e">z</span>
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@inline</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale</span>(<span style="color:#a6e22e">scalar</span>: <span style="color:#66d9ef">f64</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Vector3</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vector3</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">scalar</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">scalar</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">z</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">scalar</span>
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@inline</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">length</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">f64</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">sqrt</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">z</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">z</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@inline</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">normalize</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Vector3</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">len</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vector3</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">scale</span>(<span style="color:#ae81ff">1.0</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">len</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Particle</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">position</span>: <span style="color:#66d9ef">Vector3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">velocity</span>: <span style="color:#66d9ef">Vector3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">force</span>: <span style="color:#66d9ef">Vector3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mass</span>: <span style="color:#66d9ef">f64</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">position</span>: <span style="color:#66d9ef">Vector3</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vector3</span>(),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">velocity</span>: <span style="color:#66d9ef">Vector3</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vector3</span>(),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mass</span>: <span style="color:#66d9ef">f64</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span>
+</span></span><span style="display:flex;"><span>  ) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">position</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">velocity</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">velocity</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">force</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vector3</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">mass</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">mass</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">dt</span>: <span style="color:#66d9ef">f64</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// F = ma → a = F/m
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">acceleration</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">force</span>.<span style="color:#a6e22e">scale</span>(<span style="color:#ae81ff">1.0</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">mass</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Update velocity: v = v + a * dt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">velocity</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">velocity</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">acceleration</span>.<span style="color:#a6e22e">scale</span>(<span style="color:#a6e22e">dt</span>));
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Update position: p = p + v * dt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">position</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">velocity</span>.<span style="color:#a6e22e">scale</span>(<span style="color:#a6e22e">dt</span>));
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Reset forces
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">force</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vector3</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">applyForce</span>(<span style="color:#a6e22e">force</span>: <span style="color:#66d9ef">Vector3</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">force</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">force</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">force</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="casi-duso-di-webassembly-nel-2025">Casi d&rsquo;uso di WebAssembly nel 2025</h2>
+<h3 id="1-applicazioni-ad-alte-prestazioni-nel-browser">1. Applicazioni ad alte prestazioni nel browser</h3>
+<p>Nel 2025, WebAssembly ha trasformato le applicazioni web complesse:</p>
+<ul>
+<li><strong>Editing video e audio</strong>: Applicazioni come DaVinci Resolve Web e Adobe Audition Cloud utilizzano WASM per elaborazione in tempo reale</li>
+<li><strong>CAD e 3D nel browser</strong>: AutoCAD Web e Blender Cloud offrono funzionalità quasi native grazie a WASM</li>
+<li><strong>Videogiochi</strong>: Motori come Unity e Unreal possono esportare direttamente per il web con prestazioni paragonabili alle app native</li>
+<li><strong>Applicazioni scientifiche</strong>: Simulazioni complesse e visualizzazione di dati in tempo reale</li>
+</ul>
+<h3 id="2-webassembly-sul-server-wasi">2. WebAssembly sul server (WASI)</h3>
+<p>Nel 2025, WASM ha conquistato anche l&rsquo;ambiente server:</p>
+<ul>
+<li><strong>Funzioni serverless</strong>: Provider come AWS Lambda, Google Cloud Functions e Cloudflare Workers supportano nativamente moduli WASM</li>
+<li><strong>Microservizi</strong>: Architetture basate su microservizi leggeri in WASM che si avviano in millisecondi</li>
+<li><strong>Edge computing</strong>: Esecuzione di codice vicino all&rsquo;utente finale con sicurezza e prestazioni</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Esempio di una Cloudflare Worker che utilizza WASM nel 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">wasmModule</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./image-processor.wasm&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">env</span>, <span style="color:#a6e22e">ctx</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ImageProcessor</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">WebAssembly</span>.<span style="color:#a6e22e">instantiate</span>(<span style="color:#a6e22e">wasmModule</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imageData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">arrayBuffer</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">processImage</span>(<span style="color:#a6e22e">imageData</span>, <span style="color:#a6e22e">ImageProcessor</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#a6e22e">result</span>, {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;image/webp&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Cache-Control&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;max-age=3600&#39;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">processImage</span>(<span style="color:#a6e22e">imageData</span>, <span style="color:#a6e22e">ImageProcessor</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">processor</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ImageProcessor</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">processor</span>.<span style="color:#a6e22e">loadImage</span>(<span style="color:#a6e22e">imageData</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">processor</span>.<span style="color:#a6e22e">resize</span>(<span style="color:#ae81ff">800</span>, <span style="color:#ae81ff">600</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">processor</span>.<span style="color:#a6e22e">applyFilter</span>(<span style="color:#e6db74">&#39;enhance&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">processor</span>.<span style="color:#a6e22e">exportAsWebP</span>(<span style="color:#ae81ff">0.8</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="3-plugin-e-estensioni">3. Plugin e estensioni</h3>
+<p>WASM ha rivoluzionato il modo in cui vengono create estensioni per applicazioni:</p>
+<ul>
+<li><strong>Estensioni browser</strong>: Più performanti e isolate per sicurezza</li>
+<li><strong>Plugin per CMS</strong>: WordPress, Drupal e altri CMS supportano plugin WASM</li>
+<li><strong>Suite di produttività</strong>: Microsoft Office Web e Google Workspace supportano estensioni WASM</li>
+</ul>
+<h3 id="4-portabilità-del-software-legacy">4. Portabilità del software legacy</h3>
+<p>Un caso d&rsquo;uso importante è la possibilità di portare software esistente sul web:</p>
+<ul>
+<li><strong>Software scientifico</strong>: Librerie C/C++ di calcolo numerico come BLAS, LAPACK</li>
+<li><strong>Motori di database</strong>: SQLite, PostgreSQL compilati per WASM</li>
+<li><strong>Emulatori</strong>: Macchine virtuali e emulatori di vecchi sistemi</li>
+</ul>
+<h2 id="prestazioni-e-ottimizzazioni-nel-2025">Prestazioni e ottimizzazioni nel 2025</h2>
+<h3 id="confronto-prestazionale">Confronto prestazionale</h3>
+<p>Nel 2025, WebAssembly ha ridotto significativamente il divario di prestazioni con il codice nativo:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Operazione</th>
+          <th>JavaScript</th>
+          <th>WASM (2022)</th>
+          <th>WASM (2025)</th>
+          <th>Nativo C++</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Elaborazione immagini</td>
+          <td>100%</td>
+          <td>40%</td>
+          <td>15%</td>
+          <td>0%</td>
+      </tr>
+      <tr>
+          <td>Decodifica video</td>
+          <td>300%</td>
+          <td>60%</td>
+          <td>20%</td>
+          <td>0%</td>
+      </tr>
+      <tr>
+          <td>Simulazione fisica</td>
+          <td>500%</td>
+          <td>70%</td>
+          <td>25%</td>
+          <td>0%</td>
+      </tr>
+      <tr>
+          <td>Compressione dati</td>
+          <td>400%</td>
+          <td>50%</td>
+          <td>20%</td>
+          <td>0%</td>
+      </tr>
+  </tbody>
+</table>
+<p><em>Percentuali rappresentano l&rsquo;overhead rispetto al codice nativo (più basso è meglio)</em></p>
+<h3 id="tecniche-di-ottimizzazione">Tecniche di ottimizzazione</h3>
+<ol>
+<li><strong>SIMD</strong>: Le istruzioni Single Instruction Multiple Data sono ora ampiamente supportate</li>
+<li><strong>Multi-threading</strong>: Supporto avanzato per thread e atomics</li>
+<li><strong>Streaming compilation</strong>: Compilazione del codice WASM durante il download</li>
+<li><strong>Tiered compilation</strong>: Compilazione rapida iniziale seguita da ottimizzazioni più avanzate</li>
+<li><strong>Cache del codice compilato</strong>: I browser memorizzano in cache le versioni compilate</li>
+</ol>
+<h2 id="integrazione-con-javascript-e-web-api">Integrazione con JavaScript e Web API</h2>
+<h3 id="pattern-di-interoperabilità">Pattern di interoperabilità</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Esempio di interazione JavaScript-WASM nel 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createWASMInstance</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@wasm-tools/loader&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Importare e inizializzare il modulo WASM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">exports</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">createWASMInstance</span>(<span style="color:#e6db74">&#39;./physics-engine.wasm&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createWorld</span>, 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">addBody</span>, 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">simulate</span>, 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getPositionsPtr</span>, 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getPositionsSize</span> 
+</span></span><span style="display:flex;"><span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">exports</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Creare mondo fisico
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">worldId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createWorld</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Aggiungere corpi fisici
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">boxId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">addBody</span>(<span style="color:#a6e22e">worldId</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;box&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">dimensions</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mass</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">groundId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">addBody</span>(<span style="color:#a6e22e">worldId</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;plane&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">normal</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Loop di simulazione
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">simulationLoop</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Eseguire step simulazione (16ms = ~60fps)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">simulate</span>(<span style="color:#a6e22e">worldId</span>, <span style="color:#ae81ff">16</span>);
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Ottenere i risultati
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">posPtr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getPositionsPtr</span>(<span style="color:#a6e22e">worldId</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">posSize</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getPositionsSize</span>(<span style="color:#a6e22e">worldId</span>);
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Accedere direttamente alla memoria WASM tramite SharedArrayBuffer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">positions</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Float32Array</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">memory</span>.<span style="color:#a6e22e">buffer</span>, 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">posPtr</span>, 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">posSize</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Aggiornare la scena 3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">updateScene</span>(<span style="color:#a6e22e">positions</span>);
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#a6e22e">simulationLoop</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#a6e22e">simulationLoop</span>);
+</span></span></code></pre></div><h3 id="web-api-accessibili-da-wasm">Web API accessibili da WASM</h3>
+<p>Nel 2025, WASM può accedere direttamente a molte Web API:</p>
+<ul>
+<li><strong>Canvas API e WebGL/WebGPU</strong>: Rendering grafico diretto</li>
+<li><strong>Web Audio API</strong>: Elaborazione audio di basso livello</li>
+<li><strong>WebRTC</strong>: Comunicazione real-time</li>
+<li><strong>File System Access API</strong>: Accesso ai file locali (con autorizzazione)</li>
+<li><strong>Web Bluetooth/USB/Serial</strong>: Connessione a dispositivi</li>
+</ul>
+<h2 id="sviluppi-futuri-2026-e-oltre">Sviluppi futuri: 2026 e oltre</h2>
+<h3 id="wasm-sul-mobile">WASM sul mobile</h3>
+<ul>
+<li><strong>Applicazioni ibride</strong>: Framework come React Native e Flutter che utilizzano WASM per logica condivisa</li>
+<li><strong>Performance gaming</strong>: Giochi mobili con componenti WASM per prestazioni elevate</li>
+<li><strong>Elaborazione ML on-device</strong>: Modelli ML compilati in WASM per esecuzione locale</li>
+</ul>
+<h3 id="wasm-e-intelligenza-artificiale">WASM e intelligenza artificiale</h3>
+<ul>
+<li><strong>Esecuzione di modelli ML nel browser</strong>: Framework come TensorFlow.js e ONNX.js ottimizzati con WASM</li>
+<li><strong>Inferenza locale</strong>: Modelli più piccoli che possono essere eseguiti completamente lato client</li>
+<li><strong>Applicazioni generative</strong>: Strumenti di generazione testo/immagine che funzionano offline</li>
+</ul>
+<h3 id="il-futuro-dellarchitettura-software-con-wasm">Il futuro dell&rsquo;architettura software con WASM</h3>
+<ul>
+<li><strong>WASM come formato universale di distribuzione</strong>: &ldquo;Compila una volta, esegui ovunque&rdquo;</li>
+<li><strong>Microservizi universali</strong>: Componenti riutilizzabili tra web, mobile, edge e server</li>
+<li><strong>Ecosistema di package WASM</strong>: Come npm ma per moduli WASM interoperabili</li>
+</ul>
+<h2 id="conclusioni">Conclusioni</h2>
+<p>Nel 2025, WebAssembly è passato dall&rsquo;essere una tecnologia interessante ma di nicchia a un pilastro fondamentale dell&rsquo;ecosistema di sviluppo web e oltre. La sua capacità di eseguire codice quasi nativo in ambienti sicuri e sandboxed lo ha reso la scelta ideale per applicazioni ad alte prestazioni, sia nel browser che sul server.</p>
+<p>Le nuove funzionalità come la garbage collection nativa, il component model e l&rsquo;accesso diretto alle API web hanno ampliato significativamente i casi d&rsquo;uso, mentre l&rsquo;integrazione con l&rsquo;edge computing e i microservizi ha aperto nuove frontiere per l&rsquo;architettura delle applicazioni.</p>
+<p>Per gli sviluppatori italiani, imparare a lavorare con WebAssembly oggi rappresenta un investimento prezioso per il futuro, in quanto questa tecnologia continuerà ad espandere il suo ruolo nello sviluppo software nei prossimi anni. Che si tratti di ottimizzare applicazioni web esistenti, portare software legacy sul web o costruire la prossima generazione di applicazioni distribuite, WASM sarà uno strumento fondamentale nella cassetta degli attrezzi degli sviluppatori.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/webassembly">WebAssembly</a></li>
+					
+					<li><a href="/tags/wasm">WASM</a></li>
+					
+					<li><a href="/tags/rust">Rust</a></li>
+					
+					<li><a href="/tags/c&#43;&#43;">C&#43;&#43;</a></li>
+					
+					<li><a href="/tags/web-development">Web Development</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/angepili" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/ngpi71" title="Twitter"><i data-feather="twitter"></i></a>|⚡️
+	2025  © AngeloPili.it |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>
