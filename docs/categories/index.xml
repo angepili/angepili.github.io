@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on AngePili</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on AngePili</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
     <lastBuildDate>Sat, 22 Mar 2025 09:15:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Systems</title>
-      <link>http://localhost:1313/categories/systems/</link>
+      <link>/categories/systems/</link>
       <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/categories/systems/</guid>
+      <guid>/categories/systems/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
-      <link>http://localhost:1313/categories/development/</link>
+      <link>/categories/development/</link>
       <pubDate>Wed, 17 Jan 2024 08:45:00 +0100</pubDate>
-      <guid>http://localhost:1313/categories/development/</guid>
+      <guid>/categories/development/</guid>
       <description></description>
     </item>
     <item>
       <title>DevOps</title>
-      <link>http://localhost:1313/categories/devops/</link>
+      <link>/categories/devops/</link>
       <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/devops/</guid>
+      <guid>/categories/devops/</guid>
       <description></description>
     </item>
   </channel>

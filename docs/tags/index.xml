@@ -2,270 +2,270 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on AngePili</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on AngePili</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
     <lastBuildDate>Sat, 22 Mar 2025 09:15:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Agile</title>
-      <link>http://localhost:1313/tags/agile/</link>
+      <link>/tags/agile/</link>
       <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/agile/</guid>
+      <guid>/tags/agile/</guid>
       <description></description>
     </item>
     <item>
       <title>Headless CMS</title>
-      <link>http://localhost:1313/tags/headless-cms/</link>
+      <link>/tags/headless-cms/</link>
       <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/headless-cms/</guid>
+      <guid>/tags/headless-cms/</guid>
       <description></description>
     </item>
     <item>
       <title>Leadership</title>
-      <link>http://localhost:1313/tags/leadership/</link>
+      <link>/tags/leadership/</link>
       <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/leadership/</guid>
+      <guid>/tags/leadership/</guid>
       <description></description>
     </item>
     <item>
       <title>Project Management</title>
-      <link>http://localhost:1313/tags/project-management/</link>
+      <link>/tags/project-management/</link>
       <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/project-management/</guid>
+      <guid>/tags/project-management/</guid>
       <description></description>
     </item>
     <item>
       <title>Scrum</title>
-      <link>http://localhost:1313/tags/scrum/</link>
+      <link>/tags/scrum/</link>
       <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/scrum/</guid>
+      <guid>/tags/scrum/</guid>
       <description></description>
     </item>
     <item>
       <title>AI</title>
-      <link>http://localhost:1313/tags/ai/</link>
+      <link>/tags/ai/</link>
       <pubDate>Wed, 17 Jan 2024 08:45:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
+      <guid>/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>ChatGPT</title>
-      <link>http://localhost:1313/tags/chatgpt/</link>
+      <link>/tags/chatgpt/</link>
       <pubDate>Wed, 17 Jan 2024 08:45:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/chatgpt/</guid>
+      <guid>/tags/chatgpt/</guid>
       <description></description>
     </item>
     <item>
       <title>Produttività</title>
-      <link>http://localhost:1313/tags/produttivit%C3%A0/</link>
+      <link>/tags/produttivit%C3%A0/</link>
       <pubDate>Wed, 17 Jan 2024 08:45:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/produttivit%C3%A0/</guid>
+      <guid>/tags/produttivit%C3%A0/</guid>
       <description></description>
     </item>
     <item>
       <title>Sviluppo Software</title>
-      <link>http://localhost:1313/tags/sviluppo-software/</link>
+      <link>/tags/sviluppo-software/</link>
       <pubDate>Wed, 17 Jan 2024 08:45:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/sviluppo-software/</guid>
+      <guid>/tags/sviluppo-software/</guid>
       <description></description>
     </item>
     <item>
       <title>Automation</title>
-      <link>http://localhost:1313/tags/automation/</link>
+      <link>/tags/automation/</link>
       <pubDate>Thu, 09 Feb 2023 11:20:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/automation/</guid>
+      <guid>/tags/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>Frontend</title>
-      <link>http://localhost:1313/tags/frontend/</link>
+      <link>/tags/frontend/</link>
       <pubDate>Thu, 09 Feb 2023 11:20:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/frontend/</guid>
+      <guid>/tags/frontend/</guid>
       <description></description>
     </item>
     <item>
       <title>Playwright</title>
-      <link>http://localhost:1313/tags/playwright/</link>
+      <link>/tags/playwright/</link>
       <pubDate>Thu, 09 Feb 2023 11:20:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/playwright/</guid>
+      <guid>/tags/playwright/</guid>
       <description></description>
     </item>
     <item>
       <title>Testing</title>
-      <link>http://localhost:1313/tags/testing/</link>
+      <link>/tags/testing/</link>
       <pubDate>Thu, 09 Feb 2023 11:20:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/testing/</guid>
+      <guid>/tags/testing/</guid>
       <description></description>
     </item>
     <item>
       <title>CSS</title>
-      <link>http://localhost:1313/tags/css/</link>
+      <link>/tags/css/</link>
       <pubDate>Tue, 21 Jun 2022 09:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/css/</guid>
+      <guid>/tags/css/</guid>
       <description></description>
     </item>
     <item>
       <title>Responsive Design</title>
-      <link>http://localhost:1313/tags/responsive-design/</link>
+      <link>/tags/responsive-design/</link>
       <pubDate>Tue, 21 Jun 2022 09:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/responsive-design/</guid>
+      <guid>/tags/responsive-design/</guid>
       <description></description>
     </item>
     <item>
       <title>Angular</title>
-      <link>http://localhost:1313/tags/angular/</link>
+      <link>/tags/angular/</link>
       <pubDate>Fri, 05 Nov 2021 10:30:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/angular/</guid>
+      <guid>/tags/angular/</guid>
       <description></description>
     </item>
     <item>
       <title>Javascript</title>
-      <link>http://localhost:1313/tags/javascript/</link>
+      <link>/tags/javascript/</link>
       <pubDate>Fri, 05 Nov 2021 10:30:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/javascript/</guid>
+      <guid>/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>TypeScript</title>
-      <link>http://localhost:1313/tags/typescript/</link>
+      <link>/tags/typescript/</link>
       <pubDate>Fri, 05 Nov 2021 10:30:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/typescript/</guid>
+      <guid>/tags/typescript/</guid>
       <description></description>
     </item>
     <item>
       <title>API</title>
-      <link>http://localhost:1313/tags/api/</link>
+      <link>/tags/api/</link>
       <pubDate>Thu, 18 Mar 2021 10:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/api/</guid>
+      <guid>/tags/api/</guid>
       <description></description>
     </item>
     <item>
       <title>Backend</title>
-      <link>http://localhost:1313/tags/backend/</link>
+      <link>/tags/backend/</link>
       <pubDate>Thu, 18 Mar 2021 10:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/backend/</guid>
+      <guid>/tags/backend/</guid>
       <description></description>
     </item>
     <item>
       <title>GraphQL</title>
-      <link>http://localhost:1313/tags/graphql/</link>
+      <link>/tags/graphql/</link>
       <pubDate>Thu, 18 Mar 2021 10:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/graphql/</guid>
+      <guid>/tags/graphql/</guid>
       <description></description>
     </item>
     <item>
       <title>REST</title>
-      <link>http://localhost:1313/tags/rest/</link>
+      <link>/tags/rest/</link>
       <pubDate>Thu, 18 Mar 2021 10:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/tags/rest/</guid>
+      <guid>/tags/rest/</guid>
       <description></description>
     </item>
     <item>
       <title>Apache</title>
-      <link>http://localhost:1313/tags/apache/</link>
+      <link>/tags/apache/</link>
       <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/apache/</guid>
+      <guid>/tags/apache/</guid>
       <description></description>
     </item>
     <item>
       <title>HTTPS</title>
-      <link>http://localhost:1313/tags/https/</link>
+      <link>/tags/https/</link>
       <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/https/</guid>
+      <guid>/tags/https/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>/tags/linux/</link>
       <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>MacOS</title>
-      <link>http://localhost:1313/tags/macos/</link>
+      <link>/tags/macos/</link>
       <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/macos/</guid>
+      <guid>/tags/macos/</guid>
       <description></description>
     </item>
     <item>
       <title>SSL</title>
-      <link>http://localhost:1313/tags/ssl/</link>
+      <link>/tags/ssl/</link>
       <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ssl/</guid>
+      <guid>/tags/ssl/</guid>
       <description></description>
     </item>
     <item>
       <title>Webserver</title>
-      <link>http://localhost:1313/tags/webserver/</link>
+      <link>/tags/webserver/</link>
       <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/webserver/</guid>
+      <guid>/tags/webserver/</guid>
       <description></description>
     </item>
     <item>
       <title>Svelte</title>
-      <link>http://localhost:1313/tags/svelte/</link>
+      <link>/tags/svelte/</link>
       <pubDate>Wed, 02 Sep 2020 21:45:33 +0200</pubDate>
-      <guid>http://localhost:1313/tags/svelte/</guid>
+      <guid>/tags/svelte/</guid>
       <description></description>
     </item>
     <item>
       <title>Youtube</title>
-      <link>http://localhost:1313/tags/youtube/</link>
+      <link>/tags/youtube/</link>
       <pubDate>Fri, 21 Aug 2020 18:49:16 +0200</pubDate>
-      <guid>http://localhost:1313/tags/youtube/</guid>
+      <guid>/tags/youtube/</guid>
       <description></description>
     </item>
     <item>
       <title>Postman</title>
-      <link>http://localhost:1313/tags/postman/</link>
+      <link>/tags/postman/</link>
       <pubDate>Mon, 17 Aug 2020 17:22:42 +0200</pubDate>
-      <guid>http://localhost:1313/tags/postman/</guid>
+      <guid>/tags/postman/</guid>
       <description></description>
     </item>
     <item>
       <title>Linkedin</title>
-      <link>http://localhost:1313/tags/linkedin/</link>
+      <link>/tags/linkedin/</link>
       <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/linkedin/</guid>
+      <guid>/tags/linkedin/</guid>
       <description></description>
     </item>
     <item>
       <title>Parcel.js</title>
-      <link>http://localhost:1313/tags/parcel.js/</link>
+      <link>/tags/parcel.js/</link>
       <pubDate>Fri, 03 Jul 2020 22:57:46 +0200</pubDate>
-      <guid>http://localhost:1313/tags/parcel.js/</guid>
+      <guid>/tags/parcel.js/</guid>
       <description></description>
     </item>
     <item>
       <title>HTML5</title>
-      <link>http://localhost:1313/tags/html5/</link>
+      <link>/tags/html5/</link>
       <pubDate>Fri, 15 May 2020 14:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/html5/</guid>
+      <guid>/tags/html5/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Components</title>
-      <link>http://localhost:1313/tags/web-components/</link>
+      <link>/tags/web-components/</link>
       <pubDate>Fri, 15 May 2020 14:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/web-components/</guid>
+      <guid>/tags/web-components/</guid>
       <description></description>
     </item>
     <item>
       <title>Class Components</title>
-      <link>http://localhost:1313/tags/class-components/</link>
+      <link>/tags/class-components/</link>
       <pubDate>Sat, 15 Jun 2019 14:20:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/class-components/</guid>
+      <guid>/tags/class-components/</guid>
       <description></description>
     </item>
     <item>
       <title>React</title>
-      <link>http://localhost:1313/tags/react/</link>
+      <link>/tags/react/</link>
       <pubDate>Sat, 15 Jun 2019 14:20:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/react/</guid>
+      <guid>/tags/react/</guid>
       <description></description>
     </item>
   </channel>

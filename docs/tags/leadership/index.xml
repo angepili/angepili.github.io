@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Leadership on AngePili</title>
-    <link>http://localhost:1313/tags/leadership/</link>
+    <link>/tags/leadership/</link>
     <description>Recent content in Leadership on AngePili</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
     <lastBuildDate>Sat, 22 Mar 2025 09:15:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/leadership/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Da sviluppatore a Technical Project Manager</title>
-      <link>http://localhost:1313/pages/sviluppatore-technical-pm-progetti-headless/</link>
+      <link>/pages/sviluppatore-technical-pm-progetti-headless/</link>
       <pubDate>Sat, 22 Mar 2025 09:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/pages/sviluppatore-technical-pm-progetti-headless/</guid>
+      <guid>/pages/sviluppatore-technical-pm-progetti-headless/</guid>
       <description>Il viaggio da sviluppatore a Technical Project Manager raccontato attraverso un progetto headless con Nuxt 3, Contentful e Algolia. Una guida pratica su come il background tecnico e le competenze di gestione Agile si fondono per portare al successo progetti complessi.</description>
     </item>
   </channel>

@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linkedin on AngePili</title>
-    <link>http://localhost:1313/tags/linkedin/</link>
+    <link>/tags/linkedin/</link>
     <description>Recent content in Linkedin on AngePili</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
     <lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/linkedin/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/linkedin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linkedin Login con Javascript</title>
-      <link>http://localhost:1313/pages/linkedin-api-javascript/</link>
+      <link>/pages/linkedin-api-javascript/</link>
       <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/pages/linkedin-api-javascript/</guid>
+      <guid>/pages/linkedin-api-javascript/</guid>
       <description>Come sviluppare una login linkedin con le API in Javascript ES6: attraverso l&amp;rsquo;utilizzo delle Promise andiamo a fare l&amp;rsquo;autenticazione e prendere i dati del profilo.</description>
     </item>
     <item>
       <title>Linkedin Login con Postman</title>
-      <link>http://localhost:1313/pages/linkedin-api-postman/</link>
+      <link>/pages/linkedin-api-postman/</link>
       <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/pages/linkedin-api-postman/</guid>
+      <guid>/pages/linkedin-api-postman/</guid>
       <description>Linkedin Login tramite le API, eseguire una semplice autenticazione, e ottenere i dati dell&amp;rsquo;utente e pubblicare qualcosa sulla propria bacheca.</description>
     </item>
   </channel>

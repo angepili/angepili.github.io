@@ -1,4 +1,4 @@
-baseURL = "https://angepili.github.io/"
+baseURL = "/"
 languageCode = "en-us"
 title = "AngePili"
 description = "Software Engineer Analyst di Monza Brianza, sviluppo applicativi in Php e Mysql su framework Laravel, Javascript ES6, React e Svelte."

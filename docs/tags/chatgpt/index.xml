@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChatGPT on AngePili</title>
-    <link>http://localhost:1313/tags/chatgpt/</link>
+    <link>/tags/chatgpt/</link>
     <description>Recent content in ChatGPT on AngePili</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
     <lastBuildDate>Wed, 17 Jan 2024 08:45:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/chatgpt/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/chatgpt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Integrare ChatGPT nel workflow di sviluppo: guida pratica per gli sviluppatori</title>
-      <link>http://localhost:1313/pages/chatgpt-workflow-sviluppo/</link>
+      <link>/pages/chatgpt-workflow-sviluppo/</link>
       <pubDate>Wed, 17 Jan 2024 08:45:00 +0100</pubDate>
-      <guid>http://localhost:1313/pages/chatgpt-workflow-sviluppo/</guid>
+      <guid>/pages/chatgpt-workflow-sviluppo/</guid>
       <description>Come gli sviluppatori possono sfruttare ChatGPT per migliorare la produttività, generare codice, documentazione e ottimizzare il workflow di sviluppo nel 2024 con esempi pratici e best practices.</description>
     </item>
   </channel>

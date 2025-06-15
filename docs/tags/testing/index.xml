@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Testing on AngePili</title>
-    <link>http://localhost:1313/tags/testing/</link>
+    <link>/tags/testing/</link>
     <description>Recent content in Testing on AngePili</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
     <lastBuildDate>Thu, 09 Feb 2023 11:20:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Testing automatizzato con Playwright: strategie e best practices</title>
-      <link>http://localhost:1313/pages/testing-automatizzato-playwright/</link>
+      <link>/pages/testing-automatizzato-playwright/</link>
       <pubDate>Thu, 09 Feb 2023 11:20:00 +0100</pubDate>
-      <guid>http://localhost:1313/pages/testing-automatizzato-playwright/</guid>
+      <guid>/pages/testing-automatizzato-playwright/</guid>
       <description>Scopri come implementare una strategia di testing efficace utilizzando Playwright, il framework di automazione cross-browser di Microsoft che sta rivoluzionando il testing end-to-end nel 2023.</description>
     </item>
   </channel>

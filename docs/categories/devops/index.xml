@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DevOps on AngePili</title>
-    <link>http://localhost:1313/categories/devops/</link>
+    <link>/categories/devops/</link>
     <description>Recent content in DevOps on AngePili</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
     <lastBuildDate>Wed, 23 Sep 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Abilitare HTTPS su Apache in ambiente locale</title>
-      <link>http://localhost:1313/pages/creare-un-dominio-locale-con-apache-con-https/</link>
+      <link>/pages/creare-un-dominio-locale-con-apache-con-https/</link>
       <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/pages/creare-un-dominio-locale-con-apache-con-https/</guid>
+      <guid>/pages/creare-un-dominio-locale-con-apache-con-https/</guid>
       <description>Dopo aver visto come configurare virtual host con Apache, scopriamo come abilitare HTTPS in ambiente locale per replicare completamente un ambiente di produzione sicuro.</description>
     </item>
   </channel>

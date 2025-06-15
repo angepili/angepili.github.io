@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Frontend on AngePili</title>
-    <link>http://localhost:1313/tags/frontend/</link>
+    <link>/tags/frontend/</link>
     <description>Recent content in Frontend on AngePili</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
     <lastBuildDate>Thu, 09 Feb 2023 11:20:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Testing automatizzato con Playwright: strategie e best practices</title>
-      <link>http://localhost:1313/pages/testing-automatizzato-playwright/</link>
+      <link>/pages/testing-automatizzato-playwright/</link>
       <pubDate>Thu, 09 Feb 2023 11:20:00 +0100</pubDate>
-      <guid>http://localhost:1313/pages/testing-automatizzato-playwright/</guid>
+      <guid>/pages/testing-automatizzato-playwright/</guid>
       <description>Scopri come implementare una strategia di testing efficace utilizzando Playwright, il framework di automazione cross-browser di Microsoft che sta rivoluzionando il testing end-to-end nel 2023.</description>
     </item>
     <item>
       <title>CSS Container Queries: il futuro del responsive design oltre i media queries</title>
-      <link>http://localhost:1313/pages/css-container-queries/</link>
+      <link>/pages/css-container-queries/</link>
       <pubDate>Tue, 21 Jun 2022 09:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/pages/css-container-queries/</guid>
+      <guid>/pages/css-container-queries/</guid>
       <description>CSS Container Queries rappresentano un&amp;rsquo;evoluzione fondamentale nel responsive design: scopri come creare layout che rispondono alle dimensioni del container invece che della viewport, con esempi pratici e casi d&amp;rsquo;uso.</description>
     </item>
     <item>
       <title>Angular 13: novità e miglioramenti</title>
-      <link>http://localhost:1313/pages/angular-13-novita-e-miglioramenti/</link>
+      <link>/pages/angular-13-novita-e-miglioramenti/</link>
       <pubDate>Fri, 05 Nov 2021 10:30:00 +0100</pubDate>
-      <guid>http://localhost:1313/pages/angular-13-novita-e-miglioramenti/</guid>
+      <guid>/pages/angular-13-novita-e-miglioramenti/</guid>
       <description>Scopriamo tutte le novità di Angular 13: View Engine rimosso a favore di Ivy, componenti più performanti, miglioramenti significativi nelle form API e nel CLI, e cosa significa questo per lo sviluppo di applicazioni moderne.</description>
     </item>
     <item>
       <title>React Class Components: guida completa</title>
-      <link>http://localhost:1313/pages/react-class-components-guida/</link>
+      <link>/pages/react-class-components-guida/</link>
       <pubDate>Sat, 15 Jun 2019 14:20:00 +0200</pubDate>
-      <guid>http://localhost:1313/pages/react-class-components-guida/</guid>
+      <guid>/pages/react-class-components-guida/</guid>
       <description>Una guida completa ai Class Components di React: come strutturarli, gestire lo stato, usare lifecycle methods, e implementare pattern comuni per applicazioni React robuste e manutenibili.</description>
     </item>
   </channel>

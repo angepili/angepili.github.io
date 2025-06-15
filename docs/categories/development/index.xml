@@ -2,109 +2,109 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on AngePili</title>
-    <link>http://localhost:1313/categories/development/</link>
+    <link>/categories/development/</link>
     <description>Recent content in Development on AngePili</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© AngeloPili.it</copyright>
     <lastBuildDate>Wed, 17 Jan 2024 08:45:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Integrare ChatGPT nel workflow di sviluppo: guida pratica per gli sviluppatori</title>
-      <link>http://localhost:1313/pages/chatgpt-workflow-sviluppo/</link>
+      <link>/pages/chatgpt-workflow-sviluppo/</link>
       <pubDate>Wed, 17 Jan 2024 08:45:00 +0100</pubDate>
-      <guid>http://localhost:1313/pages/chatgpt-workflow-sviluppo/</guid>
+      <guid>/pages/chatgpt-workflow-sviluppo/</guid>
       <description>Come gli sviluppatori possono sfruttare ChatGPT per migliorare la produttività, generare codice, documentazione e ottimizzare il workflow di sviluppo nel 2024 con esempi pratici e best practices.</description>
     </item>
     <item>
       <title>Testing automatizzato con Playwright: strategie e best practices</title>
-      <link>http://localhost:1313/pages/testing-automatizzato-playwright/</link>
+      <link>/pages/testing-automatizzato-playwright/</link>
       <pubDate>Thu, 09 Feb 2023 11:20:00 +0100</pubDate>
-      <guid>http://localhost:1313/pages/testing-automatizzato-playwright/</guid>
+      <guid>/pages/testing-automatizzato-playwright/</guid>
       <description>Scopri come implementare una strategia di testing efficace utilizzando Playwright, il framework di automazione cross-browser di Microsoft che sta rivoluzionando il testing end-to-end nel 2023.</description>
     </item>
     <item>
       <title>CSS Container Queries: il futuro del responsive design oltre i media queries</title>
-      <link>http://localhost:1313/pages/css-container-queries/</link>
+      <link>/pages/css-container-queries/</link>
       <pubDate>Tue, 21 Jun 2022 09:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/pages/css-container-queries/</guid>
+      <guid>/pages/css-container-queries/</guid>
       <description>CSS Container Queries rappresentano un&amp;rsquo;evoluzione fondamentale nel responsive design: scopri come creare layout che rispondono alle dimensioni del container invece che della viewport, con esempi pratici e casi d&amp;rsquo;uso.</description>
     </item>
     <item>
       <title>Angular 13: novità e miglioramenti</title>
-      <link>http://localhost:1313/pages/angular-13-novita-e-miglioramenti/</link>
+      <link>/pages/angular-13-novita-e-miglioramenti/</link>
       <pubDate>Fri, 05 Nov 2021 10:30:00 +0100</pubDate>
-      <guid>http://localhost:1313/pages/angular-13-novita-e-miglioramenti/</guid>
+      <guid>/pages/angular-13-novita-e-miglioramenti/</guid>
       <description>Scopriamo tutte le novità di Angular 13: View Engine rimosso a favore di Ivy, componenti più performanti, miglioramenti significativi nelle form API e nel CLI, e cosa significa questo per lo sviluppo di applicazioni moderne.</description>
     </item>
     <item>
       <title>API GraphQL vs REST: quando scegliere l&#39;uno o l&#39;altro</title>
-      <link>http://localhost:1313/pages/graphql-vs-rest/</link>
+      <link>/pages/graphql-vs-rest/</link>
       <pubDate>Thu, 18 Mar 2021 10:15:00 +0100</pubDate>
-      <guid>http://localhost:1313/pages/graphql-vs-rest/</guid>
+      <guid>/pages/graphql-vs-rest/</guid>
       <description>Confronto approfondito tra le API GraphQL e REST: vantaggi, svantaggi e scenari d&amp;rsquo;uso ideali per ciascuna tecnologia. Quando scegliere GraphQL e quando restare con REST nel 2021.</description>
     </item>
     <item>
       <title>I tipi di dati in Javascript</title>
-      <link>http://localhost:1313/pages/tipi-in-javascript/</link>
+      <link>/pages/tipi-in-javascript/</link>
       <pubDate>Sat, 03 Oct 2020 00:45:33 +0200</pubDate>
-      <guid>http://localhost:1313/pages/tipi-in-javascript/</guid>
+      <guid>/pages/tipi-in-javascript/</guid>
       <description>Cos&amp;rsquo;è un valore di tipo numero, una stringa, o cos&amp;rsquo;è undefined? Andiamo ad analizzire quali sono i tipi di dato in javascript, e come usarli.</description>
     </item>
     <item>
       <title>Svelte Framework: come funziona, una veloce introduzione.</title>
-      <link>http://localhost:1313/pages/svelte-js/</link>
+      <link>/pages/svelte-js/</link>
       <pubDate>Wed, 02 Sep 2020 21:45:33 +0200</pubDate>
-      <guid>http://localhost:1313/pages/svelte-js/</guid>
+      <guid>/pages/svelte-js/</guid>
       <description>Che cos&amp;rsquo;è e come funziona Svelte framework? Andiamo ad analizzare come funziona questo framework che fa dei suoi punti forti la reattività, la semplicità e velocità.</description>
     </item>
     <item>
       <title>Ottenere i commenti Youtube tramite API con Javascript</title>
-      <link>http://localhost:1313/pages/commenti-youtube-javascript/</link>
+      <link>/pages/commenti-youtube-javascript/</link>
       <pubDate>Fri, 21 Aug 2020 18:49:16 +0200</pubDate>
-      <guid>http://localhost:1313/pages/commenti-youtube-javascript/</guid>
+      <guid>/pages/commenti-youtube-javascript/</guid>
       <description>Attraverso le API di youtube viste nel precedente articolo, con Javascript proveremo ad eseguire questa chiamata direttamente dal browser: dall&amp;rsquo;API otterremo la risposta con i commenti di Youtube in formato JSON, e proveremo ad impaginarli in un widget Html</description>
     </item>
     <item>
       <title>Ottenere i commenti di un video Youtube tramite API con Postman</title>
-      <link>http://localhost:1313/pages/ottenere-commenti-video-youtube/</link>
+      <link>/pages/ottenere-commenti-video-youtube/</link>
       <pubDate>Mon, 17 Aug 2020 17:22:42 +0200</pubDate>
-      <guid>http://localhost:1313/pages/ottenere-commenti-video-youtube/</guid>
+      <guid>/pages/ottenere-commenti-video-youtube/</guid>
       <description>Tramite le API di Youtube è possibile ottenere dati di canali, video, ed insighits in maniera molto semplice. In questo post vediamo come ottenere la lista dei commenti di un Video tramite API in formato Json.</description>
     </item>
     <item>
       <title>Linkedin Login con Javascript</title>
-      <link>http://localhost:1313/pages/linkedin-api-javascript/</link>
+      <link>/pages/linkedin-api-javascript/</link>
       <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/pages/linkedin-api-javascript/</guid>
+      <guid>/pages/linkedin-api-javascript/</guid>
       <description>Come sviluppare una login linkedin con le API in Javascript ES6: attraverso l&amp;rsquo;utilizzo delle Promise andiamo a fare l&amp;rsquo;autenticazione e prendere i dati del profilo.</description>
     </item>
     <item>
       <title>Linkedin Login con Postman</title>
-      <link>http://localhost:1313/pages/linkedin-api-postman/</link>
+      <link>/pages/linkedin-api-postman/</link>
       <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/pages/linkedin-api-postman/</guid>
+      <guid>/pages/linkedin-api-postman/</guid>
       <description>Linkedin Login tramite le API, eseguire una semplice autenticazione, e ottenere i dati dell&amp;rsquo;utente e pubblicare qualcosa sulla propria bacheca.</description>
     </item>
     <item>
       <title>Creare un progetto Parcel.js</title>
-      <link>http://localhost:1313/pages/creare-progetto-parceljs/</link>
+      <link>/pages/creare-progetto-parceljs/</link>
       <pubDate>Fri, 03 Jul 2020 22:57:46 +0200</pubDate>
-      <guid>http://localhost:1313/pages/creare-progetto-parceljs/</guid>
+      <guid>/pages/creare-progetto-parceljs/</guid>
       <description>Parcel.js è un semplice bundler, ma anche molto completo. Vediamo come è semplice per uno sviluppatore, creare un piccolo progetto di partenza che compili ES6 a Javascript compatibile e ci permetta di scrivere Scss, poi compilato in Css</description>
     </item>
     <item>
       <title>Web Components e Shadow DOM: componenti riutilizzabili senza framework</title>
-      <link>http://localhost:1313/pages/web-components-shadow-dom/</link>
+      <link>/pages/web-components-shadow-dom/</link>
       <pubDate>Fri, 15 May 2020 14:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/pages/web-components-shadow-dom/</guid>
+      <guid>/pages/web-components-shadow-dom/</guid>
       <description>Scopri come creare componenti riutilizzabili nativi senza dipendere da framework come React o Vue grazie ai Web Components e Shadow DOM, una tecnologia web standard supportata da tutti i browser moderni.</description>
     </item>
     <item>
       <title>React Class Components: guida completa</title>
-      <link>http://localhost:1313/pages/react-class-components-guida/</link>
+      <link>/pages/react-class-components-guida/</link>
       <pubDate>Sat, 15 Jun 2019 14:20:00 +0200</pubDate>
-      <guid>http://localhost:1313/pages/react-class-components-guida/</guid>
+      <guid>/pages/react-class-components-guida/</guid>
       <description>Una guida completa ai Class Components di React: come strutturarli, gestire lo stato, usare lifecycle methods, e implementare pattern comuni per applicazioni React robuste e manutenibili.</description>
     </item>
   </channel>

@@ -2,194 +2,194 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>2025-03-22T09:15:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/agile/</loc>
+    <loc>/tags/agile/</loc>
     <lastmod>2025-03-22T09:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2025-03-22T09:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/sviluppatore-technical-pm-progetti-headless/</loc>
+    <loc>/pages/sviluppatore-technical-pm-progetti-headless/</loc>
     <lastmod>2025-03-22T09:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/headless-cms/</loc>
+    <loc>/tags/headless-cms/</loc>
     <lastmod>2025-03-22T09:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/leadership/</loc>
+    <loc>/tags/leadership/</loc>
     <lastmod>2025-03-22T09:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/</loc>
+    <loc>/pages/</loc>
     <lastmod>2025-03-22T09:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/project-management/</loc>
+    <loc>/tags/project-management/</loc>
     <lastmod>2025-03-22T09:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/scrum/</loc>
+    <loc>/tags/scrum/</loc>
     <lastmod>2025-03-22T09:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/systems/</loc>
+    <loc>/categories/systems/</loc>
     <lastmod>2025-03-22T09:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2025-03-22T09:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ai/</loc>
+    <loc>/tags/ai/</loc>
     <lastmod>2024-01-17T08:45:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/chatgpt/</loc>
+    <loc>/tags/chatgpt/</loc>
     <lastmod>2024-01-17T08:45:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/development/</loc>
+    <loc>/categories/development/</loc>
     <lastmod>2024-01-17T08:45:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/chatgpt-workflow-sviluppo/</loc>
+    <loc>/pages/chatgpt-workflow-sviluppo/</loc>
     <lastmod>2024-01-17T08:45:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/produttivit%C3%A0/</loc>
+    <loc>/tags/produttivit%C3%A0/</loc>
     <lastmod>2024-01-17T08:45:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sviluppo-software/</loc>
+    <loc>/tags/sviluppo-software/</loc>
     <lastmod>2024-01-17T08:45:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/automation/</loc>
+    <loc>/tags/automation/</loc>
     <lastmod>2023-02-09T11:20:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/frontend/</loc>
+    <loc>/tags/frontend/</loc>
     <lastmod>2023-02-09T11:20:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/playwright/</loc>
+    <loc>/tags/playwright/</loc>
     <lastmod>2023-02-09T11:20:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/testing/</loc>
+    <loc>/tags/testing/</loc>
     <lastmod>2023-02-09T11:20:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/testing-automatizzato-playwright/</loc>
+    <loc>/pages/testing-automatizzato-playwright/</loc>
     <lastmod>2023-02-09T11:20:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/css/</loc>
+    <loc>/tags/css/</loc>
     <lastmod>2022-06-21T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/css-container-queries/</loc>
+    <loc>/pages/css-container-queries/</loc>
     <lastmod>2022-06-21T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/responsive-design/</loc>
+    <loc>/tags/responsive-design/</loc>
     <lastmod>2022-06-21T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/angular/</loc>
+    <loc>/tags/angular/</loc>
     <lastmod>2021-11-05T10:30:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/angular-13-novita-e-miglioramenti/</loc>
+    <loc>/pages/angular-13-novita-e-miglioramenti/</loc>
     <lastmod>2021-11-05T10:30:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
+    <loc>/tags/javascript/</loc>
     <lastmod>2021-11-05T10:30:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/typescript/</loc>
+    <loc>/tags/typescript/</loc>
     <lastmod>2021-11-05T10:30:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/api/</loc>
+    <loc>/tags/api/</loc>
     <lastmod>2021-03-18T10:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/graphql-vs-rest/</loc>
+    <loc>/pages/graphql-vs-rest/</loc>
     <lastmod>2021-03-18T10:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/backend/</loc>
+    <loc>/tags/backend/</loc>
     <lastmod>2021-03-18T10:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/graphql/</loc>
+    <loc>/tags/graphql/</loc>
     <lastmod>2021-03-18T10:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rest/</loc>
+    <loc>/tags/rest/</loc>
     <lastmod>2021-03-18T10:15:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2020-10-03T21:25:38+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/pages/tipi-in-javascript/</loc>
+    <loc>/pages/tipi-in-javascript/</loc>
     <lastmod>2020-10-03T00:45:33+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/creare-un-dominio-locale-con-apache-con-https/</loc>
+    <loc>/pages/creare-un-dominio-locale-con-apache-con-https/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/apache/</loc>
+    <loc>/tags/apache/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/devops/</loc>
+    <loc>/categories/devops/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/https/</loc>
+    <loc>/tags/https/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>/tags/linux/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/macos/</loc>
+    <loc>/tags/macos/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ssl/</loc>
+    <loc>/tags/ssl/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/webserver/</loc>
+    <loc>/tags/webserver/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/svelte/</loc>
+    <loc>/tags/svelte/</loc>
     <lastmod>2020-09-02T21:45:33+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/svelte-js/</loc>
+    <loc>/pages/svelte-js/</loc>
     <lastmod>2020-09-02T21:45:33+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/commenti-youtube-javascript/</loc>
+    <loc>/pages/commenti-youtube-javascript/</loc>
     <lastmod>2020-08-21T18:49:16+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/youtube/</loc>
+    <loc>/tags/youtube/</loc>
     <lastmod>2020-08-21T18:49:16+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/ottenere-commenti-video-youtube/</loc>
+    <loc>/pages/ottenere-commenti-video-youtube/</loc>
     <lastmod>2020-08-17T17:22:42+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/postman/</loc>
+    <loc>/tags/postman/</loc>
     <lastmod>2020-08-17T17:22:42+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/creare-un-dominio-locale-con-apache/</loc>
+    <loc>/pages/creare-un-dominio-locale-con-apache/</loc>
     <lastmod>2020-08-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linkedin/</loc>
+    <loc>/tags/linkedin/</loc>
     <lastmod>2020-07-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/linkedin-api-javascript/</loc>
+    <loc>/pages/linkedin-api-javascript/</loc>
     <lastmod>2020-07-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/linkedin-api-postman/</loc>
+    <loc>/pages/linkedin-api-postman/</loc>
     <lastmod>2020-07-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/creare-progetto-parceljs/</loc>
+    <loc>/pages/creare-progetto-parceljs/</loc>
     <lastmod>2020-07-03T22:57:46+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/parcel.js/</loc>
+    <loc>/tags/parcel.js/</loc>
     <lastmod>2020-07-03T22:57:46+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/html5/</loc>
+    <loc>/tags/html5/</loc>
     <lastmod>2020-05-15T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/web-components/</loc>
+    <loc>/tags/web-components/</loc>
     <lastmod>2020-05-15T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/web-components-shadow-dom/</loc>
+    <loc>/pages/web-components-shadow-dom/</loc>
     <lastmod>2020-05-15T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/class-components/</loc>
+    <loc>/tags/class-components/</loc>
     <lastmod>2019-06-15T14:20:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/react/</loc>
+    <loc>/tags/react/</loc>
     <lastmod>2019-06-15T14:20:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pages/react-class-components-guida/</loc>
+    <loc>/pages/react-class-components-guida/</loc>
     <lastmod>2019-06-15T14:20:00+02:00</lastmod>
   </url>
 </urlset>
