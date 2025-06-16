@@ -18,6 +18,9 @@ publishDir = "docs"
 	useCDN=false
 	subtitle = "Appunti di sviluppo"
 	mainSections = ["pages", "posts"]
+	favicon = "/images/favicon.svg"
+	# Immagine per gli asset social
+	og_image = "/images/favicon.png"
 
 [[params.social]]
 name = "GitHub"
